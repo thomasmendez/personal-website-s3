@@ -42,13 +42,13 @@ The [React Testing Library](https://testing-library.com/) is used to test React 
 
 ### Husky
 
-[Husky](https://typicode.github.io/husky/#/) allows you to run scripts for the git lifecyle
+[Husky](https://typicode.github.io/husky/#/) allows you to run scripts in the git lifecyle
 
 This project is configured to check for lint rules in `.eslintrc` prior to each commit to keep code quality consistent in the repository
 
 ***Note: Huksy has the following known [issue](https://stackoverflow.com/questions/50048717/lint-staged-not-running-on-precommit) and this is a temporary known solution***
 
-### Huksy Known Issue
+#### Huksy Known Issue
 
 After running `npm install` it is recommended to re-install husky again to allow pre-commit hooks
 ```
@@ -56,6 +56,10 @@ npm uninstall husky
 npm install -D husky@4
 ```
 This seems to be a known [issue](https://stackoverflow.com/questions/50048717/lint-staged-not-running-on-precommit) as of 8/20/2021
+
+### ESLint
+
+[ESLint](https://eslint.org/) is a static code analysis tool for identifying problematic patterns found in JavaScript code. Rules in ESLint are configurable, and customized rules can be defined and loaded. ESLint covers both code quality and coding style issues
 
 ### VSCode Editor + ESLint
 
