@@ -59,7 +59,11 @@ This seems to be a known [issue](https://stackoverflow.com/questions/50048717/li
 
 ### ESLint
 
-[ESLint](https://eslint.org/) is a static code analysis tool for identifying problematic patterns found in JavaScript code. Rules in ESLint are configurable, and customized rules can be defined and loaded. ESLint covers both code quality and coding style issues
+[ESLint](https://eslint.org/) is a static code analysis tool for identifying problematic patterns found in JavaScript code
+
+Rules in ESLint are configurable, and customized rules can be defined and loaded
+
+ESLint covers both code quality and coding style issues
 
 ### VSCode Editor + ESLint
 
