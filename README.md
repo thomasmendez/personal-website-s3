@@ -10,7 +10,7 @@ Run `npm install`
 
 Run the project in a development environment `npm run start`
 
-### Build
+## Build
 
 To build the project for a production environment run `npm run build`
 
