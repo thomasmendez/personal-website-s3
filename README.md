@@ -1,6 +1,6 @@
 # React Starter Project
 
-Sample Webpack project with some industry standard tools setup
+Sample React Webpack project with some industry standard tools setup
 
 ## Run Locally
 
