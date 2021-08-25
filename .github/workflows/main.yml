@@ -1,7 +1,4 @@
-# This workflow will do a clean install of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-
-name: Node.js CI
+name: Main.yml CI
 
 on:
   push:
@@ -10,32 +7,41 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
-
+  test: 
     runs-on: ubuntu-latest
+      strategy:
+        matrix:
+          node-version: [12.x, 14.x, 16.x]
+      steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run build --if-present
+      - run: npm test
 
-    strategy:
-      matrix:
-        node-version: [12.x, 14.x, 16.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
+  build:
+    needs: test
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Use Node.js 16.x
       uses: actions/setup-node@v2
       with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+        node-version: 16.x
+        path: |
+          ~/.dist
+    - run: npm run build
 
-  deploy: 
+  deploy:
+    needs: build
     runs-on: ubuntu-latest
     steps: 
-    - name: Checkout
-      uses: actions/checkout@v1
-
+    - name: Use Cached Build
+      uses: actions/cache@v1
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
@@ -44,4 +50,4 @@ jobs:
         aws-region: us-east-2
 
     - name: Deploy static site to S3 bucket
-      run: aws s3 sync ./public/ s3://thomasamendez --delete
+      run: aws s3 sync ./dist/ s3://thomasamendez --delete
