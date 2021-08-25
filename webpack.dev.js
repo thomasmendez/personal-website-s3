@@ -18,11 +18,6 @@ module.exports = {
         test: /\.(jsx|js)$/,
         exclude: '/node_modules/',
         use: ['babel-loader', 'eslint-loader'],
-        // options: {
-        //   formatter: eslintFormatter,
-        //   eslintPath: require.resolve('eslint'),
-        //   emitWarning: true,
-        // },
       },
     ],
   },
