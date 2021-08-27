@@ -5,8 +5,8 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket = var.aws_bucket_name
-    key    = "${var.aws_bucket_name}key"
+    bucket = "mys3bucket"
+    key    = "mys3bucketkey"
     region = "eu-central-1"
   }
 }
