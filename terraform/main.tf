@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "s3Bucket" {
-  bucket = var.aws_bucket_name
+  bucket = "${var.aws_bucket_name}"
   acl = "public-read"
   tags = {
     Environment = var.env
