@@ -50,8 +50,7 @@ jobs:
 
       - name: Terraform Init
         id: init
-        run: terraform init \
-          -backend-config="aws_bucket_name=mybucketdev"
+        run: terraform init -backend-config="aws_bucket_name=mybucketdev"
 
       - name: Terraform Validate
         id: validate
