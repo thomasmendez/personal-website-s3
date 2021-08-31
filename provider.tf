@@ -5,7 +5,7 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket     = var.aws_bucket_name
+    bucket     = "myawsbucketdev"
     key        = "myawsbucketdevkey"
     access_key = var.access_key
     secret_key = var.secret_key
