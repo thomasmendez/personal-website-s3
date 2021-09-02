@@ -100,7 +100,7 @@ jobs:
 
       - name: Deploy static site to S3 bucket
         # if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        run: aws s3 sync ./dist/ ${{ secrets.AWS_BUCKET_NAME_DEV }} --delete
+        run: aws s3 sync ./dist/ ${{ secrets.AWS_BUCKET_NAME_DEV }}
   # deploy:
   #   runs-on: ubuntu-latest
   #   if: github.ref == 'refs/heads/main'
