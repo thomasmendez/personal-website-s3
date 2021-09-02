@@ -1,6 +1,8 @@
 resource "aws_s3_bucket" "demos3" {
-  bucket = var.aws_bucket_name
-  acl    = "public-read"
+  for_each = fileset("../../dist/", "*")
+  source   = "myfiles/${each.value}"
+  bucket   = var.aws_bucket_name
+  acl      = "public-read"
   tags = {
     Environment = var.env
   }
