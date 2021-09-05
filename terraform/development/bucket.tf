@@ -4,6 +4,14 @@ resource "aws_s3_bucket" "demos3" {
   tags = {
     Environment = var.env
   }
+  lifecycle_rule = {
+    id      = "cleanup"
+    prefix  = "cleanup/"
+    enabled = true
+    expiration {
+      days = 1
+    }
+  }
   policy = <<EOF
 {
   "Id": "MakePublic",
