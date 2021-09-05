@@ -38,7 +38,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION_DEV }}
       - name: Check Bucket Exist
-      - run: |
+        run: |
           exists=$(aws s3 ls s3://${{ secrets.AWS_BUCKET_NAME_DEV }})
           if [ -z "$exists" ]; then
             exit 0
