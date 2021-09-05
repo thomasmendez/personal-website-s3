@@ -48,7 +48,7 @@ jobs:
   deploy-dev:
     runs-on: ubuntu-latest
     needs: [build, verify-s3-dev]
-    if: github.ref != 'refs/heads/main' && needs.verify-s3-dev.result == 'failure'
+    if: github.ref != 'refs/heads/main' && needs.verify-s3-dev.result == 'Process completed with exit code 254'
     steps:
       - name: Checkout
         uses: actions/checkout@v2
