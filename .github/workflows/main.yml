@@ -38,11 +38,18 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION_DEV }}
       - name: Check Bucket Exist
         run: |
-          exists=$(aws s3 ls s3://${{ secrets.AWS_BUCKET_NAME_DEV }})
-          if [ -z "$exists" ]; then
-            exit 0
+          if [ $? != 0]
+          then
+            exists=$(aws s3 ls s3://${{ secrets.AWS_BUCKET_NAME_DEV }} | grep -c 'NoSuchBucket')
+            if [ "$exists" ]; then
+              echo "Bucket does not exist"
+              exit 1
+            else
+              echo "Error checking S3 Bucket"
+              exit 1
+            fi
           else
-            exit 1
+            echo "Bucket exists"
           fi
   deploy-dev:
     runs-on: ubuntu-latest
