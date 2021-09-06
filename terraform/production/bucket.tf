@@ -1,4 +1,4 @@
-resource "aws_s3_bucket" "bucketdev" {
+resource "aws_s3_bucket" "bucketprd" {
   bucket = var.aws_bucket_name
   acl    = "public-read"
   tags = {
@@ -33,10 +33,10 @@ EOF
   }
 }
 
-data "aws_s3_bucket" "bucketdev" {
+data "aws_s3_bucket" "bucketprd" {
   bucket = var.aws_bucket_name
 }
 
-output "bucketdev" {
-  value = data.aws_s3_bucket.bucketdev.bucket
+output "bucketprd" {
+  value = data.aws_s3_bucket.bucketprd.bucket
 }

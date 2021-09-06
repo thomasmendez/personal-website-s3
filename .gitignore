@@ -38,9 +38,10 @@ node_modules
 # Ignore dist files
 dist
 
-# Terraform 
+# Terraform
 # Local .terraform directories
 **/.terraform/*
+.terraform.lock.hcl
 
 # .tfstate files
 *.tfstate
