@@ -1,13 +1,12 @@
-name: main.yml CI
+name: development.yml CI
 
 on:
-  push:
+  pull_request:
     branches: [main]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -21,44 +20,13 @@ jobs:
       - name: Create dist Artifact
         uses: actions/upload-artifact@v2
         with:
-          name: dist-main
+          name: dist-dev
           path: dist/
           retention-days: 1
-  verify-s3-prd:
+  configure-s3-dev:
     runs-on: ubuntu-latest
-    needs: build
-    if: (github.ref == 'refs/heads/main' && github.event_name == 'push')
-    steps:
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION_PRD }}
-      - name: Check Bucket Exist
-        run: |
-          echo "Checking S3 bucket exists..."
-          BUCKET_EXISTS=true
-          S3_CHECK=$(aws s3 ls "s3://${{ secrets.AWS_BUCKET_NAME_PRD }}" 2>&1)
-          if [ $? != 0 ]
-          then
-            NO_BUCKET_CHECK=$(echo $S3_CHECK | grep -c 'NoSuchBucket')
-            if [ $NO_BUCKET_CHECK = 1 ]; then
-              echo "Bucket does not exist"
-              BUCKET_EXISTS=false
-              exit 1
-            else
-              echo "Error checking S3 Bucket"
-              exit 1
-            fi
-          else
-            echo "Bucket exists"
-            exit 0
-          fi
-  create-s3-prd:
-    runs-on: ubuntu-latest
-    needs: [build, verify-s3-prd]
-    if: (github.ref == 'refs/heads/main' && github.event_name == 'push') && (always() && needs.verify-s3-dev.result == 'failure')
+    needs: [build, verify-s3-dev]
+    if: github.ref != 'refs/heads/main'
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -71,15 +39,15 @@ jobs:
 
       - name: Terraform Format
         id: fmt
-        run: terraform -chdir=terraform/production fmt -check
+        run: terraform -chdir=terraform/development fmt -check
 
       - name: Terraform Init
         id: init
-        run: terraform -chdir=terraform/production init -backend-config="region=${{ secrets.AWS_REGION_PRD }}" -backend-config="access_key=${{ secrets.AWS_ACCESS_KEY_ID }}" -backend-config="secret_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}"
+        run: terraform -chdir=terraform/development init -backend-config="region=${{ secrets.AWS_REGION_DEV }}" -backend-config="access_key=${{ secrets.AWS_ACCESS_KEY_ID }}" -backend-config="secret_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}"
 
       - name: Terraform Validate
         id: validate
-        run: terraform -chdir=terraform/production validate -no-color
+        run: terraform -chdir=terraform/development validate -no-color
 
       - name: Terraform Plan
         id: plan
@@ -87,8 +55,8 @@ jobs:
         run: |
           export AWS_ACCESS_KEY_ID="${{ secrets.AWS_ACCESS_KEY_ID }}"
           export AWS_SECRET_ACCESS_KEY="${{ secrets.AWS_SECRET_ACCESS_KEY }}"
-          export AWS_DEFAULT_REGION="${{ secrets.AWS_REGION_PRD }}"
-          terraform -chdir=terraform/production plan -no-color
+          export AWS_DEFAULT_REGION="${{ secrets.AWS_REGION_DEV }}"
+          terraform -chdir=terraform/development plan -no-color
 
       - name: Update Pull Request
         uses: actions/github-script@0.9.0
@@ -125,28 +93,40 @@ jobs:
         run: exit 1
 
       - name: Terraform Apply
+        id: apply
         run: |
           export AWS_ACCESS_KEY_ID="${{ secrets.AWS_ACCESS_KEY_ID }}"
           export AWS_SECRET_ACCESS_KEY="${{ secrets.AWS_SECRET_ACCESS_KEY }}"
-          export AWS_DEFAULT_REGION="${{ secrets.AWS_REGION_PRD }}"
-          terraform -chdir=terraform/production apply -auto-approve
-  sync-s3-prd:
+          export AWS_DEFAULT_REGION="${{ secrets.AWS_REGION_DEV }}"
+          terraform -chdir=terraform/development apply -auto-approve
+      - name: Terraform Import and Apply
+        id: import-apply
+        if: steps.apply.outcome == 'failure'
+        run: |
+          export AWS_ACCESS_KEY_ID="${{ secrets.AWS_ACCESS_KEY_ID }}"
+          export AWS_SECRET_ACCESS_KEY="${{ secrets.AWS_SECRET_ACCESS_KEY }}"
+          export AWS_DEFAULT_REGION="${{ secrets.AWS_REGION_DEV }}"
+          terraform -chdir=terraform/development import aws_s3_bucket.bucketdev ${{ secrets.AWS_BUCKET_NAME_DEV }}
+          terraform -chdir=terraform/development apply -auto-approve
+  sync-s3-dev:
     runs-on: ubuntu-latest
-    needs: [build, verify-s3-prd, create-s3-prd]
-    if: (github.ref == 'refs/heads/main' && github.event_name == 'push') && (always() && ((needs.verify-s3-prd.result == 'failure' && needs.deploy-prd.result == 'success') || needs.verify-s3-prd.result == 'success'))
+    needs: [build, configure-s3-dev]
+    if: github.ref != 'refs/heads/main'
     steps:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Retrieve dist files
         uses: actions/download-artifact@v2
         with:
-          name: dist-main
+          name: dist-dev
           path: dist/
       - name: Configure AWS Credentials
+        # if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION_PRD }}
+          aws-region: ${{ secrets.AWS_REGION_DEV }}
       - name: Deploy static site to S3 bucket
-        run: aws s3 sync ./dist/ s3://${{ secrets.AWS_BUCKET_NAME_PRD }}
+        # if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: aws s3 sync ./dist/ s3://${{ secrets.AWS_BUCKET_NAME_DEV }}

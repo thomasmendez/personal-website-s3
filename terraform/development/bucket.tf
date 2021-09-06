@@ -1,4 +1,4 @@
-resource "aws_s3_bucket" "demos3" {
+resource "aws_s3_bucket" "bucketdev" {
   bucket = var.aws_bucket_name
   acl    = "public-read"
   tags = {
