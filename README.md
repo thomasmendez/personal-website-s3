@@ -24,7 +24,7 @@ Manages node_modules used for node based projects and manages dependency and con
 
 ### Webpack
 
-[Webpack](https://webpack.js.org/) is a JavaScript module bundler 
+[Webpack](https://webpack.js.org/) is a JavaScript module bundler
 
 It can transform front-end assets (HTML, CSS, JavaScript, and images) along with it's modules and dependencies to generate static assets
 
@@ -70,20 +70,20 @@ To apply ESLint format rules on file save, modify `settings.json`
 2. Type `Open User Settings` to manage preferences
 3. Search for `Code Actions On Save`
 4. Make sure `Format On Save` is checked
-4. Open the `settings.json` for `Code Actions on Save`
-5. Add the following code to its settings
-    ```
-    "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": true
-    },
-    "eslint.validate": ["javascript"]
-    ```
+5. Open the `settings.json` for `Code Actions on Save`
+6. Add the following code to its settings
+   ```
+   "editor.codeActionsOnSave": {
+     "source.fixAll.eslint": true
+   },
+   "eslint.validate": ["javascript"]
+   ```
 
 You should now be able to apply your ESLint rules on file save in VSCode
 
 ### Git LF Settings
 
-For this project, it is recommended to set Git to automatically set LF for any pulled files `git config --global core.autocrlf false` since the AirBnb  `.eslintrc` rules specify all files to be LF 
+For this project, it is recommended to set Git to automatically set LF for any pulled files `git config --global core.autocrlf false` since the AirBnb `.eslintrc` rules specify all files to be LF
 
 ### favicon.ico
 
