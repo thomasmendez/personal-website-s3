@@ -10,7 +10,7 @@
     "lint": "eslint --ext .js,.jsx",
     "lint:fix": "npm run lint --fix",
     "pretty:lint": "prettier --check **/*.{json,yml,yaml,md}",
-    "pretty:fix": "prettier --write ./*.{json,yml,yaml,md}",
+    "pretty:fix": "prettier --write **/*.{json,yml,yaml,md}",
     "prepare": "husky install"
   },
   "author": "Thomas Antonio Mendez",
@@ -19,7 +19,7 @@
     "*.js": [
       "eslint --ext .js src/ --fix"
     ],
-    "*.{json,yml,yaml,md}": [
+    "**/*.{json,yml,yaml,md}": [
       "prettier --check"
     ]
   },
