@@ -9,16 +9,21 @@
     "test": "jest --env=jsdom",
     "lint": "eslint --ext .js,.jsx",
     "lint:fix": "npm run lint --fix",
+    "pretty:lint": "prettier --check **/*.{json,yml,yaml,md}",
+    "pretty:fix": "prettier --write ./*.{json,yml,yaml,md}",
     "prepare": "husky install"
   },
   "author": "Thomas Antonio Mendez",
   "license": "ISC",
   "lint-staged": {
-    "*.js": "eslint --ext .js src/ --fix"
+    "*.js": [
+      "eslint --ext .js src/ --fix"
+    ],
+    "*.{json,yml,yaml,md}": [
+      "prettier --check"
+    ]
   },
   "dependencies": {
-    "eslint-webpack-plugin": "^3.0.1",
-    "html-webpack-plugin": "^5.3.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
@@ -37,9 +42,12 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^1.7.0",
+    "eslint-webpack-plugin": "^3.0.1",
+    "html-webpack-plugin": "^5.3.2",
     "husky": "^7.0.2",
     "jest": "^27.0.6",
     "lint-staged": "^11.1.2",
+    "prettier": "^2.4.1",
     "webpack": "^5.50.0",
     "webpack-cli": "^4.7.2",
     "webpack-dev-server": "^3.11.2"
