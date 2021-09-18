@@ -46,16 +46,11 @@ The [React Testing Library](https://testing-library.com/) is used to test React 
 
 This project is configured to check for lint rules in `.eslintrc` prior to each commit to keep code quality consistent in the repository
 
-***Note: Huksy has the following known [issue](https://stackoverflow.com/questions/50048717/lint-staged-not-running-on-precommit) and this is a temporary known solution***
+#### Huksy 5+
 
-#### Huksy Known Issue
+Husky 5 and above now uses a `.husky` directory in order to provide more flexebility for the way git commit hooks are run
 
-After running `npm install` it is recommended to re-install husky again to allow pre-commit hooks
-```
-npm uninstall husky
-npm install -D husky@4
-```
-This seems to be a known [issue](https://stackoverflow.com/questions/50048717/lint-staged-not-running-on-precommit) as of 8/20/2021
+Modify the `pre-commit` hook with commands you wish to run before committing
 
 ### ESLint
 
@@ -85,6 +80,10 @@ To apply ESLint format rules on file save, modify `settings.json`
     ```
 
 You should now be able to apply your ESLint rules on file save in VSCode
+
+### Git LF Settings
+
+For this project, it is recommended to set Git to automatically set LF for any pulled files `git config --global core.autocrlf false` since the AirBnb  `.eslintrc` rules specify all files to be LF 
 
 ### favicon.ico
 
