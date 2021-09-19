@@ -24,7 +24,7 @@ Manages node_modules used for node based projects and manages dependency and con
 
 ### Webpack
 
-[Webpack](https://webpack.js.org/) is a JavaScript module bundler 
+[Webpack](https://webpack.js.org/) is a JavaScript module bundler
 
 It can transform front-end assets (HTML, CSS, JavaScript, and images) along with it's modules and dependencies to generate static assets
 
@@ -46,16 +46,11 @@ The [React Testing Library](https://testing-library.com/) is used to test React 
 
 This project is configured to check for lint rules in `.eslintrc` prior to each commit to keep code quality consistent in the repository
 
-***Note: Huksy has the following known [issue](https://stackoverflow.com/questions/50048717/lint-staged-not-running-on-precommit) and this is a temporary known solution***
+#### Huksy 5+
 
-#### Huksy Known Issue
+Husky 5 and above now uses a `.husky` directory in order to provide more flexebility for the way git commit hooks are run
 
-After running `npm install` it is recommended to re-install husky again to allow pre-commit hooks
-```
-npm uninstall husky
-npm install -D husky@4
-```
-This seems to be a known [issue](https://stackoverflow.com/questions/50048717/lint-staged-not-running-on-precommit) as of 8/20/2021
+Modify the `pre-commit` hook with commands you wish to run before committing
 
 ### ESLint
 
@@ -75,16 +70,20 @@ To apply ESLint format rules on file save, modify `settings.json`
 2. Type `Open User Settings` to manage preferences
 3. Search for `Code Actions On Save`
 4. Make sure `Format On Save` is checked
-4. Open the `settings.json` for `Code Actions on Save`
-5. Add the following code to its settings
-    ```
-    "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": true
-    },
-    "eslint.validate": ["javascript"]
-    ```
+5. Open the `settings.json` for `Code Actions on Save`
+6. Add the following code to its settings
+   ```
+   "editor.codeActionsOnSave": {
+     "source.fixAll.eslint": true
+   },
+   "eslint.validate": ["javascript"]
+   ```
 
 You should now be able to apply your ESLint rules on file save in VSCode
+
+### Git LF Settings
+
+For this project, it is recommended to set Git to automatically set LF for any pulled files `git config --global core.autocrlf false` since the AirBnb `.eslintrc` rules specify all files to be LF
 
 ### favicon.ico
 
