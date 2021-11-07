@@ -16,11 +16,11 @@ To build the project for a production environment run `npm run build`
 
 ## Tools Used
 
-### NPM Package Registry
+### Yarn
 
-[Node Package Manager](https://www.npmjs.com/) for Node Javascript platform
+[Yarn](https://classic.yarnpkg.com/en/docs/install#windows-stable)
 
-Manages node_modules used for node based projects and manages dependency and conflicts
+Manages packages efficiently with features such as [Offline Cache](https://yarnpkg.com/features/offline-cache), [Zero Installs](https://yarnpkg.com/features/zero-installs), [Plug'n'Play](https://yarnpkg.com/features/pnp)
 
 ### Webpack
 
