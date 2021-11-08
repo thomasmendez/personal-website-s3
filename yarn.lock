@@ -30,7 +30,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:^7.1.0, @babel/core@npm:^7.12.3, @babel/core@npm:^7.15.0, @babel/core@npm:^7.7.2, @babel/core@npm:^7.7.5":
+"@babel/core@npm:^7.1.0, @babel/core@npm:^7.12.3, @babel/core@npm:^7.16.0, @babel/core@npm:^7.7.2, @babel/core@npm:^7.7.5":
   version: 7.16.0
   resolution: "@babel/core@npm:7.16.0"
   dependencies:
@@ -1173,7 +1173,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/preset-env@npm:^7.15.0":
+"@babel/preset-env@npm:^7.16.0":
   version: 7.16.0
   resolution: "@babel/preset-env@npm:7.16.0"
   dependencies:
@@ -1272,7 +1272,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/preset-react@npm:^7.14.5":
+"@babel/preset-react@npm:^7.16.0":
   version: 7.16.0
   resolution: "@babel/preset-react@npm:7.16.0"
   dependencies:
@@ -1676,7 +1676,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/react@npm:^12.0.0":
+"@testing-library/react@npm:^12.1.2":
   version: 12.1.2
   resolution: "@testing-library/react@npm:12.1.2"
   dependencies:
@@ -2403,6 +2403,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"array-find@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "array-find@npm:1.0.0"
+  checksum: 6588ebfd15841296923f7c8c70f9f4cfd0e803c9f66cf53382431e5d5c763f1a866120181ba80aba7ebed73b27c5756fdb2202054e7ef475290239839185544b
+  languageName: node
+  linkType: hard
+
 "array-flatten@npm:1.1.1":
   version: 1.1.1
   resolution: "array-flatten@npm:1.1.1"
@@ -2686,7 +2693,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-loader@npm:^8.2.2":
+"babel-loader@npm:^8.2.3":
   version: 8.2.3
   resolution: "babel-loader@npm:8.2.3"
   dependencies:
@@ -4362,6 +4369,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"enhanced-resolve@npm:^0.9.1":
+  version: 0.9.1
+  resolution: "enhanced-resolve@npm:0.9.1"
+  dependencies:
+    graceful-fs: ^4.1.2
+    memory-fs: ^0.2.0
+    tapable: ^0.1.8
+  checksum: 397106771257d12177a3f07fd86db33b6dd6881a087ef2d43054d82b5e1fb8c1ce9add36f1f0c57e226e5d40e5764c44127f4adeb76bcd7fe0bd0a194c24f98c
+  languageName: node
+  linkType: hard
+
 "enhanced-resolve@npm:^5.8.3":
   version: 5.8.3
   resolution: "enhanced-resolve@npm:5.8.3"
@@ -4572,6 +4590,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint-import-resolver-webpack@npm:^0.13.2":
+  version: 0.13.2
+  resolution: "eslint-import-resolver-webpack@npm:0.13.2"
+  dependencies:
+    array-find: ^1.0.0
+    debug: ^3.2.7
+    enhanced-resolve: ^0.9.1
+    find-root: ^1.1.0
+    has: ^1.0.3
+    interpret: ^1.4.0
+    is-core-module: ^2.7.0
+    is-regex: ^1.1.4
+    lodash: ^4.17.21
+    resolve: ^1.20.0
+    semver: ^5.7.1
+  peerDependencies:
+    eslint-plugin-import: ">=1.4.0"
+    webpack: ">=1.11.0"
+  checksum: 6c40164747bf894a0e34cbc9626566193471062e8809cef7aa8be74e0346c962d03aa7b8f3579a3d348245269860c1f241eba5379ec04acc89daffa4fb6b5f17
+  languageName: node
+  linkType: hard
+
 "eslint-loader@npm:^4.0.2":
   version: 4.0.2
   resolution: "eslint-loader@npm:4.0.2"
@@ -4643,12 +4683,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-react-hooks@npm:^1.7.0":
-  version: 1.7.0
-  resolution: "eslint-plugin-react-hooks@npm:1.7.0"
+"eslint-plugin-react-hooks@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "eslint-plugin-react-hooks@npm:4.2.0"
   peerDependencies:
-    eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0
-  checksum: ea16d0cf4aaa0a30db05860bd892f3432a4cc299983a5adece092c021c4ee359e7e7277ff1e7207d1f550fae5f08a8b3aa2698f36e82cdebb756a8a3e1c842eb
+    eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0
+  checksum: ead5c5be3ded82a0cf295b064376adb1998a43e2262b605eecc0efc88283dec4e159ca39307fafb3d8e661dd08e5a4c8cdfed97eea78f923954f72bad6e20397
   languageName: node
   linkType: hard
 
@@ -4709,7 +4749,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-webpack-plugin@npm:^3.0.1":
+"eslint-webpack-plugin@npm:^3.1.0":
   version: 3.1.0
   resolution: "eslint-webpack-plugin@npm:3.1.0"
   dependencies:
@@ -5112,6 +5152,13 @@ __metadata:
     make-dir: ^3.0.2
     pkg-dir: ^4.1.0
   checksum: 1e61c2e64f5c0b1c535bd85939ae73b0e5773142713273818cc0b393ee3555fb0fd44e1a5b161b8b6c3e03e98c2fcc9c227d784850a13a90a8ab576869576817
+  languageName: node
+  linkType: hard
+
+"find-root@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "find-root@npm:1.1.0"
+  checksum: b2a59fe4b6c932eef36c45a048ae8f93c85640212ebe8363164814990ee20f154197505965f3f4f102efc33bfb1cbc26fd17c4a2fc739ebc51b886b137cbefaf
   languageName: node
   linkType: hard
 
@@ -5778,7 +5825,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"husky@npm:^7.0.2":
+"husky@npm:^7.0.4":
   version: 7.0.4
   resolution: "husky@npm:7.0.4"
   bin:
@@ -5909,6 +5956,13 @@ __metadata:
     has: ^1.0.3
     side-channel: ^1.0.4
   checksum: 1944f92e981e47aebc98a88ff0db579fd90543d937806104d0b96557b10c1f170c51fb777b97740a8b6ddeec585fca8c39ae99fd08a8e058dfc8ab70937238bf
+  languageName: node
+  linkType: hard
+
+"interpret@npm:^1.4.0":
+  version: 1.4.0
+  resolution: "interpret@npm:1.4.0"
+  checksum: 2e5f51268b5941e4a17e4ef0575bc91ed0ab5f8515e3cf77486f7c14d13f3010df9c0959f37063dcc96e78d12dc6b0bb1b9e111cdfe69771f4656d2993d36155
   languageName: node
   linkType: hard
 
@@ -6905,7 +6959,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest@npm:^27.0.6":
+"jest@npm:^27.3.1":
   version: 27.3.1
   resolution: "jest@npm:27.3.1"
   dependencies:
@@ -7189,7 +7243,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:^11.1.2":
+"lint-staged@npm:^11.2.6":
   version: 11.2.6
   resolution: "lint-staged@npm:11.2.6"
   dependencies:
@@ -7436,6 +7490,13 @@ __metadata:
   version: 0.3.0
   resolution: "media-typer@npm:0.3.0"
   checksum: af1b38516c28ec95d6b0826f6c8f276c58aec391f76be42aa07646b4e39d317723e869700933ca6995b056db4b09a78c92d5440dc23657e6764be5d28874bba1
+  languageName: node
+  linkType: hard
+
+"memory-fs@npm:^0.2.0":
+  version: 0.2.0
+  resolution: "memory-fs@npm:0.2.0"
+  checksum: 7a8268eab60ff7214ab25d9248ac0b9c51124193e4999f18a4190e64a997d9a5302704c0e5ba9e2e365acb8ab59c9f49139c9eff9bf6e9c5eca783442437b1d6
   languageName: node
   linkType: hard
 
@@ -8347,38 +8408,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"personal-website-s3@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "personal-website-s3@workspace:."
-  dependencies:
-    "@babel/core": ^7.15.0
-    "@babel/preset-env": ^7.15.0
-    "@babel/preset-react": ^7.14.5
-    "@testing-library/react": ^12.0.0
-    babel-eslint: ^10.1.0
-    babel-loader: ^8.2.2
-    babel-preset-es2015: ^6.24.1
-    eslint: ^7.2.0
-    eslint-config-airbnb: ^18.2.1
-    eslint-loader: ^4.0.2
-    eslint-plugin-import: ^2.22.1
-    eslint-plugin-jsx-a11y: ^6.4.1
-    eslint-plugin-react: ^7.21.5
-    eslint-plugin-react-hooks: ^1.7.0
-    eslint-webpack-plugin: ^3.0.1
-    html-webpack-plugin: ^5.3.2
-    husky: ^7.0.2
-    jest: ^27.0.6
-    lint-staged: ^11.1.2
-    prettier: ^2.4.1
-    react: ^17.0.2
-    react-dom: ^17.0.2
-    webpack: ^5.50.0
-    webpack-cli: ^4.7.2
-    webpack-dev-server: ^3.11.2
-  languageName: unknown
-  linkType: soft
-
 "picocolors@npm:^1.0.0":
   version: 1.0.0
   resolution: "picocolors@npm:1.0.0"
@@ -8713,6 +8742,39 @@ __metadata:
   checksum: 9d6d111d8990dc98bc5402c1266a808b0459b5d54830bbea24c12d908b536df7883f268a7868cfaedde3dd9d4e0d574db456f84d2e6df9c4526f99bb4b5344d8
   languageName: node
   linkType: hard
+
+"react-template-simple-site@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "react-template-simple-site@workspace:."
+  dependencies:
+    "@babel/core": ^7.16.0
+    "@babel/preset-env": ^7.16.0
+    "@babel/preset-react": ^7.16.0
+    "@testing-library/react": ^12.1.2
+    babel-eslint: ^10.1.0
+    babel-loader: ^8.2.3
+    babel-preset-es2015: ^6.24.1
+    eslint: ^7.2.0
+    eslint-config-airbnb: ^18.2.1
+    eslint-import-resolver-webpack: ^0.13.2
+    eslint-loader: ^4.0.2
+    eslint-plugin-import: ^2.22.1
+    eslint-plugin-jsx-a11y: ^6.4.1
+    eslint-plugin-react: ^7.21.5
+    eslint-plugin-react-hooks: ^4.2.0
+    eslint-webpack-plugin: ^3.1.0
+    html-webpack-plugin: ^5.3.2
+    husky: ^7.0.4
+    jest: ^27.3.1
+    lint-staged: ^11.2.6
+    prettier: ^2.4.1
+    react: ^17.0.2
+    react-dom: ^17.0.2
+    webpack: ^5.50.0
+    webpack-cli: ^4.7.2
+    webpack-dev-server: ^3.11.2
+  languageName: unknown
+  linkType: soft
 
 "react@npm:^17.0.2":
   version: 17.0.2
@@ -9239,7 +9301,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:^5.5.0":
+"semver@npm:^5.5.0, semver@npm:^5.7.1":
   version: 5.7.1
   resolution: "semver@npm:5.7.1"
   bin:
@@ -9918,6 +9980,13 @@ __metadata:
     string-width: ^4.2.3
     strip-ansi: ^6.0.1
   checksum: 61d732f51108222d158eca2a91bfaae41c14e0cba6eb04c702ec5a1b136219d4925940d5c4d9aff5720bc4e2385dcbe2ed52dcf37bbbd8b2be48c01c1cf2ed1d
+  languageName: node
+  linkType: hard
+
+"tapable@npm:^0.1.8":
+  version: 0.1.10
+  resolution: "tapable@npm:0.1.10"
+  checksum: fe02f5f4ce696b44c0c2d1176e41427a2fa54c2d59e80a2d16d9c8bab308c2603c3c78327a58b71e5a57abd427ddc54698736201039cc4f3d5d8b9c37b7940bb
   languageName: node
   linkType: hard
 

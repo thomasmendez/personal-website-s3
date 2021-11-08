@@ -22,6 +22,11 @@ module.exports = {
       template: path.join(__dirname, 'public', 'index.html'),
     }),
     new ESLintPlugin({
+      cache: true,
+      eslintPath: require.resolve('eslint'),
+      resolvePluginsRelativeTo: __dirname,
+      ignore: true,
+      useEslintrc: true,
       extensions: ['.js'],
       exclude: 'node_modules',
       emitError: false,

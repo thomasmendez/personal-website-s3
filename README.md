@@ -18,9 +18,11 @@ To build the project for a production environment run `npm run build`
 
 ### Yarn
 
-[Yarn](https://classic.yarnpkg.com/en/docs/install#windows-stable)
+[Yarn](https://yarnpkg.com/)
 
 Manages packages efficiently with features such as [Offline Cache](https://yarnpkg.com/features/offline-cache), [Zero Installs](https://yarnpkg.com/features/zero-installs), [Plug'n'Play](https://yarnpkg.com/features/pnp)
+
+_Tip: Use [`yarn up`](https://yarnpkg.com/cli/up) to update multiple packaegs at once_
 
 ### Webpack
 
@@ -79,7 +81,9 @@ To apply ESLint format rules on file save, modify `settings.json`
    "eslint.validate": ["javascript"]
    ```
 
-You should now be able to apply your ESLint rules on file save in VSCode
+You should now be able to apply your ESLint rules on file save in VSCode!
+
+_Note: Since Yarn Plug'n'Play does not use a `node_modules` folder in project and IDEs require a `node_modules` folder to exist in order to run lint rules, certain other settings would have to be taken into account in order to make the editor compatible with PnP features. Please see the [Yarn PnPify](https://next.yarnpkg.com/advanced/pnpify#vscode-support) and [Yarn Editors SDK](https://next.yarnpkg.com/getting-started/editor-sdks) to make your project compatible with your choosen editor with Eslint capabilities_
 
 ### Git LF Settings
 
