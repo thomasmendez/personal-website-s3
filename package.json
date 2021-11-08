@@ -16,8 +16,8 @@
   "author": "Thomas Antonio Mendez",
   "license": "ISC",
   "lint-staged": {
-    "*.js": [
-      "eslint --ext .js src/ --fix"
+    "*.{js,jsx}": [
+      "eslint --ext .js,.jsx src/ --fix"
     ],
     "*.{json,yml,yaml,md}": [
       "prettier --check"
