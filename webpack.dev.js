@@ -12,12 +12,10 @@ module.exports = {
     port: 8080,
     hot: true,
     open: true,
-    contentBase: './src/',
-    watchContentBase: true,
-    // watchFiles: [ './src/' ],
-    // devMiddleware: {
-    //   writeToDisk: true
-    // }
+    watchFiles: ['src/**/*.js', 'src/**/*.jsx'],
+    devMiddleware: {
+      writeToDisk: true,
+    },
   },
   module: {
     rules: [
