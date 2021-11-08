@@ -9,7 +9,7 @@
     "test": "jest --env=jsdom",
     "lint": "eslint . --ext .js,.jsx",
     "lint:fix": "yarn run lint --fix",
-    "pretty:lint": "prettier --check **/*.{json,yml,yaml,md}",
+    "pretty": "prettier --check **/*.{json,yml,yaml,md}",
     "pretty:fix": "prettier --write **/*.{json,yml,yaml,md}",
     "prepare": "husky install"
   },
@@ -20,7 +20,7 @@
       "eslint --ext .js,.jsx src/ --fix"
     ],
     "*.{json,yml,yaml,md}": [
-      "prettier --check"
+      "prettier --write"
     ]
   },
   "packageManager": "yarn@3.1.0",

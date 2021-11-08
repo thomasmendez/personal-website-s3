@@ -4,15 +4,57 @@ Sample React Webpack project with some industry standard tools setup
 
 ## Run Locally
 
-Git clone this repository `git clone https://github.com/thomasmendez/react-template-simple-site.git`
+### Clone Repository or Use Template
 
-Run `npm install`
+Clone this repository `git clone https://github.com/thomasmendez/react-template-simple-site.git` or click `'Use this template'` in the Github UI to use the current project as a template
 
-Run the project in a development environment `npm run start`
+### Install Node
+
+Install the latest version of Node.js [here](https://nodejs.org/en/download/)
+
+Verify Node is installed by checking the node version with `node -v`
+
+### Install Yarn
+
+Install [Yarn 2 (berry)](https://yarnpkg.com/getting-started/migration#why-should-you-migrate)
+
+Run `npm install --global yarn` to update global yarn version to latest v1
+
+Go into the project directory `cd react-template-simple-site`
+
+Run `yarn set version berry` to enable v2 (includes .2x, 3.x, etc.)
+
+_Note: latest version tested for this project is 3.1.0_
+
+Run `yarn install`
+
+Run the project in a development environment `yarn start`
 
 ## Build
 
-To build the project for a production environment run `npm run build`
+To build the project for a production environment run `yarn build`
+
+## Test
+
+To run test for the project, run `yarn test`
+
+## Linting
+
+Lint rules can be checked manually running the following commands
+
+_Note: The Husky pre-commit hook will try to automatically fix any ESLint and Prettier lint errors when committing. ESLint errors can also be automatically fixed on IDE save if configured. See the project's [VSCode Editor + ESLint](https://github.com/thomasmendez/react-template-simple-site#vscode-editor--eslint) instructions to learn how to set this up for convenience_
+
+### ESLint
+
+Running `yarn lint` will use ESLint to check for project formatting errors based on ESLint rules determined in `.eslintrc.js`
+
+Running `yarn lint:fix` will try to have ESLint fix code foramtting errors for project `.js` and `.jsx` files
+
+### Prettier
+
+Running `yarn pretty` will use Prettier to check linting for non-js and non-jsx files
+
+Running `yarn pretty:fix` will use Prettier to try to fix any lint erros present for non-js and non-jsx files
 
 ## Tools Used
 
