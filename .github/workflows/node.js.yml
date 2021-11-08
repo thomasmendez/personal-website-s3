@@ -28,8 +28,11 @@ jobs:
       - name: Install Packages
         run: yarn install --immutable
 
-      - name: Lint
-        run: yarn lint && yarn pretty
+      - name: ESLint
+        run: yarn lint
+
+      - name: Prettier
+        run: yarn pretty
 
       - name: Test
         run: yarn test
