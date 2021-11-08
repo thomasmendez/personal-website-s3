@@ -22,7 +22,7 @@ To build the project for a production environment run `npm run build`
 
 Manages packages efficiently with features such as [Offline Cache](https://yarnpkg.com/features/offline-cache), [Zero Installs](https://yarnpkg.com/features/zero-installs), [Plug'n'Play](https://yarnpkg.com/features/pnp)
 
-_Tip: Use [`yarn up`](https://yarnpkg.com/cli/up) to update multiple packaegs at once_
+_Tip: Use [`yarn up`](https://yarnpkg.com/cli/up) to update multiple packages at once_
 
 ### Webpack
 
