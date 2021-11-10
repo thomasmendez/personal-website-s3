@@ -11,18 +11,26 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(jsx|js)$/,
         exclude: '/node_modules/',
         use: ['babel-loader', 'eslint-loader'],
       },
     ],
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'public', 'index.html'),
     }),
     new ESLintPlugin({
-      extensions: ['.js'],
+      cache: true,
+      eslintPath: require.resolve('eslint'),
+      resolvePluginsRelativeTo: __dirname,
+      ignore: true,
+      useEslintrc: true,
+      extensions: ['.js', '.jsx'],
       exclude: 'node_modules',
       emitError: false,
       failOnError: false,
