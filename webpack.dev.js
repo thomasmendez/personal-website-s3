@@ -26,6 +26,9 @@ module.exports = {
       },
     ],
   },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'public', 'index.html'),
@@ -36,7 +39,7 @@ module.exports = {
       resolvePluginsRelativeTo: __dirname,
       ignore: true,
       useEslintrc: true,
-      extensions: ['.js'],
+      extensions: ['.js', '.jsx'],
       exclude: 'node_modules',
       emitError: false,
       failOnError: false,
