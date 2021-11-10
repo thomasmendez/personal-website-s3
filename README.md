@@ -60,9 +60,7 @@ Running `yarn pretty:fix` will use Prettier to try to fix any lint erros present
 
 ### Yarn
 
-[Yarn](https://yarnpkg.com/)
-
-Manages packages efficiently with features such as [Offline Cache](https://yarnpkg.com/features/offline-cache), [Zero Installs](https://yarnpkg.com/features/zero-installs), [Plug'n'Play](https://yarnpkg.com/features/pnp)
+[Yarn](https://yarnpkg.com/) manages packages efficiently with features such as [Offline Cache](https://yarnpkg.com/features/offline-cache), [Zero Installs](https://yarnpkg.com/features/zero-installs), [Plug'n'Play](https://yarnpkg.com/features/pnp)
 
 _Tip: Use [`yarn up`](https://yarnpkg.com/cli/up) to update multiple packages at once_
 
