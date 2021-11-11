@@ -12,8 +12,10 @@ module.exports = {
     port: 8080,
     hot: true,
     open: true,
-    contentBase: './src/',
-    watchContentBase: true,
+    watchFiles: ['src/**/*.js', 'src/**/*.jsx'],
+    devMiddleware: {
+      writeToDisk: true,
+    },
   },
   module: {
     rules: [
@@ -24,12 +26,20 @@ module.exports = {
       },
     ],
   },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'public', 'index.html'),
     }),
     new ESLintPlugin({
-      extensions: ['.js'],
+      cache: true,
+      eslintPath: require.resolve('eslint'),
+      resolvePluginsRelativeTo: __dirname,
+      ignore: true,
+      useEslintrc: true,
+      extensions: ['.js', '.jsx'],
       exclude: 'node_modules',
       emitError: false,
       failOnError: false,
