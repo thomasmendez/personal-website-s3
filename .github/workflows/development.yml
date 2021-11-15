@@ -14,15 +14,28 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 16.x
-      - run: npm ci
-      - run: npm test
-      - run: npm run build
+      - name: Install Packages
+        run: yarn install --immutable
+
+      - name: ESLint
+        run: yarn lint
+
+      - name: Prettier
+        run: yarn pretty
+
+      - name: Test
+        run: yarn test
+
+      - name: Build
+        run: yarn run build
+
       - name: Create dist Artifact
         uses: actions/upload-artifact@v2
         with:
           name: dist-dev
           path: dist/
           retention-days: 1
+
   configure-s3-dev:
     runs-on: ubuntu-latest
     needs: build
