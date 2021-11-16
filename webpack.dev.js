@@ -16,6 +16,12 @@ module.exports = {
     devMiddleware: {
       writeToDisk: true,
     },
+    client: {
+      overlay: {
+        errors: false,
+        warnings: false,
+      },
+    },
   },
   module: {
     rules: [
@@ -41,9 +47,10 @@ module.exports = {
       useEslintrc: true,
       extensions: ['.js', '.jsx'],
       exclude: 'node_modules',
-      emitError: false,
+      fix: true,
+      emitError: true,
       failOnError: false,
-      emitWarning: false,
+      emitWarning: true,
       failOnWarning: false,
     }),
   ],
