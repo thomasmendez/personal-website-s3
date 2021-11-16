@@ -40,9 +40,9 @@ To run test for the project, run `yarn test`
 
 ## Linting
 
-Lint rules can be checked manually running the following commands
+Lint rules can be checked manually by running `yarn lint` for ESLint or `yarn pretty` for Prettier
 
-_Note: The Husky pre-commit hook will try to automatically fix any ESLint and Prettier lint errors when committing. ESLint errors can also be automatically fixed on IDE save if configured. See the project's [VSCode Editor + ESLint](https://github.com/thomasmendez/react-template-simple-site#vscode-editor--eslint) instructions to learn how to set this up for convenience_
+_Note: The Husky pre-commit hook will try to automatically fix any ESLint and Prettier lint errors when committing. To enable this, please run `chmod +x .husky/pre-commit` to allow linting and test to run on each git commit. ESLint errors can also be automatically fixed on IDE save if configured. See the project's [VSCode Editor + ESLint](https://github.com/thomasmendez/react-template-simple-site#vscode-editor--eslint) instructions to learn how to set this up for convenience_
 
 ### ESLint
 
@@ -94,6 +94,8 @@ Husky 5 and above now uses a `.husky` directory in order to provide more flexebi
 
 Modify the `pre-commit` hook with commands you wish to run before committing
 
+_Note: When you clone this repo, please run `chmod +x .husky/pre-commit` to allow linting and test to run on each git commit_
+
 ### ESLint
 
 [ESLint](https://eslint.org/) is a static code analysis tool for identifying problematic patterns found in JavaScript code
@@ -104,22 +106,38 @@ ESLint covers both code quality and coding style issues
 
 ### VSCode Editor + ESLint
 
-Recommended to use ESLint Plugin to see ESLint errors in editor
+It is recommended to use the VSCode Extension [ESLint Plugin](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) to see ESLint errors in the editor
 
-To apply ESLint format rules on file save, modify `settings.json`
+To apply ESLint format rules on file save, modify the `settings.json`
 
 1. Hit `F1` on your keyboard
 2. Type `Open User Settings` to manage preferences
 3. Search for `Code Actions On Save`
 4. Make sure `Format On Save` is checked
 5. Open the `settings.json` for `Code Actions on Save`
-6. Add the following code to its settings
+6. Add the following code to its settings (this alone works with npm projects)
    ```
    "editor.codeActionsOnSave": {
      "source.fixAll.eslint": true
    },
-   "eslint.validate": ["javascript"]
+   "eslint.options": {
+        "extensions":  [".jsx", ".js"]
+      },
+      "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "jsx"
+   ],
    ```
+7. Since we are using Yarn Berry, add the following as well to make sure VSCode can reference the correct ESLint files
+
+```
+"eslint.nodePath": ".yarn/sdks",
+"search.exclude": {
+  "**/.pnp.*": true,
+  "**/.yarn": true
+}
+```
 
 You should now be able to apply your ESLint rules on file save in VSCode!
 
