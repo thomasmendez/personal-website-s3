@@ -16,6 +16,12 @@ module.exports = {
     devMiddleware: {
       writeToDisk: true,
     },
+    client: {
+      overlay: {
+        errors: false,
+        warnings: false,
+      },
+    },
   },
   module: {
     rules: [
@@ -25,6 +31,9 @@ module.exports = {
         use: ['babel-loader', 'eslint-loader'],
       },
     ],
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -36,11 +45,11 @@ module.exports = {
       resolvePluginsRelativeTo: __dirname,
       ignore: true,
       useEslintrc: true,
-      extensions: ['.js'],
+      extensions: ['.js', '.jsx'],
       exclude: 'node_modules',
-      emitError: false,
+      emitError: true,
       failOnError: false,
-      emitWarning: false,
+      emitWarning: true,
       failOnWarning: false,
     }),
   ],

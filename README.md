@@ -115,13 +115,21 @@ To apply ESLint format rules on file save, modify `settings.json`
 3. Search for `Code Actions On Save`
 4. Make sure `Format On Save` is checked
 5. Open the `settings.json` for `Code Actions on Save`
-6. Add the following code to its settings
+6. Add the following code to its settings (this alone works with npm projects)
    ```
    "editor.codeActionsOnSave": {
      "source.fixAll.eslint": true
    },
    "eslint.validate": ["javascript"]
    ```
+7. Since we are using Yarn Berry, add the following as well to make sure VSCode can reference the node_modules Yarn is using
+  ```
+  "eslint.nodePath": ".yarn/sdks",
+  "search.exclude": {
+    "**/.pnp.*": true,
+    "**/.yarn": true
+  }
+  ```
 
 You should now be able to apply your ESLint rules on file save in VSCode!
 
