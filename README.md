@@ -104,9 +104,9 @@ ESLint covers both code quality and coding style issues
 
 ### VSCode Editor + ESLint
 
-Recommended to use ESLint Plugin to see ESLint errors in editor
+It is recommended to use the VSCode Extension [ESLint Plugin](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) to see ESLint errors in the editor
 
-To apply ESLint format rules on file save, modify `settings.json`
+To apply ESLint format rules on file save, modify the `settings.json`
 
 1. Hit `F1` on your keyboard
 2. Type `Open User Settings` to manage preferences
@@ -118,9 +118,16 @@ To apply ESLint format rules on file save, modify `settings.json`
    "editor.codeActionsOnSave": {
      "source.fixAll.eslint": true
    },
-   "eslint.validate": ["javascript"]
+   "eslint.options": {
+        "extensions":  [".jsx", ".js"]
+      },
+      "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "jsx"
+   ],
    ```
-7. Since we are using Yarn Berry, add the following as well to make sure VSCode can reference the node_modules Yarn is using
+7. Since we are using Yarn Berry, add the following as well to make sure VSCode can reference the correct ESLint files
 
 ```
 "eslint.nodePath": ".yarn/sdks",
