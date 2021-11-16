@@ -47,6 +47,7 @@ module.exports = {
       useEslintrc: true,
       extensions: ['.js', '.jsx'],
       exclude: 'node_modules',
+      fix: true,
       emitError: true,
       failOnError: false,
       emitWarning: true,
