@@ -121,13 +121,14 @@ To apply ESLint format rules on file save, modify `settings.json`
    "eslint.validate": ["javascript"]
    ```
 7. Since we are using Yarn Berry, add the following as well to make sure VSCode can reference the node_modules Yarn is using
-  ```
-  "eslint.nodePath": ".yarn/sdks",
-  "search.exclude": {
-    "**/.pnp.*": true,
-    "**/.yarn": true
-  }
-  ```
+
+```
+"eslint.nodePath": ".yarn/sdks",
+"search.exclude": {
+  "**/.pnp.*": true,
+  "**/.yarn": true
+}
+```
 
 You should now be able to apply your ESLint rules on file save in VSCode!
 

@@ -20,7 +20,7 @@
       "eslint --ext .js,.jsx src/ --fix"
     ],
     "*.{json,yml,yaml,md}": [
-      "prettier --write"
+      "prettier --write **/*.{json,yml,yaml,md}"
     ]
   },
   "packageManager": "yarn@3.1.0",
