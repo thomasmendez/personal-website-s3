@@ -40,9 +40,9 @@ To run test for the project, run `yarn test`
 
 ## Linting
 
-Lint rules can be checked manually running the following commands
+Lint rules can be checked manually by running `yarn lint` for ESLint or `yarn pretty` for Prettier
 
-_Note: The Husky pre-commit hook will try to automatically fix any ESLint and Prettier lint errors when committing. ESLint errors can also be automatically fixed on IDE save if configured. See the project's [VSCode Editor + ESLint](https://github.com/thomasmendez/react-template-simple-site#vscode-editor--eslint) instructions to learn how to set this up for convenience_
+_Note: The Husky pre-commit hook will try to automatically fix any ESLint and Prettier lint errors when committing. To enable this, please run `chmod +x .husky/pre-commit` to allow linting and test to run on each git commit. ESLint errors can also be automatically fixed on IDE save if configured. See the project's [VSCode Editor + ESLint](https://github.com/thomasmendez/react-template-simple-site#vscode-editor--eslint) instructions to learn how to set this up for convenience_
 
 ### ESLint
 
@@ -93,6 +93,8 @@ This project is configured to check for lint rules in `.eslintrc` prior to each 
 Husky 5 and above now uses a `.husky` directory in order to provide more flexebility for the way git commit hooks are run
 
 Modify the `pre-commit` hook with commands you wish to run before committing
+
+_Note: When you clone this repo, please run `chmod +x .husky/pre-commit` to allow linting and test to run on each git commit_
 
 ### ESLint
 
