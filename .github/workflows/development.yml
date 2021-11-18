@@ -2,7 +2,7 @@ name: Development.yml CI
 
 on:
   push:
-    branches:
+    branches-ignore:
       - main
 
 jobs:
