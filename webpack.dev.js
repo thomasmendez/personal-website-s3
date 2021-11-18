@@ -12,7 +12,8 @@ module.exports = {
     port: 8080,
     hot: true,
     open: true,
-    watchFiles: ['src/**/*.js', 'src/**/*.jsx'],
+    historyApiFallback: true,
+    watchFiles: ['src/**/*.js', 'src/**/*.jsx', 'src/**/*'],
     devMiddleware: {
       writeToDisk: true,
     },
