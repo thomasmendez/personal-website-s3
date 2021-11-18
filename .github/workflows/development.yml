@@ -72,8 +72,9 @@ jobs:
           terraform -chdir=terraform/development/remote plan -var="aws_bucket_name=${{ secrets.AWS_BUCKET_NAME_DEV }}" -no-color
         continue-on-error: true
 
-      - name: Update Push - Existing Bucket
+      - name: Update Pull Request - Existing Bucket
         uses: actions/github-script@0.9.0
+        if: github.event_name == 'pull_request'
         env:
           PLAN: "terraform\n${{ steps.plan-remote.outputs.stdout }}"
         with:
@@ -126,9 +127,9 @@ jobs:
           terraform -chdir=terraform/development/create plan -var="aws_bucket_name=${{ secrets.AWS_BUCKET_NAME_DEV }}" -no-color
         continue-on-error: true
 
-      - name: Update Push - Create Bucket
+      - name: Update Pull Request - Create Bucket
         uses: actions/github-script@0.9.0
-        if: steps.plan-remote.outcome == 'failure'
+        if: github.event_name == 'pull_request' && steps.plan-remote.outcome == 'failure'
         env:
           PLAN: "terraform\n${{ steps.plan-create.outputs.stdout }}"
         with:
