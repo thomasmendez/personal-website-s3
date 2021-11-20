@@ -12,9 +12,16 @@ module.exports = {
     port: 8080,
     hot: true,
     open: true,
-    watchFiles: ['src/**/*.js', 'src/**/*.jsx'],
+    historyApiFallback: true,
+    watchFiles: ['src/**/*.js', 'src/**/*.jsx', 'src/**/*'],
     devMiddleware: {
       writeToDisk: true,
+    },
+    client: {
+      overlay: {
+        errors: false,
+        warnings: false,
+      },
     },
   },
   module: {
@@ -41,9 +48,10 @@ module.exports = {
       useEslintrc: true,
       extensions: ['.js', '.jsx'],
       exclude: 'node_modules',
-      emitError: false,
+      fix: true,
+      emitError: true,
       failOnError: false,
-      emitWarning: false,
+      emitWarning: true,
       failOnWarning: false,
     }),
   ],

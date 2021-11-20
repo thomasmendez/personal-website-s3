@@ -1307,6 +1307,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.7.6":
+  version: 7.16.3
+  resolution: "@babel/runtime@npm:7.16.3"
+  dependencies:
+    regenerator-runtime: ^0.13.4
+  checksum: ab8ac887096d76185ddbf291d28fb976cd32473696dc497ad4905b784acbd5aa462533ad83a5c5104e10ead28c2e0e119840ee28ed8eff90dcdde9d57f916eda
+  languageName: node
+  linkType: hard
+
 "@babel/template@npm:^7.16.0, @babel/template@npm:^7.3.3":
   version: 7.16.0
   resolution: "@babel/template@npm:7.16.0"
@@ -4506,9 +4515,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-webpack-plugin@npm:^3.1.0":
-  version: 3.1.0
-  resolution: "eslint-webpack-plugin@npm:3.1.0"
+"eslint-webpack-plugin@npm:^3.1.1":
+  version: 3.1.1
+  resolution: "eslint-webpack-plugin@npm:3.1.1"
   dependencies:
     "@types/eslint": ^7.28.2
     jest-worker: ^27.3.1
@@ -4518,7 +4527,7 @@ __metadata:
   peerDependencies:
     eslint: ^7.0.0 || ^8.0.0
     webpack: ^5.0.0
-  checksum: c6858e5f28d0ca5c5982a7a00cad99a25a8e117f90a662c5f550722f31ef8057ef1cf0cf1b89da249032437a61d917ab7623cb1ff4677cb4886aa2b010ecfdb0
+  checksum: 4ff3f3fc8f03a187792f783513c3f4274221623d5f5c16ca90542c1b781fd04ed646ab6043caa55a51a654d5ab2c7039677faedee8bfb526d1310edc3909cbd2
   languageName: node
   linkType: hard
 
@@ -5210,6 +5219,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"history@npm:^5.1.0":
+  version: 5.1.0
+  resolution: "history@npm:5.1.0"
+  dependencies:
+    "@babel/runtime": ^7.7.6
+  checksum: c978710a188ee5ad5d2acf55721c77e27469578c891a66311e71e8920d1390d14476e39a6db07e0ab0f5f8d594f1f62eb55a1059c7549cde7795a36367df5869
+  languageName: node
+  linkType: hard
+
 "hpack.js@npm:^2.1.6":
   version: 2.1.6
   resolution: "hpack.js@npm:2.1.6"
@@ -5262,7 +5280,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"html-webpack-plugin@npm:^5.3.2":
+"html-webpack-plugin@npm:^5.5.0":
   version: 5.5.0
   resolution: "html-webpack-plugin@npm:5.5.0"
   dependencies:
@@ -7928,6 +7946,30 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-router-dom@npm:^6.0.2":
+  version: 6.0.2
+  resolution: "react-router-dom@npm:6.0.2"
+  dependencies:
+    history: ^5.1.0
+    react-router: 6.0.2
+  peerDependencies:
+    react: ">=16.8"
+    react-dom: ">=16.8"
+  checksum: d3680939a4fac286f8df028c1fabe5626567ba065b2029b1cc4ad64fe9444aeba186d0e5e765563fc36ea868e7d17e02fb098f2ebc0b1c70212a8470a4b58ad6
+  languageName: node
+  linkType: hard
+
+"react-router@npm:6.0.2":
+  version: 6.0.2
+  resolution: "react-router@npm:6.0.2"
+  dependencies:
+    history: ^5.1.0
+  peerDependencies:
+    react: ">=16.8"
+  checksum: 9d4f3a8002a90f38be022c6740e11e9bb481e60ad04c5a0ce2d6dbe685059c09b3037c45414d6e7e40eb97308842380413cfb93c5cdcb992e7ee0c50b4f7fcaa
+  languageName: node
+  linkType: hard
+
 "react-template-simple-site@workspace:.":
   version: 0.0.0-use.local
   resolution: "react-template-simple-site@workspace:."
@@ -7947,14 +7989,15 @@ __metadata:
     eslint-plugin-jsx-a11y: ^6.4.1
     eslint-plugin-react: ^7.21.5
     eslint-plugin-react-hooks: ^4.2.0
-    eslint-webpack-plugin: ^3.1.0
-    html-webpack-plugin: ^5.3.2
+    eslint-webpack-plugin: ^3.1.1
+    html-webpack-plugin: ^5.5.0
     husky: ^7.0.4
     jest: ^27.3.1
     lint-staged: ^11.2.6
     prettier: ^2.4.1
     react: ^17.0.2
     react-dom: ^17.0.2
+    react-router-dom: ^6.0.2
     webpack: ^5.50.0
     webpack-cli: ^4.7.2
     webpack-dev-server: ^4.4.0
