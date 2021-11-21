@@ -8,6 +8,9 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
   },
+  watchOptions: {
+    aggregateTimeout: 10000,
+  },
   devServer: {
     port: 8080,
     hot: true,
