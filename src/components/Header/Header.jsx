@@ -12,26 +12,22 @@ import {
   bindMenu,
 } from 'material-ui-popup-state/hooks';
 
-const LinkNoDecoration = ({ to, children }) => {
-  return (
-    <Link
-      to={to}
-      style={{
-        textDecoration: 'none', display: 'block', color: 'black', hover: false,
-      }}
-    >
-      {children}
-    </Link>
-  );
-};
+const LinkNoDecoration = ({ to, children }) => (
+  <Link
+    to={to}
+    style={{
+      textDecoration: 'none', display: 'block', color: 'black', hover: false,
+    }}
+  >
+    {children}
+  </Link>
+);
 
-const RouteButton = ({ to, props, children }) => {
-  return (
-    <Button color="inherit" component={Link} to={to} {...props}>
-      {children}
-    </Button>
-  );
-};
+const RouteButton = ({ to, props, children }) => (
+  <Button color="inherit" component={Link} to={to} {...props}>
+    {children}
+  </Button>
+);
 
 const MenuPopupState = () => {
   const popupState = usePopupState({ variant: 'popover', popupId: 'demoMenu' });
@@ -59,34 +55,32 @@ const MenuPopupState = () => {
   );
 };
 
-const Header = () => {
-  return (
-    <AppBar style={{ backgroundColor: 'gray' }}>
-      <Toolbar>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          Thomas A. Mendez
-        </Typography>
+const Header = () => (
+  <AppBar style={{ backgroundColor: 'gray' }}>
+    <Toolbar>
+      <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+        Thomas A. Mendez
+      </Typography>
 
-        <RouteButton to="about">
-          About
-        </RouteButton>
+      <RouteButton to="about">
+        About
+      </RouteButton>
 
-        <RouteButton to="work">
-          Work
-        </RouteButton>
+      <RouteButton to="work">
+        Work
+      </RouteButton>
 
-        <RouteButton to="skills">
-          Skills &#38; Tools
-        </RouteButton>
+      <RouteButton to="skills">
+        Skills &#38; Tools
+      </RouteButton>
 
-        <MenuPopupState />
+      <MenuPopupState />
 
-        <RouteButton to="resume">
-          Resume
-        </RouteButton>
-      </Toolbar>
-    </AppBar>
-  );
-};
+      <RouteButton to="resume">
+        Resume
+      </RouteButton>
+    </Toolbar>
+  </AppBar>
+);
 
 export default Header;
