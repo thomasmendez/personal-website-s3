@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router,
   useRoutes,
 } from 'react-router-dom';
-import Header from './components/Header';
 import Error from './views/Error';
 import About from './views/About';
 import Skills from './views/Skills';
@@ -29,7 +28,6 @@ const AppRoutes = () => {
 const App = function () {
   return (
     <Router>
-      <Header />
       <AppRoutes />
     </Router>
   );
