@@ -31,7 +31,12 @@ module.exports = {
     rules: [
       {
         test: /\.(jsx|js)$/,
-        exclude: '/node_modules/',
+        include: path.resolve(__dirname, 'node_modules'),
+        use: ['babel-loader'],
+      },
+      {
+        test: /\.(jsx|js)$/,
+        include: [path.resolve(__dirname, './src')],
         use: ['babel-loader', 'eslint-loader'],
       },
     ],
@@ -50,11 +55,11 @@ module.exports = {
       ignore: true,
       useEslintrc: true,
       extensions: ['.js', '.jsx'],
-      exclude: 'node_modules',
+      files: [path.join(__dirname, 'src')],
       fix: true,
       emitError: true,
       failOnError: false,
-      emitWarning: false,
+      emitWarning: true,
       failOnWarning: false,
     }),
   ],
