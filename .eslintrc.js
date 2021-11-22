@@ -42,6 +42,13 @@ module.exports = {
     'no-multiple-empty-lines': ['error', { 'max': 2, 'maxEOF': 0 }],
     'no-console': ['error', { 'allow': ['warn', 'error', 'info', 'debug'] }],
     'eqeqeq': ['error', 'smart'],
+    'semi': [2, 'always'],
+    'no-restricted-imports': [
+      'error',
+      {
+        'patterns': ['@mui/*/*/*', '!@mui/material/test-utils/*'],
+      },
+    ],
   },
   settings: {
     react: {

@@ -54,7 +54,7 @@ module.exports = {
       fix: true,
       emitError: true,
       failOnError: false,
-      emitWarning: true,
+      emitWarning: false,
       failOnWarning: false,
     }),
   ],
