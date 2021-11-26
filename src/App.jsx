@@ -22,7 +22,6 @@ const AppRoutes = () => {
     { path: '/vr_ar', exact: true, element: <VR_AR /> },
     { path: '*', element: <Error errorCode={404} /> },
   ]);
-
   return routes;
 };
 

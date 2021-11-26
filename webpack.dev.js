@@ -35,6 +35,13 @@ module.exports = {
         use: ['babel-loader'],
       },
       {
+        test: /\.(png|jpe?g|gif|mp4|pdf)$/i,
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]',
+        },
+      },
+      {
         test: /\.(jsx|js)$/,
         include: [path.resolve(__dirname, './src')],
         use: ['babel-loader', 'eslint-loader'],
