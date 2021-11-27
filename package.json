@@ -11,7 +11,9 @@
     "lint:fix": "yarn run lint --fix",
     "pretty": "prettier --check **/*.{json,yml,yaml,md}",
     "pretty:fix": "prettier --write **/*.{json,yml,yaml,md}",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "author": "Thomas Antonio Mendez",
   "license": "ISC",
@@ -43,6 +45,12 @@
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.0",
     "@babel/preset-react": "^7.16.0",
+    "@mdx-js/react": "^1.6.22",
+    "@storybook/addon-actions": "^6.4.0",
+    "@storybook/addon-docs": "^6.4.0",
+    "@storybook/addon-essentials": "^6.4.0",
+    "@storybook/addon-links": "^6.4.0",
+    "@storybook/react": "^6.4.0",
     "@testing-library/react": "^12.1.2",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.3",

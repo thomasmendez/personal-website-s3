@@ -25,10 +25,6 @@ const ROUTES = [
     { id: '6', name: 'VR / AR', to: 'vr_ar' },
   ]},
   { id: '7', name: 'Resume', to: 'resume'},
-  { id: '8', name: 'Other', subItems: [
-    { id: '9', name: 'Other 2', to: 'software_engineering' },
-    { id: '10', name: 'Other 3', to: 'vr_ar' },
-  ]},
 ];
 
 const LinkNoDecoration = ({ to, children }) => (
@@ -76,7 +72,6 @@ const Header = () => {
   const [open, setOpen] = useState(false);
   const [expanded, setExpanded] = useState({
     'Projects': false,
-    'Other': false,
   });
   return(
     <AppBar position="static" style={{ backgroundColor: 'gray' }}>
