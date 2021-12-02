@@ -15,9 +15,7 @@ export default {
     },
 };
 
-const Template = args => <Router>
-  <Header {...args}/>
-</Router>;
+const Template = args => <Header {...args}/>;
 
 export const Navigation = Template.bind({});
 Navigation.args = {
