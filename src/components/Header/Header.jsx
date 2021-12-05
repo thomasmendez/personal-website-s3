@@ -67,14 +67,15 @@ const MenuPopupState = () => {
   );
 };
 
-const Header = () => {
+const Header = (props) => {
+  const { backgroundColor } = props;
   const { width } = useWindowDimensions();
   const [open, setOpen] = useState(false);
   const [expanded, setExpanded] = useState({
     'Projects': false,
   });
   return(
-    <AppBar position="static" style={{ backgroundColor: 'gray' }}>
+    <AppBar position="static" style={{ backgroundColor: backgroundColor }}>
       <Toolbar>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1}}>
           Thomas A. Mendez

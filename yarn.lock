@@ -5,6 +5,33 @@ __metadata:
   version: 5
   cacheKey: 8
 
+"@babel/cli@npm:^7.14.5":
+  version: 7.16.0
+  resolution: "@babel/cli@npm:7.16.0"
+  dependencies:
+    "@nicolo-ribaudo/chokidar-2": 2.1.8-no-fsevents.3
+    chokidar: ^3.4.0
+    commander: ^4.0.1
+    convert-source-map: ^1.1.0
+    fs-readdir-recursive: ^1.1.0
+    glob: ^7.0.0
+    make-dir: ^2.1.0
+    slash: ^2.0.0
+    source-map: ^0.5.0
+  peerDependencies:
+    "@babel/core": ^7.0.0-0
+  dependenciesMeta:
+    "@nicolo-ribaudo/chokidar-2":
+      optional: true
+    chokidar:
+      optional: true
+  bin:
+    babel: ./bin/babel.js
+    babel-external-helpers: ./bin/babel-external-helpers.js
+  checksum: 7055b9d0ad762ae57fe8f287501a9b4ac8f9e3279761bab43ee848c3f2cc584b9ba5828990e95fe12a774c9a099b36140a68f4b59295357ea5c621e2eebbf614
+  languageName: node
+  linkType: hard
+
 "@babel/code-frame@npm:7.10.4":
   version: 7.10.4
   resolution: "@babel/code-frame@npm:7.10.4"
@@ -1682,7 +1709,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.13.10, @babel/runtime@npm:^7.14.0, @babel/runtime@npm:^7.14.8, @babel/runtime@npm:^7.16.3, @babel/runtime@npm:^7.3.1, @babel/runtime@npm:^7.5.0, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.7.6, @babel/runtime@npm:^7.8.3, @babel/runtime@npm:^7.8.7":
+"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.13.10, @babel/runtime@npm:^7.14.0, @babel/runtime@npm:^7.14.8, @babel/runtime@npm:^7.15.4, @babel/runtime@npm:^7.16.3, @babel/runtime@npm:^7.3.1, @babel/runtime@npm:^7.5.0, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.7.6, @babel/runtime@npm:^7.8.3, @babel/runtime@npm:^7.8.7":
   version: 7.16.3
   resolution: "@babel/runtime@npm:7.16.3"
   dependencies:
@@ -1901,6 +1928,29 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@emotion/react@npm:^11.4.0":
+  version: 11.7.0
+  resolution: "@emotion/react@npm:11.7.0"
+  dependencies:
+    "@babel/runtime": ^7.13.10
+    "@emotion/cache": ^11.6.0
+    "@emotion/serialize": ^1.0.2
+    "@emotion/sheet": ^1.1.0
+    "@emotion/utils": ^1.0.0
+    "@emotion/weak-memoize": ^0.2.5
+    hoist-non-react-statics: ^3.3.1
+  peerDependencies:
+    "@babel/core": ^7.0.0
+    react: ">=16.8.0"
+  peerDependenciesMeta:
+    "@babel/core":
+      optional: true
+    "@types/react":
+      optional: true
+  checksum: 8b50d61caabe04ae413ae23b98c170da643754ec89f25eb001464095685686585d0f88988bc36432f231e6de6abdbee73308c42ba427de9eaaf5a54d7f2f6ae5
+  languageName: node
+  linkType: hard
+
 "@emotion/react@npm:^11.6.0":
   version: 11.6.0
   resolution: "@emotion/react@npm:11.6.0"
@@ -2063,6 +2113,43 @@ __metadata:
     minimatch: ^3.0.4
     strip-json-comments: ^3.1.1
   checksum: 03a7704150b868c318aab6a94d87a33d30dc2ec579d27374575014f06237ba1370ae11178db772f985ef680d469dc237e7b16a1c5d8edaaeb8c3733e7a95a6d3
+  languageName: node
+  linkType: hard
+
+"@fortawesome/fontawesome-common-types@npm:^0.2.36":
+  version: 0.2.36
+  resolution: "@fortawesome/fontawesome-common-types@npm:0.2.36"
+  checksum: d604ac51da0b1597127fde70c64157b70ead6af7f2643ab7dfca268ef99d4ed0b4cc823afba206362422a622e389828408bec573df802bf4f02b118d0fa18dc8
+  languageName: node
+  linkType: hard
+
+"@fortawesome/fontawesome-svg-core@npm:^1.2.35":
+  version: 1.2.36
+  resolution: "@fortawesome/fontawesome-svg-core@npm:1.2.36"
+  dependencies:
+    "@fortawesome/fontawesome-common-types": ^0.2.36
+  checksum: 3011d8c1452b5df52a62eaee8b1ec925b9fdfabcc170fd6da5eaac7cfdef56258b9292ddd06c30f03a6a8ed6faa886565211f2e469fee3c9831c32f93e9383d8
+  languageName: node
+  linkType: hard
+
+"@fortawesome/free-solid-svg-icons@npm:^5.15.3":
+  version: 5.15.4
+  resolution: "@fortawesome/free-solid-svg-icons@npm:5.15.4"
+  dependencies:
+    "@fortawesome/fontawesome-common-types": ^0.2.36
+  checksum: eb037b703827ee37af3387a964afc7a190ff42a674ef46f4a6c295b634a38e849741eca78306b6423eaf3062d6ab1e7372aac5be2aec06f0fd9e8bd8110efcf9
+  languageName: node
+  linkType: hard
+
+"@fortawesome/react-fontawesome@npm:^0.1.14":
+  version: 0.1.16
+  resolution: "@fortawesome/react-fontawesome@npm:0.1.16"
+  dependencies:
+    prop-types: ^15.7.2
+  peerDependencies:
+    "@fortawesome/fontawesome-svg-core": ~1 || >=1.3.0-beta1
+    react: ">=16.x"
+  checksum: 22e7f624ab29ef47ccd21ebc57c1b92d01596472f73fdeee860236ad4976353436d0780bdccf927f9d7b6713081e2cef7a93c88305dd330244c54408c35a6dc4
   languageName: node
   linkType: hard
 
@@ -2622,6 +2709,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@nicolo-ribaudo/chokidar-2@npm:2.1.8-no-fsevents.3":
+  version: 2.1.8-no-fsevents.3
+  resolution: "@nicolo-ribaudo/chokidar-2@npm:2.1.8-no-fsevents.3"
+  checksum: ee55cc9241aeea7eb94b8a8551bfa4246c56c53bc71ecda0a2104018fcc328ba5723b33686bdf9cc65d4df4ae65e8016b89e0bbdeb94e0309fe91bb9ced42344
+  languageName: node
+  linkType: hard
+
 "@nodelib/fs.scandir@npm:2.1.5":
   version: 2.1.5
   resolution: "@nodelib/fs.scandir@npm:2.1.5"
@@ -2712,6 +2806,13 @@ __metadata:
     webpack-plugin-serve:
       optional: true
   checksum: 3f8310c0f76d4b627cb90b822fff8906ee85e152f011221e69a4e01689157862a0ce1b677bbf7a7ef14ea0e7aa457cae1740c2ebfd84df5aba0dfb7a9f77c475
+  languageName: node
+  linkType: hard
+
+"@popperjs/core@npm:^2.10.2":
+  version: 2.11.0
+  resolution: "@popperjs/core@npm:2.11.0"
+  checksum: 84d6f197d3ddfd8a5b05c7276c3692d8404c96128a946ab0a800b25567d8fc231928319c1f97a67e0817e76ce2a1b735589ef0f38f8e8835692408660a2395a1
   languageName: node
   linkType: hard
 
@@ -4174,6 +4275,13 @@ __metadata:
   version: 5.0.3
   resolution: "@types/parse5@npm:5.0.3"
   checksum: d6b7495cb1850f9f2e9c5e103ede9f2d30a5320669707b105c403868adc9e4bf8d3a7ff314cc23f67826bbbbbc0e6147346ce9062ab429f099dba7a01f463919
+  languageName: node
+  linkType: hard
+
+"@types/pluralize@npm:^0.0.29":
+  version: 0.0.29
+  resolution: "@types/pluralize@npm:0.0.29"
+  checksum: db7732b733ba1dc59f080f87364c9f985c1ae9f1e5ec5fcefb83c1327149e01ecac42766352eb7b19b117cf39defa99cf514629f3666968a3bdeb00e74f2a97e
   languageName: node
   linkType: hard
 
@@ -6791,7 +6899,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chokidar@npm:^3.4.1, chokidar@npm:^3.4.2, chokidar@npm:^3.5.2":
+"chokidar@npm:^3.4.0, chokidar@npm:^3.4.1, chokidar@npm:^3.4.2, chokidar@npm:^3.5.2":
   version: 3.5.2
   resolution: "chokidar@npm:3.5.2"
   dependencies:
@@ -6874,7 +6982,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"classnames@npm:^2.2.6":
+"classnames@npm:^2.2.5, classnames@npm:^2.2.6":
   version: 2.3.1
   resolution: "classnames@npm:2.3.1"
   checksum: 14db8889d56c267a591f08b0834989fe542d47fac659af5a539e110cc4266694e8de86e4e3bbd271157dbd831361310a8293e0167141e80b0f03a0f175c80960
@@ -7105,7 +7213,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:^4.1.1":
+"commander@npm:^4.0.1, commander@npm:^4.1.1":
   version: 4.1.1
   resolution: "commander@npm:4.1.1"
   checksum: d7b9913ff92cae20cb577a4ac6fcc121bd6223319e54a40f51a14740a681ad5c574fd29a57da478a5f234a6fa6c52cbf0b7c641353e03c648b1ae85ba670b977
@@ -7204,6 +7312,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"concurrently@npm:^6.2.0":
+  version: 6.4.0
+  resolution: "concurrently@npm:6.4.0"
+  dependencies:
+    chalk: ^4.1.0
+    date-fns: ^2.16.1
+    lodash: ^4.17.21
+    rxjs: ^6.6.3
+    spawn-command: ^0.0.2-1
+    supports-color: ^8.1.0
+    tree-kill: ^1.2.2
+    yargs: ^16.2.0
+  bin:
+    concurrently: bin/concurrently.js
+  checksum: 902864cc853176cac406246fa367a1b24ebfcbea9ba43c164f9cb4e2c9c1a5f9d8be05ce98fe7ef13329ffd5cc340a052007a9c870863e2068425d95b3bf89d7
+  languageName: node
+  linkType: hard
+
 "connect-history-api-fallback@npm:^1.6.0":
   version: 1.6.0
   resolution: "connect-history-api-fallback@npm:1.6.0"
@@ -7248,7 +7374,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"convert-source-map@npm:^1.4.0, convert-source-map@npm:^1.5.0, convert-source-map@npm:^1.6.0, convert-source-map@npm:^1.7.0":
+"convert-source-map@npm:^1.1.0, convert-source-map@npm:^1.4.0, convert-source-map@npm:^1.5.0, convert-source-map@npm:^1.6.0, convert-source-map@npm:^1.7.0":
   version: 1.8.0
   resolution: "convert-source-map@npm:1.8.0"
   dependencies:
@@ -7595,6 +7721,13 @@ __metadata:
     whatwg-mimetype: ^2.3.0
     whatwg-url: ^8.0.0
   checksum: 97caf828aac25e25e04ba6869db0f99c75e6859bb5b424ada28d3e7841941ebf08ddff3c1b1bb4585986bd507a5d54c2a716853ea6cb98af877400e637393e71
+  languageName: node
+  linkType: hard
+
+"date-fns@npm:^2.16.1":
+  version: 2.27.0
+  resolution: "date-fns@npm:2.27.0"
+  checksum: db62036b3816eb0322c9532b353beac7f660a91e1a55dbd21c14893c621ebb8509f21c66ba287844dabd34dee0207edd54a9537bce6bb7cab9383dedc6b8bc90
   languageName: node
   linkType: hard
 
@@ -9385,6 +9518,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fs-readdir-recursive@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "fs-readdir-recursive@npm:1.1.0"
+  checksum: 29d50f3d2128391c7fc9fd051c8b7ea45bcc8aa84daf31ef52b17218e20bfd2bd34d02382742801954cc8d1905832b68227f6b680a666ce525d8b6b75068ad1e
+  languageName: node
+  linkType: hard
+
 "fs-write-stream-atomic@npm:^1.0.8":
   version: 1.0.10
   resolution: "fs-write-stream-atomic@npm:1.0.10"
@@ -9640,7 +9780,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:^7.1.1, glob@npm:^7.1.2, glob@npm:^7.1.3, glob@npm:^7.1.4, glob@npm:^7.1.6":
+"glob@npm:^7.0.0, glob@npm:^7.1.1, glob@npm:^7.1.2, glob@npm:^7.1.3, glob@npm:^7.1.4, glob@npm:^7.1.6":
   version: 7.2.0
   resolution: "glob@npm:7.2.0"
   dependencies:
@@ -14022,6 +14162,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"pluralize@npm:^8.0.0":
+  version: 8.0.0
+  resolution: "pluralize@npm:8.0.0"
+  checksum: 08931d4a6a4a5561a7f94f67a31c17e6632cb21e459ab3ff4f6f629d9a822984cf8afef2311d2005fbea5d7ef26016ebb090db008e2d8bce39d0a9a9d218736e
+  languageName: node
+  linkType: hard
+
 "pnp-webpack-plugin@npm:1.6.4":
   version: 1.6.4
   resolution: "pnp-webpack-plugin@npm:1.6.4"
@@ -14319,7 +14466,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.0.0, prop-types@npm:^15.6.0, prop-types@npm:^15.6.2, prop-types@npm:^15.7.2":
+"prop-types@npm:^15.0.0, prop-types@npm:^15.6.0, prop-types@npm:^15.6.1, prop-types@npm:^15.6.2, prop-types@npm:^15.7.2":
   version: 15.7.2
   resolution: "prop-types@npm:15.7.2"
   dependencies:
@@ -14530,6 +14677,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-animate-height@npm:^2.0.23":
+  version: 2.0.23
+  resolution: "react-animate-height@npm:2.0.23"
+  dependencies:
+    classnames: ^2.2.5
+    prop-types: ^15.6.1
+  peerDependencies:
+    react: ">=15.6.2"
+    react-dom: ">=15.6.2"
+  checksum: 280f504b38a98e06323981eaa7752f568d5f761b6d511e21625adc04b0b96222b3a20224c5af9146dff23fb834064437065f834b781ba9377243427a66f1553c
+  languageName: node
+  linkType: hard
+
 "react-colorful@npm:^5.1.2":
   version: 5.5.1
   resolution: "react-colorful@npm:5.5.1"
@@ -14712,7 +14872,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-popper@npm:^2.2.4":
+"react-popper-tooltip@npm:^4.3.0":
+  version: 4.3.1
+  resolution: "react-popper-tooltip@npm:4.3.1"
+  dependencies:
+    "@babel/runtime": ^7.15.4
+    "@popperjs/core": ^2.10.2
+    react-popper: ^2.2.5
+  peerDependencies:
+    react: ">=16.6.0"
+    react-dom: ">=16.6.0"
+  checksum: 82ae84c3b75324ddcafbc3ff4358d77780d20ff28dc5b01a3500b31b34e84caae5dbe3b569165b967b4cdbbacce7af6886e006e0921ee0da5b73638893014e0e
+  languageName: node
+  linkType: hard
+
+"react-popper@npm:^2.2.4, react-popper@npm:^2.2.5":
   version: 2.2.5
   resolution: "react-popper@npm:2.2.5"
   dependencies:
@@ -14804,6 +14978,7 @@ __metadata:
     babel-eslint: ^10.1.0
     babel-loader: ^8.2.3
     babel-preset-es2015: ^6.24.1
+    copy-to-clipboard: ^3.3.1
     eslint: ^7.2.0
     eslint-import-resolver-webpack: ^0.13.2
     eslint-loader: ^4.0.2
@@ -14822,6 +14997,7 @@ __metadata:
     react: ^17.0.2
     react-dom: ^17.0.2
     react-router-dom: ^6.0.2
+    storybook-color-picker: ^2.1.5
     typescript: ^4.5.2
     webpack: ^5.50.0
     webpack-cli: ^4.7.2
@@ -15430,6 +15606,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"rxjs@npm:^6.6.3":
+  version: 6.6.7
+  resolution: "rxjs@npm:6.6.7"
+  dependencies:
+    tslib: ^1.9.0
+  checksum: bc334edef1bb8bbf56590b0b25734ba0deaf8825b703256a93714308ea36dff8a11d25533671adf8e104e5e8f256aa6fdfe39b2e248cdbd7a5f90c260acbbd1b
+  languageName: node
+  linkType: hard
+
 "rxjs@npm:^7.4.0":
   version: 7.4.0
   resolution: "rxjs@npm:7.4.0"
@@ -16025,6 +16210,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"spawn-command@npm:^0.0.2-1":
+  version: 0.0.2
+  resolution: "spawn-command@npm:0.0.2"
+  checksum: e35c5d28177b4d461d33c88cc11f6f3a5079e2b132c11e1746453bbb7a0c0b8a634f07541a2a234fa4758239d88203b758def509161b651e81958894c0b4b64b
+  languageName: node
+  linkType: hard
+
 "spdx-correct@npm:^3.0.0":
   version: 3.1.1
   resolution: "spdx-correct@npm:3.1.1"
@@ -16171,6 +16363,25 @@ __metadata:
   version: 2.12.0
   resolution: "store2@npm:2.12.0"
   checksum: dd4184a677b11e5efc304b910d08f43e2b0ea018930a4e5ac407cb3472f08a6d42004c43b5f249c7299ba9cfd05cbe1eed998ea3f3388d2ca0f0650a6efb5dc4
+  languageName: node
+  linkType: hard
+
+"storybook-color-picker@npm:^2.1.5":
+  version: 2.1.5
+  resolution: "storybook-color-picker@npm:2.1.5"
+  dependencies:
+    "@babel/cli": ^7.14.5
+    "@emotion/react": ^11.4.0
+    "@fortawesome/fontawesome-svg-core": ^1.2.35
+    "@fortawesome/free-solid-svg-icons": ^5.15.3
+    "@fortawesome/react-fontawesome": ^0.1.14
+    "@types/pluralize": ^0.0.29
+    concurrently: ^6.2.0
+    pluralize: ^8.0.0
+    react-animate-height: ^2.0.23
+    react-popper-tooltip: ^4.3.0
+    typescript: ^4.3.4
+  checksum: 6d1efe73da0d1a3bd6135eece1f4ca70a5e7e91ca50cff820391d878baf5d0279cb609f302272464f35ae9915f23a6291bd18e486649fe7333ab3873032966ac
   languageName: node
   linkType: hard
 
@@ -16467,7 +16678,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"supports-color@npm:8.1.1, supports-color@npm:^8.0.0":
+"supports-color@npm:8.1.1, supports-color@npm:^8.0.0, supports-color@npm:^8.1.0":
   version: 8.1.1
   resolution: "supports-color@npm:8.1.1"
   dependencies:
@@ -16897,6 +17108,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tree-kill@npm:^1.2.2":
+  version: 1.2.2
+  resolution: "tree-kill@npm:1.2.2"
+  bin:
+    tree-kill: cli.js
+  checksum: 49117f5f410d19c84b0464d29afb9642c863bc5ba40fcb9a245d474c6d5cc64d1b177a6e6713129eb346b40aebb9d4631d967517f9fbe8251c35b21b13cd96c7
+  languageName: node
+  linkType: hard
+
 "trim-trailing-lines@npm:^1.0.0":
   version: 1.1.4
   resolution: "trim-trailing-lines@npm:1.1.4"
@@ -16951,6 +17171,13 @@ __metadata:
     minimist: ^1.2.0
     strip-bom: ^3.0.0
   checksum: e14aaa6883f316d611db41cbb0fc8779b59c66b31d1e045565ad4540c77ccd3d2bb66f7c261b74ff535d3cc6b4a1ce21dc84774bf2a2a603ed6b0fb96f7e0cc7
+  languageName: node
+  linkType: hard
+
+"tslib@npm:^1.9.0":
+  version: 1.14.1
+  resolution: "tslib@npm:1.14.1"
+  checksum: dbe628ef87f66691d5d2959b3e41b9ca0045c3ee3c7c7b906cc1e328b39f199bb1ad9e671c39025bd56122ac57dfbf7385a94843b1cc07c60a4db74795829acd
   languageName: node
   linkType: hard
 
@@ -17054,7 +17281,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^4.5.2":
+"typescript@npm:^4.3.4, typescript@npm:^4.5.2":
   version: 4.5.2
   resolution: "typescript@npm:4.5.2"
   bin:
@@ -17064,7 +17291,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.5.2#~builtin<compat/typescript>":
+"typescript@patch:typescript@^4.3.4#~builtin<compat/typescript>, typescript@patch:typescript@^4.5.2#~builtin<compat/typescript>":
   version: 4.5.2
   resolution: "typescript@patch:typescript@npm%3A4.5.2#~builtin<compat/typescript>::version=4.5.2&hash=ddd1e8"
   bin:
