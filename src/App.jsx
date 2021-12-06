@@ -3,7 +3,7 @@ import {
   BrowserRouter as Router,
   useRoutes,
 } from 'react-router-dom';
-import Error from './views/Error';
+import ErrorView from './views/ErrorView';
 import About from './views/About';
 import Skills_Tools from './views/Skills_Tools';
 import Work from './views/Work';
@@ -20,7 +20,7 @@ const AppRoutes = () => {
     { path: '/work', exact: true, element: <Work /> },
     { path: '/software_engineering', exact: true, element: <SoftwareEngineering /> },
     { path: '/vr_ar', exact: true, element: <VR_AR /> },
-    { path: '*', element: <Error errorCode={404} /> },
+    { path: '*', element: <ErrorView errorCode={404} /> },
   ]);
   return routes;
 };

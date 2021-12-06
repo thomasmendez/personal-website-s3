@@ -25,7 +25,6 @@ module.exports = {
   },
   ignorePatterns: ['./dist'],
   rules: {
-    'react/prop-types': 0,
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     'react/jsx-no-useless-fragment': ['error'],
     'react/jsx-one-expression-per-line': ['error'],

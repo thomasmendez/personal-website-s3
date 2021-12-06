@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Error = ({ errorCode }) => {
+const ErrorView = ({ errorCode }) => {
   let message = '';
 
   if (errorCode === 404) {
@@ -15,4 +16,8 @@ const Error = ({ errorCode }) => {
   );
 };
 
-export default Error;
+ErrorView.propTypes = {
+  errorCode: PropTypes.number.isRequired,
+};
+
+export default ErrorView;

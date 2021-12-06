@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { 
   AppBar, Toolbar, Typography, Button, Menu, MenuItem, Drawer, Box,
   List, ListItem, ListItemText, Divider, Collapse,
@@ -14,6 +15,9 @@ import {
 } from 'material-ui-popup-state/hooks';
 import useWindowDimensions from '../../utils/windowDimensions';
 
+import LinkNoDecoration from './LinkNoDecoration';
+import RouteButton from './RouteButton';
+
 const MAX_WIDTH_FOR_NAV = 992;
 
 const ROUTES = [
@@ -26,23 +30,6 @@ const ROUTES = [
   ]},
   { id: '7', name: 'Resume', to: 'resume'},
 ];
-
-const LinkNoDecoration = ({ to, children }) => (
-  <Link
-    to={to}
-    style={{
-      textDecoration: 'none', display: 'block', color: 'black', hover: false,
-    }}
-  >
-    {children}
-  </Link>
-);
-
-const RouteButton = ({ to, props, children }) => (
-  <Button color='inherit' component={Link} to={to} {...props}>
-    {children}
-  </Button>
-);
 
 const MenuPopupState = () => {
   const popupState = usePopupState({ variant: 'popover', popupId: 'demoMenu' });
@@ -176,6 +163,14 @@ const Header = (props) => {
       </Toolbar>
     </AppBar>
   );
+};
+
+Header.defaultProps = {
+  backgroundColor: 'grey',
+};
+
+Header.propTypes = {
+  backgroundColor: PropTypes.string,
 };
 
 export default Header;
