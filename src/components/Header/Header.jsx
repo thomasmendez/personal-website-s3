@@ -1,22 +1,17 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { 
-  AppBar, Toolbar, Typography, Button, Menu, MenuItem, Drawer, Box,
+  AppBar, Toolbar, Typography, Button, Drawer, Box,
   List, ListItem, ListItemText, Divider, Collapse,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import { Link } from 'react-router-dom';
-import {
-  usePopupState,
-  bindTrigger,
-  bindMenu,
-} from 'material-ui-popup-state/hooks';
 import useWindowDimensions from '../../utils/windowDimensions';
 
-import LinkNoDecoration from './LinkNoDecoration';
 import RouteButton from './RouteButton';
+import MenuPopup from './MenuPopup/MenuPopup';
 
 const MAX_WIDTH_FOR_NAV = 992;
 
@@ -30,29 +25,6 @@ const ROUTES = [
   ]},
   { id: '7', name: 'Resume', to: 'resume'},
 ];
-
-const MenuPopupState = () => {
-  const popupState = usePopupState({ variant: 'popover', popupId: 'demoMenu' });
-  return (
-    <>
-      <Button color="inherit" {...bindTrigger(popupState)}>
-        Projects
-      </Button>
-      <Menu {...bindMenu(popupState)}>
-        <LinkNoDecoration to="software_engineering">
-          <MenuItem>
-            Software Engineering
-          </MenuItem>
-        </LinkNoDecoration>
-        <LinkNoDecoration to="vr_ar">
-          <MenuItem>
-            VR / AR
-          </MenuItem>
-        </LinkNoDecoration>
-      </Menu>
-    </>
-  );
-};
 
 const Header = (props) => {
   const { backgroundColor } = props;
@@ -69,19 +41,17 @@ const Header = (props) => {
         </Typography>
         {width > MAX_WIDTH_FOR_NAV ? (
           <>
-            <RouteButton to="about">
-              About
-            </RouteButton>
-            <RouteButton to="work">
-              Work
-            </RouteButton>
-            <RouteButton to="skills_tools">
-              Skills &#38; Tools
-            </RouteButton>
-            <MenuPopupState />
-            <RouteButton to="resume">
-              Resume
-            </RouteButton>
+            {ROUTES.map((object) => (
+              <div key={object.id}>
+                {object.subItems != null ? (
+                  <MenuPopup menuName={object.name} menuSubItems={object.subItems} />
+                ) : (
+                  <RouteButton key={object.id} to={object.to}>
+                    {object.name}
+                  </RouteButton>
+                )}
+              </div>
+            ))}
           </>
         ) : (
           <>
