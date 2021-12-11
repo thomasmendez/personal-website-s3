@@ -11,7 +11,7 @@ const RouteButton = ({ to, children }) => (
 
 RouteButton.propTypes = {
   to: PropTypes.string.isRequired,
-  children: PropTypes.element.isRequired,
+  children: PropTypes.string.isRequired,
 };
 
 export default RouteButton;
