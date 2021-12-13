@@ -34,25 +34,26 @@ const Header = (props) => {
     'Projects': false,
   });
   return(
-    <AppBar position="static" style={{ backgroundColor: backgroundColor }}>
-      <Toolbar>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1}}>
-          Thomas A. Mendez
-        </Typography>
-        {width > MAX_WIDTH_FOR_NAV ? (
-          <>
-            {ROUTES.map((object) => (
-              <div key={object.id}>
-                {object.subItems != null ? (
-                  <MenuPopup menuName={object.name} menuSubItems={object.subItems} />
+    <Box sx={{ flexGrow: 1 }} pb={3}>
+      <AppBar position="fixed" style={{ backgroundColor: backgroundColor }}>
+        <Toolbar>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1}}>
+            Thomas A. Mendez
+          </Typography>
+          {width > MAX_WIDTH_FOR_NAV ? (
+            <>
+              {ROUTES.map((object) => (
+                <div key={object.id}>
+                  {object.subItems != null ? (
+                    <MenuPopup menuName={object.name} menuSubItems={object.subItems} />
                 ) : (
                   <RouteButton key={object.id} to={object.to}>
                     {object.name}
                   </RouteButton>
                 )}
-              </div>
+                </div>
             ))}
-          </>
+            </>
         ) : (
           <>
             <Button
@@ -130,8 +131,10 @@ const Header = (props) => {
             </Drawer>
           </>
         )}
-      </Toolbar>
-    </AppBar>
+        </Toolbar>
+      </AppBar>
+      <Toolbar />
+    </Box>
   );
 };
 
