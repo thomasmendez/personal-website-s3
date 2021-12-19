@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { makeStyles } from '@mui/styles';
-import { Paper, Grid, Box, Typography } from '@mui/material';
+import { Grid, Box, Typography } from '@mui/material';
 
 import ProfilePic from '../../assets/pic.jpeg';
 
@@ -26,7 +27,47 @@ const useStyles = makeStyles({
   bold: {
     fontWeight: 600,
   },
+  noTextDecoration: {
+    textDecoration: 'none',
+    color: 'black',
+    //hover: false,
+    '&:hover': {
+      color: '#800080',
+    },
+  },
 });
+
+const ContactMethod = (props) => {
+  const { contactMethodName, icon, hrefLink } = props;
+  const useStyles = makeStyles({
+    noTextDecoration: {
+      textDecoration: 'none',
+      color: 'black',
+      '&:hover': {
+        color: '#800080',
+      },
+    },
+  });
+  const classes = useStyles();
+  return(
+    <Grid container item xs={12}>
+      <Grid item xs={1} className={classes.noTextDecoration} component='a' target="_blank" href={hrefLink}>
+        {icon}
+      </Grid>
+      <Grid item xs={11}>
+        <Typography className={classes.noTextDecoration} component='a' target="_blank" href={hrefLink}>
+          {contactMethodName}
+        </Typography>
+      </Grid>
+    </Grid>
+  );
+};
+
+ContactMethod.propTypes = {
+  contactMethodName: PropTypes.string,
+  icon: PropTypes.element,
+  hrefLink: PropTypes.string,
+};
 
 const TitleHeader = () => {
   const classes = useStyles();
@@ -65,7 +106,7 @@ const TitleHeader = () => {
           </Grid>
         </Grid>
       </Grid>
-      <Grid container item spacing={3}>
+      <Grid container item spacing={8}>
         <Grid item sm={3} />
         <Grid container item sm={4} spacing={3}>
           <Grid item>
@@ -93,11 +134,27 @@ const TitleHeader = () => {
           </Grid>
         </Grid>
         <Grid container item sm={3}>
-          <Typography variant="h5">
-            Contact
-          </Typography>
+          <Grid item xs={12}>
+            <Typography variant="h5">
+              Contact
+            </Typography>
+          </Grid>
+          <ContactMethod
+            contactMethodName='LinkedIn'
+            icon={<LinkedInIcon />}
+            hrefLink='https://www.linkedin.com/in/thomas-a-mendez'
+          />
+          <ContactMethod
+            contactMethodName='Github'
+            icon={<GitHubIcon />}
+            hrefLink='https://github.com/thomasmendez'
+          />
+          <ContactMethod
+            contactMethodName='Email'
+            icon={<EmailIcon />}
+            hrefLink='mailto:thomasmendez01@gmail.com'
+          />
         </Grid>
-        <Grid item sm={2} />
       </Grid>
     </Grid>
   );
