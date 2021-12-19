@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { makeStyles } from '@mui/styles';
 import { Grid, Box, Typography } from '@mui/material';
 
@@ -8,6 +7,8 @@ import ProfilePic from '../../assets/pic.jpeg';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import EmailIcon from '@mui/icons-material/Email';
+
+import ContactMethod from '../ContactMethod';
 
 const useStyles = makeStyles({
   centerItems: {
@@ -36,38 +37,6 @@ const useStyles = makeStyles({
     },
   },
 });
-
-const ContactMethod = (props) => {
-  const { contactMethodName, icon, hrefLink } = props;
-  const useStyles = makeStyles({
-    noTextDecoration: {
-      textDecoration: 'none',
-      color: 'black',
-      '&:hover': {
-        color: '#800080',
-      },
-    },
-  });
-  const classes = useStyles();
-  return(
-    <Grid container item xs={12}>
-      <Grid item xs={1} className={classes.noTextDecoration} component='a' target="_blank" href={hrefLink}>
-        {icon}
-      </Grid>
-      <Grid item xs={11}>
-        <Typography className={classes.noTextDecoration} component='a' target="_blank" href={hrefLink}>
-          {contactMethodName}
-        </Typography>
-      </Grid>
-    </Grid>
-  );
-};
-
-ContactMethod.propTypes = {
-  contactMethodName: PropTypes.string,
-  icon: PropTypes.element,
-  hrefLink: PropTypes.string,
-};
 
 const TitleHeader = () => {
   const classes = useStyles();
