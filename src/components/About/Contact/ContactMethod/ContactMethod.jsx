@@ -17,11 +17,11 @@ const ContactMethod = (props) => {
   const { contactMethodName, icon, hrefLink } = props;
   const classes = useStyles();
   return(
-    <Grid container item xs={12} spacing={2}>
-      <Grid item xs={1} sm={1} md={1} className={classes.noTextDecoration} component='a' target="_blank" href={hrefLink}>
+    <Grid container item spacing={2}>
+      <Grid item className={classes.noTextDecoration} component='a' target="_blank" href={hrefLink}>
         {icon}
       </Grid>
-      <Grid item xs={11} sm={11} md={11}>
+      <Grid item>
         <Typography className={classes.noTextDecoration} component='a' target="_blank" href={hrefLink}>
           {contactMethodName}
         </Typography>

@@ -3,7 +3,7 @@ import { Grid, Typography } from '@mui/material';
 
 const AboutMe = () => {
     return(
-      <Grid container item sm={4} spacing={3}>
+      <Grid container item sm={6} md={4} spacing={3}>
         <Grid item>
           <Typography variant="h5">
             About Me

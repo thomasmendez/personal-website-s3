@@ -6,8 +6,8 @@ import ContactMethod from './ContactMethod';
 const Contact = (props) => {
   const { contacts } = props;
   return(
-    <Grid container item xs={3} sm={3} md={3}>
-      <Grid item xs={12}>
+    <Grid container item sm={4} md={5}>
+      <Grid item>
         <Typography variant="h5">
           Contact
         </Typography>

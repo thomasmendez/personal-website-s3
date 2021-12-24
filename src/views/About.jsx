@@ -32,7 +32,7 @@ const About = () => (
   >
     <TitleHeader />
     <Grid container item spacing={8}>
-      <Grid item sm={3} />
+      <Grid item sm={0} md={3} />
       <AboutMe />
       <Contact contacts={CONTACTS}/>
     </Grid>
