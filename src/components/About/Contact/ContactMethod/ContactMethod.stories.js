@@ -40,8 +40,8 @@ export default {
 
 const Template = args => <ContactMethod {...args}/>;
 
-export const ContactMethodStories = Template.bind({});
-ContactMethodStories.args = {
+export const ContactMethodStory = Template.bind({});
+ContactMethodStory.args = {
   contactMethodName: 'LinkedIn',
   icon: 'LinkedIn',
   hrefLink: 'https://www.linkedin.com/in/thomas-a-mendez',

@@ -16,8 +16,8 @@ export default {
 
 const Template = args => <Contact {...args}/>;
 
-export const ContactStories = Template.bind({});
-ContactStories.args = {
+export const ContactSection = Template.bind({});
+ContactSection.args = {
   contacts: [
     {
       contactMethod: 'LinkedIn',
