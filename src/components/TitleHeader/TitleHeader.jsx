@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { styled } from '@mui/system';
 import { Grid, Box, Typography } from '@mui/material';
 import ProfilePic from '../../assets/pic.jpeg';
@@ -10,7 +11,8 @@ const StyledImg = styled('img', {
   borderRadius: '50%',
 });
 
-const TitleHeader = () => {
+const TitleHeader = (props) => {
+  const { backgroundColor, colorSubText } = props;
   return(
     <Grid
       container
@@ -20,7 +22,7 @@ const TitleHeader = () => {
       textAlign="center"
       spacing={3}
       pb={5}
-      sx={{ backgroundColor: '#f5f8fa' }}
+      sx={{ backgroundColor: backgroundColor }}
     >
       <Grid item xs={12}>
         <Box borderRadius="50%">
@@ -35,7 +37,7 @@ const TitleHeader = () => {
         </Grid>
         <Grid item>
           <Typography variant="h5"
-            sx={{ color: '#aaa' }}
+            sx={{ color: colorSubText }}
           >
             Software Engineer
             <br />
@@ -45,6 +47,16 @@ const TitleHeader = () => {
       </Grid>
     </Grid>
   );
+};
+
+TitleHeader.defaultProps = {
+  backgroundColor: '#f5f8fa',
+  colorSubText: '#aaa',
+};
+
+TitleHeader.propTypes = {
+  backgroundColor: PropTypes.string,
+  colorSubText: PropTypes.string,
 };
 
 export default TitleHeader;

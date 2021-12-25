@@ -5,15 +5,15 @@ export default {
   title: 'Components/TitleHeader',
   component: TitleHeader,
   argTypes: {
-    backgroundColor: { control: 'color' }, // Color controls will be detected automatically
-    label: { control: 'text' }, // Text controls may be added as extra
-    text: { control: 'text' }, // Text controls may be added as extra
-  },
-  parameters: {
-    applyColorTo: ['label'], // Must match argType key
+    backgroundColor: { control: 'color' },
+    colorSubText: { control: 'color' },
   },
 };
 
 const Template = args => <TitleHeader {...args}/>;
 
 export const TitleHeaderStory = Template.bind({});
+TitleHeaderStory.args = {
+  backgroundColor: '#f5f8fa',
+  colorSubText: '#aaa',
+};
