@@ -5,10 +5,10 @@ import {
 } from 'react-router-dom';
 import ErrorView from './views/ErrorView';
 import About from './views/About';
-import Skills_Tools from './views/Skills_Tools';
+import Skills_Tools from './views/SkillsTools';
 import Work from './views/Work';
 import SoftwareEngineering from './views/SoftwareEngineering';
-import VR_AR from './views/VR_AR';
+import VRAR from './views/VRAR';
 import Header from './components/Header';
 
 const AppRoutes = () => {
@@ -16,10 +16,10 @@ const AppRoutes = () => {
     { path: '/', exact: true, element: <About /> },
     { path: '/home', exact: true, element: <About /> },
     { path: '/about', exact: true, element: <About /> },
-    { path: '/skills_tools', exact: true, element: <Skills_Tools /> },
+    { path: '/skillsTools', exact: true, element: <Skills_Tools /> },
     { path: '/work', exact: true, element: <Work /> },
-    { path: '/software_engineering', exact: true, element: <SoftwareEngineering /> },
-    { path: '/vr_ar', exact: true, element: <VR_AR /> },
+    { path: '/softwareEngineering', exact: true, element: <SoftwareEngineering /> },
+    { path: '/vrar', exact: true, element: <VRAR /> },
     { path: '*', element: <ErrorView errorCode={404} /> },
   ]);
   return routes;

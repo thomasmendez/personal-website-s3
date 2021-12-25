@@ -132,10 +132,10 @@ Header.defaultProps = {
   routes: [
     { id: 1, name: 'About', to: 'about' }, 
     { id: 2, name: 'Work', to: 'work' },
-    { id: 3, name: 'Skills & Tools', to: 'skills_tools' },
+    { id: 3, name: 'Skills & Tools', to: 'skillsTools' },
     { id: 4, name: 'Projects', subItems: [
-      { id: 5, name: 'Software Engineering', to: 'software_engineering' },
-      { id: 6, name: 'VR / AR', to: 'vr_ar' },
+      { id: 5, name: 'Software Engineering', to: 'softwareEngineering' },
+      { id: 6, name: 'VR / AR', to: 'vrar' },
     ]},
     { id: 7, name: 'Resume', to: 'resume'},
   ],

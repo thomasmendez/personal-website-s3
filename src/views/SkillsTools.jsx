@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Skills_Tools = () => (
+const SkillsTools = () => (
   <h1>
     Skills &#38; Tools
   </h1>
 );
 
-export default Skills_Tools;
+export default SkillsTools;
