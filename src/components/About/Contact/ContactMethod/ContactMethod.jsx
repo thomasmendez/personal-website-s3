@@ -1,33 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import { styled } from '@mui/system';
 import { Grid, Typography } from '@mui/material';
-
-// const StyledGrid = styled(Grid, {
-//   name: 'StyledGrid',
-//   slot: 'Wrapper',
-// })({
-//   textDecoration: 'none',
-//   color: 'black',
-//   '&:hover': {
-//     color: '#800080',
-//   },
-// });
 
 const ContactMethod = (props) => {
   const { contactMethodName, icon, hrefLink, textDecoration, color, hoverColor } = props;
   return(
     <Grid container item spacing={1}>
-      <Grid item component='a' target="_blank" href={hrefLink}
-        sx={{
-          textDecoration: textDecoration,
-          color: color,
-          '&:hover': {
-            color: hoverColor,
-          },
-        }}
-      >
-        {icon}
+      <Grid item>
+        <Typography component='a' target="_blank" href={hrefLink}
+          sx={{
+            textDecoration: textDecoration,
+            color: color,
+            '&:hover': {
+              color: hoverColor,
+            },
+          }}
+        >
+          {icon}
+        </Typography>
       </Grid>
       <Grid item>
         <Typography component='a' target="_blank" href={hrefLink}
