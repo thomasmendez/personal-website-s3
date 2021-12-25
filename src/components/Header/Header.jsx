@@ -15,17 +15,6 @@ import MenuPopup from './MenuPopup/MenuPopup';
 
 const MAX_WIDTH_FOR_NAV = 992;
 
-const ROUTES = [
-  { id: 1, name: 'About', to: 'about' }, 
-  { id: 2, name: 'Work', to: 'work' },
-  { id: 3, name: 'Skills & Tools', to: 'skills_tools' },
-  { id: 4, name: 'Projects', subItems: [
-    { id: 5, name: 'Software Engineering', to: 'software_engineering' },
-    { id: 6, name: 'VR / AR', to: 'vr_ar' },
-  ]},
-  { id: 7, name: 'Resume', to: 'resume'},
-];
-
 const Header = (props) => {
   const { backgroundColor, routes } = props;
   const { width } = useWindowDimensions();
