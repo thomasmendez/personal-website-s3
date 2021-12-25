@@ -27,7 +27,7 @@ const ROUTES = [
 ];
 
 const Header = (props) => {
-  const { backgroundColor } = props;
+  const { backgroundColor, routes } = props;
   const { width } = useWindowDimensions();
   const [open, setOpen] = useState(false);
   const [expanded, setExpanded] = useState({
@@ -42,7 +42,7 @@ const Header = (props) => {
           </Typography>
           {width > MAX_WIDTH_FOR_NAV ? (
             <>
-              {ROUTES.map((object) => (
+              {routes.map((object) => (
                 <div key={object.id}>
                   {object.subItems != null ? (
                     <MenuPopup menuName={object.name} menuSubItems={object.subItems} />
@@ -69,7 +69,7 @@ const Header = (props) => {
             >
               <Box role="presentation">
                 <List>
-                  {ROUTES.map((item) => (
+                  {routes.map((item) => (
                     <div key={item.id}>
                       {item.subItems != null ? (
                         <div>
@@ -140,10 +140,34 @@ const Header = (props) => {
 
 Header.defaultProps = {
   backgroundColor: 'grey',
+  routes: [
+    { id: 1, name: 'About', to: 'about' }, 
+    { id: 2, name: 'Work', to: 'work' },
+    { id: 3, name: 'Skills & Tools', to: 'skills_tools' },
+    { id: 4, name: 'Projects', subItems: [
+      { id: 5, name: 'Software Engineering', to: 'software_engineering' },
+      { id: 6, name: 'VR / AR', to: 'vr_ar' },
+    ]},
+    { id: 7, name: 'Resume', to: 'resume'},
+  ],
 };
 
 Header.propTypes = {
   backgroundColor: PropTypes.string,
+  routes: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      to: PropTypes.string,
+      subItems: PropTypes.arrayOf(
+        PropTypes.shape({
+          id: PropTypes.number.isRequired,
+          name: PropTypes.string.isRequired,
+          to: PropTypes.string.isRequired,
+        }),
+      ),
+    }),
+  ),
 };
 
 export default Header;

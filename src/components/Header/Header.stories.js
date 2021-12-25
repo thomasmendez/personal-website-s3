@@ -5,9 +5,8 @@ export default {
   title: 'Components/Header',
   component: Header,
   argTypes: {
-    backgroundColor: { control: 'color' }, // Color controls will be detected automatically
-    label: { control: 'text' }, // Text controls may be added as extra
-    text: { control: 'text' }, // Text controls may be added as extra
+    backgroundColor: { control: 'color' },
+    routes: { control: 'object' },
   },
   parameters: {
     applyColorTo: ['label'], // Must match argType key
@@ -17,3 +16,16 @@ export default {
 const Template = args => <Header {...args}/>;
 
 export const Navigation = Template.bind({});
+Navigation.args = {
+  backgroundColor: 'grey',
+  routes: [
+    { id: 1, name: 'About', to: 'about' }, 
+    { id: 2, name: 'Work', to: 'work' },
+    { id: 3, name: 'Skills & Tools', to: 'skills_tools' },
+    { id: 4, name: 'Projects', subItems: [
+      { id: 5, name: 'Software Engineering', to: 'software_engineering' },
+      { id: 6, name: 'VR / AR', to: 'vr_ar' },
+    ]},
+    { id: 7, name: 'Resume', to: 'resume'},
+  ],
+};
