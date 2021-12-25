@@ -18,12 +18,11 @@ export default {
       },
     },
     icon: {
-      options: Object.keys(icons), // An array of serializable values
-      mapping: icons, // Maps serializable option values to complex arg values
+      options: Object.keys(icons),
+      mapping: icons,
       control: {
-        type: 'select', // Type 'select' is automatically inferred when 'options' is defined
+        type: 'select',
         labels: {
-          // 'labels' maps option values to string labels
           LinkedIn: 'LinkedIn',
           GitHub: 'GitHub',
           Email: 'Email',
@@ -33,6 +32,21 @@ export default {
     hrefLink: {
       control: {
         type: 'text',
+      },
+    },
+    textDecoration: {
+      control: { 
+        type: 'text',
+      },
+    },
+    color: {
+      control: {
+        type: 'color',
+      },
+    },
+    hoverColor: {
+      control: {
+        type: 'color',
       },
     },
   },
@@ -45,4 +59,7 @@ ContactMethodStory.args = {
   contactMethodName: 'LinkedIn',
   icon: 'LinkedIn',
   hrefLink: 'https://www.linkedin.com/in/thomas-a-mendez',
+  textDecoration: 'none',
+  color: 'black',
+  hoverColor: '#800080',
 };

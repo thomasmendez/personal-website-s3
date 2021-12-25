@@ -16,4 +16,4 @@ export default {
 
 const Template = args => <TitleHeader {...args}/>;
 
-export const Navigation = Template.bind({});
+export const TitleHeaderStory = Template.bind({});
