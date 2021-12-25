@@ -9,7 +9,7 @@ export default {
     routes: { control: 'object' },
   },
   parameters: {
-    applyColorTo: ['label'], // Must match argType key
+    applyColorTo: ['label'],
   },
 };
 

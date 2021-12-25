@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid } from '@mui/material';
 import { LinkedIn, GitHub, Email } from '@mui/icons-material';
 
-import TitleHeader from '../components/TitleHeader';
+import TitleHeader from '../components/About/TitleHeader';
 
 import AboutMe from '../components/About/AboutMe';
 import Contact from '../components/About/Contact';

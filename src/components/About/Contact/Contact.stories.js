@@ -3,7 +3,7 @@ import Contact from './Contact';
 import { LinkedIn, GitHub, Email } from '@mui/icons-material';
 
 export default {
-  title: 'Components/Contact',
+  title: 'Components/About/Contact',
   component: Contact,
   argTypes: {
     contacts: {

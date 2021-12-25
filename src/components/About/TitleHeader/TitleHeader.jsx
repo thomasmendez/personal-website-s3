@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { styled } from '@mui/system';
 import { Grid, Box, Typography } from '@mui/material';
-import ProfilePic from '../../assets/pic.jpeg';
+import ProfilePic from '../../../assets/pic.jpeg';
 
 const StyledImg = styled('img', {
   name: 'StyledImg',

@@ -2,10 +2,10 @@ import React from 'react';
 import AboutMe from './AboutMe';
 
 export default {
-  title: 'Components/AboutMe',
+  title: 'Components/About/AboutMe',
   component: AboutMe,
   argTypes: {
-    backgroundColor: { control: 'color' }, // Color controls will be detected automatically
+    backgroundColor: { control: 'color' },
   },
 };
 

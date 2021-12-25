@@ -9,7 +9,7 @@ const icons = {
 };
 
 export default {
-  title: 'Components/Contact',
+  title: 'Components/About/Contact/ContactMethod',
   component: ContactMethod,
   argTypes: {
     contactMethodName: {

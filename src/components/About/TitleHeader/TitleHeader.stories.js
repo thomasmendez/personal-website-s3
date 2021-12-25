@@ -2,7 +2,7 @@ import React from 'react';
 import TitleHeader from './TitleHeader';
 
 export default {
-  title: 'Components/TitleHeader',
+  title: 'Components/About/TitleHeader',
   component: TitleHeader,
   argTypes: {
     backgroundColor: { control: 'color' },

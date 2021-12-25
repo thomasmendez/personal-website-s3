@@ -5,10 +5,10 @@ export default {
   title: 'Views/About',
   component: About,
   argTypes: {
-    backgroundColor: { control: 'color' }, // Color controls will be detected automatically
+    backgroundColor: { control: 'color' },
   },
   parameters: {
-    applyColorTo: ['label'], // Must match argType key
+    applyColorTo: ['label'],
   },
 };
 
