@@ -1,8 +1,8 @@
 import React from 'react';
-import TitleHeader from './TitleHeader';
+import TitleHeader from './SkillsTools';
 
 export default {
-  title: 'Components/About/TitleHeader',
+  title: 'Components/SkillsTools',
   component: TitleHeader,
   argTypes: {
     backgroundColor: { control: 'color' },
@@ -12,8 +12,8 @@ export default {
 
 const Template = args => <TitleHeader {...args}/>;
 
-export const TitleHeaderStory = Template.bind({});
-TitleHeaderStory.args = {
+export const SkillToolsSection = Template.bind({});
+SkillToolsSection.args = {
   backgroundColor: '#f5f8fa',
   colorSubText: '#aaa',
 };

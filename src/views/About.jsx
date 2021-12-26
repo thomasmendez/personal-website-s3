@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid } from '@mui/material';
 import { LinkedIn, GitHub, Email } from '@mui/icons-material';
 
-import TitleHeader from '../components/About/TitleHeader';
+import TitleHeaderProfile from '../components/TitleHeader/TitleHeaderProfile';
 
 import AboutMe from '../components/About/AboutMe';
 import Contact from '../components/About/Contact';
@@ -30,7 +30,7 @@ const About = () => (
     container
     spacing={3}
   >
-    <TitleHeader />
+    <TitleHeaderProfile />
     <Grid container item spacing={8}>
       <Grid item sm={0} md={3} />
       <AboutMe />
