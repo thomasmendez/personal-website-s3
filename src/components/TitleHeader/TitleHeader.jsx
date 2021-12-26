@@ -17,7 +17,7 @@ const TitleHeader = (props) => {
     >
       <Grid item xs={12}>
         <Grid item>
-          <Typography variant="h5"
+          <Typography variant="h3" pt={5} pb={5}
             sx={{ color: colorSubText }}
           >
             {titleName}

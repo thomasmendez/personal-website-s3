@@ -11,7 +11,7 @@ const RenderList = (props) => {
           <li key={index}>
             {Object.entries(arrayKey).map(([key, value]) => {
               return(
-                <Typography key={key}>
+                <Typography key={key} variant="h6">
                   {key + ': ' + value.join(', ')}
                 </Typography>
               );
@@ -29,20 +29,33 @@ RenderList.propTypes = {
   })),
 };
 
+const Topic = (props) => {
+  const { topicName } = props;
+  return(
+    <Typography variant="h4"
+      sx={{
+        textDecoration: 'underline',
+      }}
+    >
+      {topicName}
+    </Typography>
+  );
+};
+
+Topic.propTypes = {
+  topicName: PropTypes.string,
+};
+
 const SkillsTools = (props) => {
   const { skills, tools } = props;
   return(
     <Grid container item>
       <Grid item xs={12}>
-        <Typography variant="h5">
-          Skills
-        </Typography>
+        <Topic topicName={'Skills'} />
         <RenderList arrayOfObjects={skills}/>
       </Grid>
       <Grid item xs={12}>
-        <Typography variant="h5">
-          Tools
-        </Typography>
+        <Topic topicName={'Tools'} />
         <RenderList arrayOfObjects={tools}/>
       </Grid>
     </Grid>
