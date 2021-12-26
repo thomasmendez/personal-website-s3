@@ -1,50 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Grid, Typography } from '@mui/material';
-
-const RenderList = (props) => {
-  const { arrayOfObjects } = props;
-  return(
-    <ul>
-      {arrayOfObjects.map((arrayKey, index) => {
-        return(
-          <li key={index}>
-            {Object.entries(arrayKey).map(([key, value]) => {
-              return(
-                <Typography key={key} variant="h6">
-                  {key + ': ' + value.join(', ')}
-                </Typography>
-              );
-            })}
-          </li>
-        );
-      })}
-    </ul>
-  );
-};
-
-RenderList.propTypes = {
-  arrayOfObjects: PropTypes.arrayOf(PropTypes.shape({
-    object: PropTypes.arrayOf(PropTypes.string),
-  })),
-};
-
-const Topic = (props) => {
-  const { topicName } = props;
-  return(
-    <Typography variant="h4"
-      sx={{
-        textDecoration: 'underline',
-      }}
-    >
-      {topicName}
-    </Typography>
-  );
-};
-
-Topic.propTypes = {
-  topicName: PropTypes.string,
-};
+import { Grid } from '@mui/material';
+import Topic from './Topic';
+import RenderList from './RenderList';
 
 const SkillsTools = (props) => {
   const { skills, tools } = props;

@@ -1,5 +1,5 @@
 import React from 'react';
-import TitleHeader from './TitleHeaderProfile';
+import TitleHeader from './TitleHeader';
 
 export default {
   title: 'Components/TitleHeader',
@@ -7,6 +7,7 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
     colorSubText: { control: 'color' },
+    titleName: { control: 'text' },
   },
 };
 
@@ -15,5 +16,6 @@ const Template = args => <TitleHeader {...args}/>;
 export const TitleHeaderStory = Template.bind({});
 TitleHeaderStory.args = {
   backgroundColor: '#f5f8fa',
-  colorSubText: '#aaa',
+  colorSubText: 'black',
+  titleName: 'Skills & Tools',
 };
