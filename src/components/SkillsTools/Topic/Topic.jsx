@@ -5,7 +5,7 @@ import { Typography } from '@mui/material';
 const Topic = (props) => {
   const { topicName } = props;
   return(
-    <Typography variant="h4"
+    <Typography variant="h5"
       sx={{
         textDecoration: 'underline',
       }}

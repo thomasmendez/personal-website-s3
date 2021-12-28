@@ -11,7 +11,7 @@ const RenderList = (props) => {
           <li key={index}>
             {Object.entries(arrayKey).map(([key, value]) => {
               return(
-                <Typography key={key} variant="h6">
+                <Typography key={key}>
                   {key + ': ' + value.join(', ')}
                 </Typography>
               );
