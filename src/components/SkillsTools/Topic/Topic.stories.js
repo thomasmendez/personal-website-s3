@@ -11,7 +11,7 @@ export default {
 
 const Template = args => <Topic {...args}/>;
 
-export const SkillToolsTopicSection = Template.bind({});
-SkillToolsTopicSection.args = {
+export const SkillToolsTopicComponent = Template.bind({});
+SkillToolsTopicComponent.args = {
   topicName: 'Skills',
 };

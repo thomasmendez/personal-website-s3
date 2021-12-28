@@ -12,8 +12,8 @@ export default {
 
 const Template = args => <TitleHeader {...args}/>;
 
-export const TitleHeaderProfileStory = Template.bind({});
-TitleHeaderProfileStory.args = {
+export const TitleHeaderProfileComponent = Template.bind({});
+TitleHeaderProfileComponent.args = {
   backgroundColor: '#f5f8fa',
   colorSubText: '#aaa',
 };

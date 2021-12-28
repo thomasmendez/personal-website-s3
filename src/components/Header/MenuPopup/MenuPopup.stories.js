@@ -12,8 +12,8 @@ export default {
 
 const Template = args => <MenuPopup {...args}/>;
 
-export const MenuPopupStory = Template.bind({});
-MenuPopupStory.args = {
+export const MenuPopupComponent = Template.bind({});
+MenuPopupComponent.args = {
   menuName: 'Projects',
   menuSubItems: [
     { id: 5, name: 'Software Engineering', to: 'software_engineering' },

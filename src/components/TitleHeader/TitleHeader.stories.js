@@ -13,8 +13,8 @@ export default {
 
 const Template = args => <TitleHeader {...args}/>;
 
-export const TitleHeaderStory = Template.bind({});
-TitleHeaderStory.args = {
+export const TitleHeaderComponent = Template.bind({});
+TitleHeaderComponent.args = {
   backgroundColor: '#f5f8fa',
   colorSubText: 'black',
   titleName: 'Skills & Tools',

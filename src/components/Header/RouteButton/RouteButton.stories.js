@@ -12,8 +12,8 @@ export default {
 
 const Template = args => <RouteButton {...args}/>;
 
-export const RouteButtonStory = Template.bind({});
-RouteButtonStory.args = {
+export const RouteButtonComponent = Template.bind({});
+RouteButtonComponent.args = {
   to: 'about',
   children: 'About',
 };
