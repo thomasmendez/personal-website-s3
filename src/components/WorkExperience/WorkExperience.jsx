@@ -13,8 +13,8 @@ const WorkExperience = (props) => {
       {arrayOfExperiences.map((experience, index) => {
         const { jobTitle, company, location, date, jobRole, jobDescription } = experience;
         return(
-          <>
-            <Grid container item key={index} xs={10}>
+          <Grid container item key={index}>
+            <Grid container item xs={10}>
               <WorkTitle
                 jobTitle={jobTitle}
                 company={company}
@@ -36,7 +36,7 @@ const WorkExperience = (props) => {
                 arrayOfStrings={jobDescription}
               />
             </Grid>
-          </>
+          </Grid>
         );
       })}
     </Grid>
