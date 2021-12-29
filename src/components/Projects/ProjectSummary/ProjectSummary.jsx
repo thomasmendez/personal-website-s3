@@ -66,10 +66,7 @@ ProjectSummary.propTypes = {
   myRole: PropTypes.string.isRequired,
   myTasks: PropTypes.arrayOf(PropTypes.string).isRequired,
   teamSize: PropTypes.number.isRequired,
-  teamRoles: PropTypes.arrayOf(PropTypes.shape({
-    role: PropTypes.string.isRequired,
-    amount: PropTypes.number.isRequired,
-  })),
+  teamRoles: PropTypes.arrayOf(PropTypes.string),
   cloudServices: PropTypes.arrayOf(PropTypes.string),
   tools: PropTypes.arrayOf(PropTypes.string).isRequired,
   projectDuration: PropTypes.string.isRequired,

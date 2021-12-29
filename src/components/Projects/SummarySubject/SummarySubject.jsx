@@ -5,39 +5,42 @@ import { Grid, Typography } from '@mui/material';
 const SummarySubject = (props) => {
   const { topicName, content } = props;
   const isArray = Array.isArray(content);
-  return(
-    <Grid container item xs={12} direction={isArray ? 'column' : 'row'}>
-      <Typography
-        sx={{
-          textDecoration: 'underline',
-        }}
-      >
-        {topicName + ':'}
-      </Typography>
-      {isArray ? (
-        <ul>
-          {content.map((value, index) => {
-          return(
-            <li key={index}>
-              <Typography>
-                {value}
-              </Typography>
-            </li>
-          );
-        })}
-        </ul>
-      ) : (
-        <>
-          <Typography>
-            &nbsp;
-          </Typography>
-          <Typography>
-            {content}
-          </Typography>
-        </>
-      )}
-    </Grid>
-  );
+  if (topicName && content) {
+    return(
+      <Grid container item xs={12} direction={isArray ? 'column' : 'row'}>
+        <Typography
+          sx={{
+            textDecoration: 'underline',
+          }}
+        >
+          {topicName + ':'}
+        </Typography>
+        {isArray ? (
+          <ul>
+            {content.map((value, index) => {
+            return(
+              <li key={index}>
+                <Typography>
+                  {value}
+                </Typography>
+              </li>
+            );
+          })}
+          </ul>
+        ) : (
+          <>
+            <Typography>
+              &nbsp;
+            </Typography>
+            <Typography>
+              {content}
+            </Typography>
+          </>
+        )}
+      </Grid>
+    );
+  }
+  return null;
 };
 
 SummarySubject.propTypes = {

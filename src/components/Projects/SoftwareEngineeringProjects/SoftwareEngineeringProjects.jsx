@@ -9,9 +9,8 @@ import { BREAKPOINTSTORYBOOKDESKTOP } from '../../../utils/breakpoints';
 const SoftwareEngineeringProjects = (props) => {
   const { arrayOfObjects } = props;
   const { width } = useWindowDimensions();
-  
   return(
-    <Grid container>
+    <Grid container spacing={5}>
       {arrayOfObjects.map((project, index) => {
         const { title, description, myRole, myTasks, teamSize, teamRoles, cloudServices, tools, projectDuration, date, note,
           media, mediaAlt, mediaTitle, mediaDescription, website, repository } = project;
@@ -51,12 +50,16 @@ const SoftwareEngineeringProjects = (props) => {
               </Grid>
             ) : (
               <Grid container item xs={12} spacing={3}>
-                <Grid item xs={12}>
+                <Grid item xs={1}/>
+                <Grid item xs={10}>
                   <Typography variant="h5">
                     {title}
                   </Typography>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={1}/>
+
+                <Grid item xs={1}/>
+                <Grid item xs={5}>
                   <ProjectSummary
                     description={description}
                     myRole={myRole}
@@ -70,7 +73,7 @@ const SoftwareEngineeringProjects = (props) => {
                     note={note}
                   />
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={5}>
                   <ProjectMedia
                     media={media}
                     mediaAlt={mediaAlt}
@@ -80,6 +83,7 @@ const SoftwareEngineeringProjects = (props) => {
                     repository={repository}
                   />
                 </Grid>
+                <Grid item xs={1}/>
               </Grid>
             )}
           </Grid>
@@ -100,10 +104,7 @@ SoftwareEngineeringProjects.propTypes = {
     myRole: PropTypes.string.isRequired,
     myTasks: PropTypes.arrayOf(PropTypes.string).isRequired,
     teamSize: PropTypes.number.isRequired,
-    teamRoles: PropTypes.arrayOf(PropTypes.shape({
-      role: PropTypes.string.isRequired,
-      amount: PropTypes.number.isRequired,
-    })),
+    teamRoles: PropTypes.arrayOf(PropTypes.string),
     cloudServices: PropTypes.arrayOf(PropTypes.string),
     tools: PropTypes.arrayOf(PropTypes.string).isRequired,
     projectDuration: PropTypes.string.isRequired,
