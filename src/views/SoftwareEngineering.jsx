@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid } from '@mui/material';
 import TitleHeader from '../components/TitleHeader';
-import SoftwareEngineeringProjects from '../components/Projects/SoftwareEngineeringProjects';
+import Project from '../components/Projects/Project';
 import OpenLMSBlendedVideo from '../assets/open-lms-blended-sample.mp4';
 import NoblePrizesImg from '../assets/laureates.png';
 import CustomClothingBrandWebsite from '../assets/lcm.png';
@@ -115,7 +115,7 @@ const SoftwareEngineering = () => {
       <TitleHeader titleName={'Software Engineering Projects'}/>
       <Grid container item>
         <Grid item>
-          <SoftwareEngineeringProjects arrayOfObjects={PROJECTS}/>
+          <Project arrayOfObjects={PROJECTS}/>
         </Grid>
       </Grid>
     </Grid>

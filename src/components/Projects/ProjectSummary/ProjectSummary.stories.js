@@ -2,7 +2,7 @@ import React from 'react';
 import ProjectSummary from './ProjectSummary';
 
 export default {
-  title: 'Components/SoftwareEngineeringProjects/ProjectSummary',
+  title: 'Components/Projects/ProjectSummary',
   component: ProjectSummary,
   argTypes: {
     description: { control: 'text' },

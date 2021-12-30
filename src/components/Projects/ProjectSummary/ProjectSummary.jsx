@@ -17,7 +17,7 @@ const ProjectSummary = (props) => {
         content={myRole}
       />
       <SummarySubject
-        topicName={'My Task'}
+        topicName={'My Tasks'}
         content={myTasks}
       />
       <SummarySubject
@@ -44,15 +44,17 @@ const ProjectSummary = (props) => {
         topicName={'Project Date'}
         content={date.startDate + ' - ' + date.endDate}
       />
-      <Grid item xs={12}>
-        <Typography
-          sx={{
-          fontStyle: fontStyleNote,
-          }}
-        >
-          {'*'+note+'*'}
-        </Typography>
-      </Grid>
+      {note && (
+        <Grid item xs={12}>
+          <Typography
+            sx={{
+              fontStyle: fontStyleNote,
+            }}
+          >
+            {'*'+note+'*'}
+          </Typography>
+        </Grid>
+      )}
     </Grid>
   );
 };

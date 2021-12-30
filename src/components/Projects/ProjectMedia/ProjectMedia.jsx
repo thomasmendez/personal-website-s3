@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Grid, CardActionArea, CardMedia, CardContent, Typography, CardActions, Button } from '@mui/material';
 
 const ProjectMedia = (props) => {
-  const { media, mediaAlt, mediaTitle, mediaDescription, website, repository } = props;
+  const { media, mediaAlt, mediaTitle, mediaDescription, website, repository, youTubeLink, downloadLink } = props;
   const extension = media.split('.').pop();
   return(
     <Grid container item>
@@ -35,6 +35,16 @@ const ProjectMedia = (props) => {
             Repository
           </Button>
         )}
+        {youTubeLink && (
+          <Button size="small" color="primary" href={website} target="_blank">
+            YouTube
+          </Button>
+        )}
+        {downloadLink && (
+          <Button size="small" color="primary" href={repository} target="_blank">
+            Download
+          </Button>
+        )}
       </CardActions>
     </Grid>
   );
@@ -47,6 +57,8 @@ ProjectMedia.propTypes = {
   mediaDescription: PropTypes.string,
   website: PropTypes.string,
   repository: PropTypes.string,
+  youTubeLink: PropTypes.string,
+  downloadLink: PropTypes.string,
 };
 
 export default ProjectMedia;
