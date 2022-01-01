@@ -2,7 +2,7 @@ import React from 'react';
 import SummarySubject from './SummarySubject';
 
 export default {
-  title: 'Components/SoftwareEngineeringProjects/SummarySubject',
+  title: 'Components/Projects/SummarySubject',
   component: SummarySubject,
   argTypes: {
     topicName: { control: 'text' },
