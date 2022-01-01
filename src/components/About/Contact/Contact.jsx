@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Grid, Typography } from '@mui/material';
-import ContactMethod from './ContactMethod';
+import ContactMethod from '../../ContactMethod';
 
 const Contact = (props) => {
   const { contacts } = props;
   return(
-    <Grid container item sm={4} md={5}>
-      <Grid item>
+    <Grid container item sm={3}>
+      <Grid item xs={12}>
         <Typography variant="h5">
           Contact
         </Typography>
@@ -15,6 +15,7 @@ const Contact = (props) => {
       {contacts.map((contact, index) => (
         <ContactMethod
           key={index}
+          direction="column"
           contactMethodName={contact.contactMethod}
           icon={contact.icon}
           hrefLink={contact.hrefLink}

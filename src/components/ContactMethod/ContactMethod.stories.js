@@ -9,9 +9,13 @@ const icons = {
 };
 
 export default {
-  title: 'Components/About/Contact/ContactMethod',
+  title: 'Components/ContactMethod',
   component: ContactMethod,
   argTypes: {
+    direction: { 
+      options: ['column', 'row'],
+      control: { type: 'radio' },
+    },
     contactMethodName: {
       control: {
         type: 'text',
@@ -56,6 +60,7 @@ const Template = args => <ContactMethod {...args}/>;
 
 export const ContactMethodComponent = Template.bind({});
 ContactMethodComponent.args = {
+  direction: 'column',
   contactMethodName: 'LinkedIn',
   icon: 'LinkedIn',
   hrefLink: 'https://www.linkedin.com/in/thomas-a-mendez',

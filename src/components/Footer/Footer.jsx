@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Grid, Typography } from '@mui/material';
-import ContactMethod from './ContactMethod';
+import ContactMethod from '../ContactMethod';
 
 const Footer = (props) => {
   const { contacts } = props;
@@ -21,6 +21,7 @@ const Footer = (props) => {
         {contacts.map((contact, index) => (
           <ContactMethod
             key={index}
+            direction='row'
             contactMethodName={contact.contactMethod}
             icon={contact.icon}
             hrefLink={contact.hrefLink}

@@ -2,30 +2,30 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Typography } from '@mui/material';
 
-const ContactMethod = (props) => {
-  const { icon, hrefLink, textDecoration, color, hoverColor } = props;
+const IconLink = (props) => {
+  const { hrefLink, textDecoration, color, hoverColor, icon } = props;
   return(
     <Typography component='a' target="_blank" href={hrefLink}
       sx={{
-        textDecoration: textDecoration,
-        color: color,
-        '&:hover': {
-          color: hoverColor,
-        },
+      textDecoration: textDecoration,
+      color: color,
+      '&:hover': {
+        color: hoverColor,
+      },
       }}
     >
       {icon}
     </Typography>
   );
 };
-    
-ContactMethod.defaultProps = {
+
+IconLink.defaultProps = {
   textDecoration: 'none',
   color: 'black',
   hoverColor: '#800080',
 };
   
-ContactMethod.propTypes = {
+IconLink.propTypes = {
   icon: PropTypes.element,
   hrefLink: PropTypes.string,
   textDecoration: PropTypes.string,
@@ -33,4 +33,4 @@ ContactMethod.propTypes = {
   hoverColor: PropTypes.string,
 };
 
-export default ContactMethod;
+export default IconLink;
