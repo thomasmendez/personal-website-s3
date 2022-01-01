@@ -10,6 +10,7 @@ import Work from './views/Work';
 import SoftwareEngineering from './views/SoftwareEngineering';
 import VRAR from './views/VRAR';
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 const AppRoutes = () => {
   const routes = useRoutes([
@@ -30,6 +31,7 @@ const App = () => {
     <Router>
       <Header />
       <AppRoutes />
+      <Footer />
     </Router>
   );
 };
