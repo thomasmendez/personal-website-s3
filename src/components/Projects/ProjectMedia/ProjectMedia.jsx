@@ -12,7 +12,6 @@ const ProjectMedia = (props) => {
           component={extension === 'mp4' ? 'video' : 'img'}
           image={media}
           alt={mediaAlt}
-          autoPlay={extension === 'mp4'}
           controls={extension === 'mp4'}
         />
         <CardContent>
