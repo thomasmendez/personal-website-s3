@@ -1,27 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Grid, Typography } from '@mui/material';
-import { LinkedIn, GitHub, Email } from '@mui/icons-material';
 import ContactMethod from './ContactMethod';
 
-const CONTACTS = [
-  {
-    contactMethod: 'LinkedIn',
-    icon: <LinkedIn />,
-    hrefLink: 'https://www.linkedin.com/in/thomas-a-mendez',
-  },
-  { 
-    contactMethod: 'GitHub',
-    icon: <GitHub />,
-    hrefLink: 'https://github.com/thomasmendez',
-  },
-  {
-    contactMethod: 'Email',
-    icon: <Email />,
-    hrefLink: 'mailto:thomasmendez01@gmail.com',
-  },
-];
-
-const Footer = () => {
+const Footer = (props) => {
+  const { contacts } = props;
   return(
     <Grid container sx={{borderTop: 'solid 1px gray'}} mt={3} pt={3} pb={3} direction="row" justifyContent="flex-end" alignItems="center">
       <Grid item xs={2}/>
@@ -35,7 +18,7 @@ const Footer = () => {
         </Typography>
       </Grid>
       <Grid item xs={3}>
-        {CONTACTS.map((contact, index) => (
+        {contacts.map((contact, index) => (
           <ContactMethod
             key={index}
             contactMethodName={contact.contactMethod}
@@ -46,6 +29,16 @@ const Footer = () => {
       </Grid>
     </Grid>
   );
+};
+
+Footer.propTypes = {
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      contactMethod: PropTypes.string.isRequired,
+      icon: PropTypes.element.isRequired,
+      hrefLink: PropTypes.string.isRequired,
+    }),
+  ),
 };
 
 export default Footer;
