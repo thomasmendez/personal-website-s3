@@ -1,7 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Grid, Typography } from '@mui/material';
 import { LinkedIn, GitHub, Email } from '@mui/icons-material';
+import ContactMethod from './ContactMethod';
 
 const CONTACTS = [
   {
@@ -20,38 +20,6 @@ const CONTACTS = [
     hrefLink: 'mailto:thomasmendez01@gmail.com',
   },
 ];
-
-const ContactMethod = (props) => {
-  const { icon, hrefLink, textDecoration, color, hoverColor } = props;
-  return(
-    <Typography component='a' target="_blank" href={hrefLink}
-      sx={{
-        textDecoration: textDecoration,
-        color: color,
-        '&:hover': {
-          color: hoverColor,
-        },
-      }}
-    >
-      {icon}
-    </Typography>
-  );
-};
-  
-ContactMethod.defaultProps = {
-  textDecoration: 'none',
-  color: 'black',
-  hoverColor: '#800080',
-};
-  
-ContactMethod.propTypes = {
-  contactMethodName: PropTypes.string,
-  icon: PropTypes.element,
-  hrefLink: PropTypes.string,
-  textDecoration: PropTypes.string,
-  color: PropTypes.string,
-  hoverColor: PropTypes.string,
-};
 
 const Footer = () => {
   return(
