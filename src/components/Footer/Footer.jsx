@@ -7,8 +7,8 @@ const Footer = (props) => {
   const { contacts } = props;
   return(
     <Grid container sx={{borderTop: 'solid 1px gray'}} mt={3} pt={3} pb={3} direction="row" justifyContent="flex-end" alignItems="center">
-      <Grid item xs={2}/>
-      <Grid item xs={7}>
+      <Grid item xs={2} sm={2}/>
+      <Grid item xs={5} sm={7}>
         <Typography>
           © 
           {' '}
@@ -17,7 +17,7 @@ const Footer = (props) => {
           Copyright
         </Typography>
       </Grid>
-      <Grid container item xs={3} direction="row" spacing={1}>
+      <Grid container item xs={3} sm={3} direction="row" spacing={1}>
         {contacts.map((contact, index) => (
           <ContactMethod
             key={index}
@@ -28,6 +28,7 @@ const Footer = (props) => {
           />
         ))}
       </Grid>
+      <Grid item xs={2} sm={0}/>
     </Grid>
   );
 };
