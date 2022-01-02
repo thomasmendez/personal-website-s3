@@ -86,3 +86,6 @@ terraform.rc
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# Storybook
+storybook-static
