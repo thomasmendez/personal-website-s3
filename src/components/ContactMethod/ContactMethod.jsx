@@ -34,13 +34,15 @@ const ContactMethod = (props) => {
     );
   } else {
     return(
-      <IconLink
-        icon={icon}
-        hrefLink={hrefLink}
-        textDecoration={textDecoration}
-        color={color}
-        hoverColor={hoverColor}
-      />
+      <Grid item>
+        <IconLink
+          icon={icon}
+          hrefLink={hrefLink}
+          textDecoration={textDecoration}
+          color={color}
+          hoverColor={hoverColor}
+        />
+      </Grid>
     );
   }
   

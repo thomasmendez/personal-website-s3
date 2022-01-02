@@ -17,7 +17,7 @@ const Footer = (props) => {
           Copyright
         </Typography>
       </Grid>
-      <Grid item xs={3}>
+      <Grid container item xs={3} direction="row" spacing={1}>
         {contacts.map((contact, index) => (
           <ContactMethod
             key={index}
