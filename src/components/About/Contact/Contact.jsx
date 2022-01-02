@@ -6,14 +6,14 @@ import ContactMethod from '../../ContactMethod';
 const Contact = (props) => {
   const { contacts } = props;
   return(
-    <Grid container item>
-      <Grid item xs={12} sm={12}>
+    <Grid container item spacing={1}>
+      <Grid item xs={12}>
         <Typography variant="h5">
           Contact
         </Typography>
       </Grid>
 
-      <Grid item xs={12} sm={12}>
+      <Grid container item xs={12} spacing={1}>
         {contacts.map((contact, index) => (
           <ContactMethod
             key={index}
