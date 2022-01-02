@@ -31,6 +31,17 @@ const CONTACTS = [
   },
 ];
 
+const HEADERROUTES = [
+  { id: 1, name: 'About', to: 'about' }, 
+  { id: 2, name: 'Work', to: 'work' },
+  { id: 3, name: 'Skills & Tools', to: 'skillsTools' },
+  { id: 4, name: 'Projects', subItems: [
+    { id: 5, name: 'Software Engineering', to: 'softwareEngineering' },
+    { id: 6, name: 'VR / AR', to: 'vrar' },
+  ]},
+  { id: 7, name: 'Resume', to: 'resume'},
+];
+
 const AppRoutes = () => {
   const routes = useRoutes([
     { path: '/', exact: true, element: <About contacts={CONTACTS}/> },
@@ -48,7 +59,7 @@ const AppRoutes = () => {
 const App = () => {
   return (
     <Router>
-      <Header />
+      <Header backgroundColor='grey' routes={HEADERROUTES}/>
       <AppRoutes />
       <Footer contacts={CONTACTS}/>
     </Router>

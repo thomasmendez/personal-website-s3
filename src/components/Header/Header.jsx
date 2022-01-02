@@ -128,17 +128,7 @@ const Header = (props) => {
 };
 
 Header.defaultProps = {
-  backgroundColor: 'grey',
-  routes: [
-    { id: 1, name: 'About', to: 'about' }, 
-    { id: 2, name: 'Work', to: 'work' },
-    { id: 3, name: 'Skills & Tools', to: 'skillsTools' },
-    { id: 4, name: 'Projects', subItems: [
-      { id: 5, name: 'Software Engineering', to: 'softwareEngineering' },
-      { id: 6, name: 'VR / AR', to: 'vrar' },
-    ]},
-    { id: 7, name: 'Resume', to: 'resume'},
-  ],
+  routes: [],
 };
 
 Header.propTypes = {
