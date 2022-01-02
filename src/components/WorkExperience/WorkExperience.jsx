@@ -26,16 +26,18 @@ const WorkExperience = (props) => {
                 date={date}
               />
             </Grid>
-            <Grid container item xs={12}>
+            <Grid container item xs={10}>
               <JobRole
                 jobRole={jobRole}
               />
             </Grid>
-            <Grid container item xs={12}>
+            <Grid item xs={2}/>
+            <Grid container item xs={10}>
               <JobDescription
                 arrayOfStrings={jobDescription}
               />
             </Grid>
+            <Grid item xs={2}/>
           </Grid>
         );
       })}
