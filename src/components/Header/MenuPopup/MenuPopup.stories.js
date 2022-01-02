@@ -16,7 +16,7 @@ export const MenuPopupComponent = Template.bind({});
 MenuPopupComponent.args = {
   menuName: 'Projects',
   menuSubItems: [
-    { id: 5, name: 'Software Engineering', to: 'software_engineering' },
-    { id: 6, name: 'VR / AR', to: 'vr_ar' },
+    { id: 5, name: 'Software Engineering', to: 'softwareEngineering' },
+    { id: 6, name: 'VR / AR', to: 'vrar' },
   ],
 };

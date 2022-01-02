@@ -16,7 +16,7 @@ const MenuPopup = (props) => {
         <Menu {...bindMenu(popupState)}>
           {menuSubItems.map((menuItem) => (
             <div key={menuItem.id}>
-              <MenuItem component={Link} to={menuItem.to}>
+              <MenuItem component={Link} to={menuItem.to} onClick={popupState.close}>
                 {menuItem.name}
               </MenuItem>
             </div>
