@@ -84,13 +84,11 @@ const Work = () => (
   >
     <TitleHeader titleName={'Where I Worked'}/>
     <Grid container item>
-      <Grid item xs={1}/>
-      <Grid item xs={10}>
+      <Grid item spacing={{ xs: 3, md: 3 }} ml={{ xs: 5, md: 10 }} mr={{ xs: 5, md: 10 }}>
         <WorkExperience
           arrayOfExperiences={EXPERIENCE}
         />
       </Grid>
-      <Grid item xs={1}/>
     </Grid>
   </Grid>
 );
