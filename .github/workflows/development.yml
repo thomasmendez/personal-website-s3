@@ -8,6 +8,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      STORYBOOK_URL: http://${{ secrets.AWS_BUCKET_NAME_DEV_STORYBOOK }}.s3-website.us-east-2.amazonaws.com
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -21,8 +23,6 @@ jobs:
         run: yarn install --immutable
 
       - name: Create .env
-        env:
-          STORYBOOK_URL: http://${{ secrets.AWS_BUCKET_NAME_DEV_STORYBOOK }}.s3-website.us-east-2.amazonaws.com
         run: |
           chmod +x "${GITHUB_WORKSPACE}/.github/env.sh"
           sh ${GITHUB_WORKSPACE}/.github/env.sh
