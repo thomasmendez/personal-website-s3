@@ -13,7 +13,7 @@
     "pretty:fix": "prettier --write **/*.{json,yml,yaml,md}",
     "prepare": "husky install",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook --docs --no-manager-cache"
+    "build-storybook": "build-storybook --docs"
   },
   "author": "Thomas Antonio Mendez",
   "license": "ISC",
