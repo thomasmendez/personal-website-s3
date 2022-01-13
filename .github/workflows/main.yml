@@ -20,12 +20,12 @@ jobs:
         run: yarn install --immutable
 
       - name: Create .env
-        shell: bash
+        env:
+          STORYBOOK_URL: http://${{ secrets.AWS_BUCKET_NAME_DEV_STORYBOOK }}.s3-website.us-east-2.amazonaws.com
         run: |
           chmod +x "${GITHUB_WORKSPACE}/.github/env.sh"
           sh ${GITHUB_WORKSPACE}/.github/env.sh
-        env:
-          STORYBOOK_URL: ${{ secrets.AWS_BUCKET_NAME_PRD_STORYBOOK }}.s3-website.us-east-2.amazonaws.com
+        shell: bash
 
       - name: ESLint
         run: yarn lint
