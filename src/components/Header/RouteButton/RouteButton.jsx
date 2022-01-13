@@ -18,10 +18,34 @@ const RouteButton = ({ to, children, link }) => {
   );
 };
 
-RouteButton.propTypes = {
-  to: PropTypes.string.isRequired,
-  children: PropTypes.string.isRequired,
+function requireAtLeastOne(checkProps) {
+  return function(props, propName, compName) {
+    const requirePropNames = Object.keys(checkProps);
+    const found = requirePropNames.find((propRequired) => props[propRequired]);
+    try {
+      if (!found) {
+        throw new Error(
+          `One of ${requirePropNames.join(',')} is required by '${compName}' component.`,
+        );
+      }
+      PropTypes.checkPropTypes(checkProps, props, propName, compName);
+    } catch (e) {
+      return e;
+    }
+    return null;
+  };
+}
+
+
+const requireOne = requireAtLeastOne({
+  to: PropTypes.string,
   link: PropTypes.string,
+});
+
+RouteButton.propTypes = {
+  to: requireOne,
+  children: PropTypes.string.isRequired,
+  link: requireOne,
 };
 
 export default RouteButton;

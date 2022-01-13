@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ListItem, ListItemText } from '@mui/material';
 import { Link } from 'react-router-dom';
+import { requireAtLeastOne } from '../../../../utils/propTypesUtils';
 
 const MenuListItem = (props) => {
   const { to, name, setOpen, link } = props;
@@ -19,11 +20,16 @@ const MenuListItem = (props) => {
   );
 };
 
+const requireOne = requireAtLeastOne({
+  to: PropTypes.string,
+  link: PropTypes.string,
+});
+
 MenuListItem.propTypes = {
-  to: PropTypes.string.isRequired,
+  to: requireOne,
   name: PropTypes.string.isRequired,
   setOpen: PropTypes.func.isRequired,
-  link: PropTypes.string,
+  link: requireOne,
 };
 
 export default MenuListItem;
