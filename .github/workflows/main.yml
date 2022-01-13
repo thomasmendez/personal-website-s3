@@ -22,7 +22,8 @@ jobs:
         run: yarn install --immutable
 
       - name: Create .env
-        run: env.sh
+        run: chmod +x env.sh
+        shell: bash
 
       - name: ESLint
         run: yarn lint
