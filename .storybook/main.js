@@ -8,8 +8,5 @@ module.exports = {
     "@storybook/addon-essentials",
     "storybook-color-picker",
   ],
-  "framework": "@storybook/react",
-  "core": {
-    "builder": "webpack5",
-  }
+  "framework": "@storybook/react"
 }
