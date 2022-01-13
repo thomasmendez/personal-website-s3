@@ -24,10 +24,8 @@ jobs:
 
       - name: Create .env
         run: |
-          cd "${GITHUB_WORKSPACE}/.github"
-          ls
           chmod +x "${GITHUB_WORKSPACE}/.github/env.sh"
-          ${GITHUB_WORKSPACE}/.github/env.sh
+          sh ${GITHUB_WORKSPACE}/.github/env.sh
         shell: bash
 
       - name: ESLint
