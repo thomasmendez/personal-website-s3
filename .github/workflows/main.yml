@@ -23,6 +23,9 @@ jobs:
 
       - name: Create .env
         run: |
+          cd "${GITHUB_WORKSPACE}/.github"
+          ls
+          cat .env
           chmod +x "${GITHUB_WORKSPACE}/.github/env.sh"
           env.sh
         shell: bash
