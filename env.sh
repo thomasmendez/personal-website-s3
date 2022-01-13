@@ -1,4 +1,2 @@
-echo "hello world"
-set -a
-source .env.example
-set +a  # Require export again, if desired.
+#!/bin/bash
+echo STORYBOOK_URL=$STORYBOOK_URL>.env
