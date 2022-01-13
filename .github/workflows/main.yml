@@ -7,9 +7,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      STORYBOOK_URL: ${{ secrets.AWS_BUCKET_NAME_PRD_STORYBOOK }}.s3-website.us-east-2.amazonaws.com
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
       - name: Use Node.js
         uses: actions/setup-node@v2
         with:
@@ -17,6 +20,9 @@ jobs:
 
       - name: Install Packages
         run: yarn install --immutable
+
+      - name: Create .env
+        run: env.sh
 
       - name: ESLint
         run: yarn lint

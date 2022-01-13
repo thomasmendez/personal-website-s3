@@ -42,6 +42,7 @@ const HEADERROUTES = [
     { id: 6, name: 'VR / AR', to: 'vrar' },
   ]},
   { id: 7, name: 'Resume', to: 'resume', link: ResumePdf},
+  { id: 8, name: 'Storybook', link: process.env.STORYBOOK_URL},
 ];
 
 const AppRoutes = () => {
