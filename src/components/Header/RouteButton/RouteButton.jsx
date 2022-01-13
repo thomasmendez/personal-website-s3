@@ -12,7 +12,7 @@ const RouteButton = ({ to, children, link }) => {
     );
   }
   return(
-    <Button color='inherit' component={Link} to={to}>
+    <Button color='inherit' component={Link} to={to ? to : 'undefined'}>
       {children}
     </Button>
   );

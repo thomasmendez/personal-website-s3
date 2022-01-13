@@ -13,7 +13,7 @@ const MenuListItem = (props) => {
     );
   }
   return(
-    <ListItem button component={Link} to={to} onClick={() => setOpen(false)}>
+    <ListItem button component={Link} to={to ? to : 'undefined'} onClick={() => setOpen(false)}>
       <ListItemText primary={name} />
     </ListItem>
   );
