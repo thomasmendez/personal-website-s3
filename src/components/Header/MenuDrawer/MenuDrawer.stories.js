@@ -1,11 +1,10 @@
 import React from 'react';
-import Header from './Header';
+import MenuDrawer from './MenuDrawer';
 
 export default {
-  title: 'Components/Header',
-  component: Header,
+  title: 'Components/Header/MenuDrawer',
+  component: MenuDrawer,
   argTypes: {
-    backgroundColor: { control: 'color' },
     routes: { control: 'object' },
   },
   parameters: {
@@ -13,11 +12,10 @@ export default {
   },
 };
 
-const Template = args => <Header {...args}/>;
+const Template = args => <MenuDrawer {...args}/>;
 
-export const Navigation = Template.bind({});
-Navigation.args = {
-  backgroundColor: 'grey',
+export const MenuDrawerComponent = Template.bind({});
+MenuDrawerComponent.args = {
   routes: [
     { id: 1, name: 'About', to: 'about' }, 
     { id: 2, name: 'Work', to: 'work' },
