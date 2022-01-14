@@ -10,6 +10,8 @@ import Skills_Tools from './views/SkillsTools';
 import Work from './views/Work';
 import SoftwareEngineering from './views/SoftwareEngineering';
 import VRAR from './views/VRAR';
+import Resume from './views/Resume';
+import ResumePdf from '../src/assets/ResumeThomasMendez.pdf';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
@@ -39,6 +41,7 @@ const HEADERROUTES = [
     { id: 5, name: 'Software Engineering', to: 'softwareEngineering' },
     { id: 6, name: 'VR / AR', to: 'vrar' },
   ]},
+  { id: 7, name: 'Resume', to: 'resume', link: ResumePdf},
   { id: 8, name: 'Storybook', link: process.env.STORYBOOK_URL},
 ];
 
@@ -51,6 +54,7 @@ const AppRoutes = () => {
     { path: '/work', exact: true, element: <Work /> },
     { path: '/softwareEngineering', exact: true, element: <SoftwareEngineering /> },
     { path: '/vrar', exact: true, element: <VRAR /> },
+    { path: '/resume', exact: true, element: <Resume />},
     { path: '*', element: <ErrorView errorCode={404} /> },
   ]);
   return routes;
