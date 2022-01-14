@@ -28,14 +28,12 @@ const SkillsToolsView = () => (
   >
     <TitleHeader titleName={'Skills & Tools'}/>
     <Grid container item>
-      <Grid item xs={3}/>
-      <Grid item xs={6}>
+      <Grid container item spacing={{ xs: 3, md: 3 }} ml={{ xs: 5, md: 10, lg: 30, xl: 50 }} mr={{ xs: 5, md: 10, lg: 30, xl: 50 }}>
         <SkillsTools
           skills={SKILLS}
           tools={TOOLS}
         />
       </Grid>
-      <Grid item xs={3}/>
     </Grid>
   </Grid>
 );

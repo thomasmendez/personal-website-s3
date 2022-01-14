@@ -119,7 +119,7 @@ const VRAR = () => {
       spacing={3}
     >
       <TitleHeader titleName={'Virtual Reality (VR) / Augmented Reality (AR) Projects'}/>
-      <Grid container item>
+      <Grid container item spacing={{ xs: 3, md: 3 }} ml={{ xs: 5, md: 10 }} mr={{ xs: 5, md: 10 }}>
         <Grid item>
           <Project arrayOfObjects={PROJECTS}/>
         </Grid>

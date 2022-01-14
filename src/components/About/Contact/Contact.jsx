@@ -6,21 +6,24 @@ import ContactMethod from '../../ContactMethod';
 const Contact = (props) => {
   const { contacts } = props;
   return(
-    <Grid container item sm={3}>
+    <Grid container item spacing={1}>
       <Grid item xs={12}>
         <Typography variant="h5">
           Contact
         </Typography>
       </Grid>
-      {contacts.map((contact, index) => (
-        <ContactMethod
-          key={index}
-          direction="column"
-          contactMethodName={contact.contactMethod}
-          icon={contact.icon}
-          hrefLink={contact.hrefLink}
-        />
-      ))}
+
+      <Grid container item xs={12} spacing={1}>
+        {contacts.map((contact, index) => (
+          <ContactMethod
+            key={index}
+            direction="column"
+            contactMethodName={contact.contactMethod}
+            icon={contact.icon}
+            hrefLink={contact.hrefLink}
+          />
+        ))}
+      </Grid>
     </Grid>
   );
 };
