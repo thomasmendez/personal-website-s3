@@ -39,7 +39,7 @@ const HEADERROUTES = [
     { id: 5, name: 'Software Engineering', to: 'softwareEngineering' },
     { id: 6, name: 'VR / AR', to: 'vrar' },
   ]},
-  { id: 7, name: 'Resume', to: 'resume'},
+  { id: 8, name: 'Storybook', link: process.env.STORYBOOK_URL},
 ];
 
 const AppRoutes = () => {
