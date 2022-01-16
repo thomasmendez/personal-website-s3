@@ -18,10 +18,3 @@ describe('full app rendering/navigating', () => {
         expect(text).toBeTruthy();
     });
 });
-
-// test('landing on a bad page', () => {
-//   render(
-//     <App />,
-//   )
-//   expect(screen.getByText(/404/i)).toBeInTheDocument()
-// })
