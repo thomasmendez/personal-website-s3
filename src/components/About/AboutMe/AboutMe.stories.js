@@ -5,10 +5,13 @@ export default {
   title: 'Components/About/AboutMe',
   component: AboutMe,
   argTypes: {
-    backgroundColor: { control: 'color' },
+    fontWeight: { control: 'number' },
   },
 };
 
 const Template = args => <AboutMe {...args}/>;
 
 export const AboutMeSection = Template.bind({});
+AboutMeSection.args = {
+  fontWeight: 600,
+};

@@ -5,7 +5,7 @@ import { Grid, Typography } from '@mui/material';
 const WorkDate = (props) => {
   const { date, fontWeight } = props;
   return(
-    <Grid container item xs={12}>
+    <Grid container item xs={12} justifyContent="flex-end">
       <Typography
         sx={{
           fontWeight: fontWeight,
