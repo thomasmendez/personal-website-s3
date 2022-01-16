@@ -30,6 +30,7 @@ resource "aws_s3_bucket" "bucketdev" {
 EOF
   website {
     index_document = "index.html"
+    error_document = "index.html"
   }
 }
 
