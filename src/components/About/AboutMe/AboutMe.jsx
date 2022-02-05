@@ -23,21 +23,23 @@ const AboutMe = (props) => {
           Education
         </Typography>
       </Grid>
-      <Grid item xs={12} sm={8}>
-        <Typography>
-          Bachelor of Science in Arts and Entertainment Technologies, at The University of Texas at Austin
-        </Typography>
-      </Grid>
-      <Grid container item xs={12} sm={4} justifyContent="flex-end">
-        <Typography
-          sx={{
+      <Grid container item xs={12} sm={12}>
+        <Grid item xs={9} sm={8}>
+          <Typography>
+            Bachelor of Science in Arts and Entertainment Technologies, at The University of Texas at Austin
+          </Typography>
+        </Grid>
+        <Grid container item xs={3} sm={4} justifyContent="flex-end">
+          <Typography
+            sx={{
             fontWeight: fontWeight,
-          }}
-        >
-          August 2016 - May 2019
-        </Typography>
+            }}
+          >
+            August 2016 - May 2019
+          </Typography>
+        </Grid>
       </Grid>
-      <Grid item xs={12} sm={12}>
+      <Grid item xs={9} sm={12}>
         <ul>
           <li>
             <Typography>
@@ -46,6 +48,7 @@ const AboutMe = (props) => {
           </li>
         </ul>
       </Grid>
+      <Grid item xs={3}/>
     </Grid>
   );
 };
