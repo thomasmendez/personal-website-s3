@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Grid, Typography } from '@mui/material';
-
+import useWindowDimensions from '../../../utils/windowDimensions';
+import { BREAKPOINTSTORYBOOKSMALLMOBILEL } from '../../../utils/breakpoints';
 const AboutMe = (props) => {
   const { fontWeight } = props;
+  const { width } = useWindowDimensions();
   return(
     <Grid container item spacing={3}>
       <Grid item xs={12} sm={12}>
@@ -23,21 +25,19 @@ const AboutMe = (props) => {
           Education
         </Typography>
       </Grid>
-      <Grid container item xs={12} sm={12}>
-        <Grid item xs={9} sm={8}>
-          <Typography>
-            Bachelor of Science in Arts and Entertainment Technologies, at The University of Texas at Austin
-          </Typography>
-        </Grid>
-        <Grid container item xs={3} sm={4} justifyContent="flex-end">
-          <Typography
-            sx={{
+      <Grid item xs={8} sm={8}>
+        <Typography>
+          Bachelor of Science in Arts and Entertainment Technologies, at The University of Texas at Austin
+        </Typography>
+      </Grid>
+      <Grid container item xs={2} sm={4} justifyContent={width > BREAKPOINTSTORYBOOKSMALLMOBILEL && 'flex-end'}>
+        <Typography
+          sx={{
             fontWeight: fontWeight,
-            }}
-          >
-            August 2016 - May 2019
-          </Typography>
-        </Grid>
+          }}
+        >
+          August 2016 - May 2019
+        </Typography>
       </Grid>
       <Grid item xs={9} sm={12}>
         <ul>
