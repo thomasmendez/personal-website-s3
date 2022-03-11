@@ -13,11 +13,13 @@ const TOOLS = [
   {'Game Engines': ['Unity']},
   {'Programming Languages': ['Python', 'JavaScript', 'Java', 'Swift', 'C#']},
   {'Front-End': ['HTML', 'CSS', 'ES6', 'React', 'Angular', 'Bootstrap', 'Material-UI', 'Webpack', 'GraphQL', 'ESLint']},
-  {'Back-End': ['Node.js', 'PHP', 'Flask', 'SQLAlchemy']},
+  {'Back-End': ['Spring Boot', 'GraphQL', 'Node.js', 'PHP', 'Flask', 'SQLAlchemy']},
   {'Databases': ['MySQL', 'MongoDB']},
   {'Mobile Development': ['iOS (XCode)', 'Android (Android Studio)']},
   {'Unit Testing': ['Jest', 'Mocha', 'Jasmine', 'Chai', 'Enzyme', 'Junit', 'XCTest']},
-  {'CI/CD Tools': ['Gitlab CI', 'Jenkins', 'Github Actions']},
+  {'CI/CD Tools': ['Docker', 'Gitlab CI', 'Jenkins', 'Github Actions']},
+  {'DevOps Tools': ['Terraform', 'Ansible']},
+  {'Cloud Services': ['Digital Ocean', 'AWS', 'Azure', 'Google Cloud Platform']},
   {'Data Mining': ['Classification', 'Clustering', 'Association Analysis', 'Dimensionality Reduction']},
 ];
 
