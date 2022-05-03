@@ -4,6 +4,10 @@ resource "aws_s3_bucket" "bucketdev" {
   tags = {
     Environment = var.env
   }
+}
+
+resource "aws_s3_bucket_lifecycle_configuration" "bucketdev" {
+  bucket = var.aws_bucket_name
   rule {
     id      = "cleanup"
     prefix  = "cleanup/"
@@ -12,6 +16,10 @@ resource "aws_s3_bucket" "bucketdev" {
       days = 1
     }
   }
+}
+
+resource "aws_s3_bucket_policy" "bucketdev" {
+  bucket = var.aws_bucket_name
   policy = <<EOF
 {
   "Id": "MakePublic",
