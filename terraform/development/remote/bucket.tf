@@ -5,7 +5,7 @@ resource "aws_s3_bucket" "bucketdev" {
   }
 }
 
-resouce "aws_s3_bucket_acl" "bucketdev" {
+resource "aws_s3_bucket_acl" "bucketdev" {
   bucket = var.aws_bucket_name
   acl    = "public-read"
 }
@@ -42,7 +42,7 @@ resource "aws_s3_bucket_policy" "bucketdev" {
 EOF
 }
 
-resouce "aws_s3_bucket_website_configuration" "bucketdev" {
+resource "aws_s3_bucket_website_configuration" "bucketdev" {
   bucket = var.aws_bucket_name
 
   index_document {
