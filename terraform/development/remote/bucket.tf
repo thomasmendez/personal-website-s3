@@ -15,7 +15,7 @@ resource "aws_s3_bucket_lifecycle_configuration" "bucketdev" {
   rule {
     id      = "cleanup"
     prefix  = "cleanup/"
-    enabled = true
+    status = "Enabled"
     expiration {
       days = 1
     }
@@ -40,9 +40,17 @@ resource "aws_s3_bucket_policy" "bucketdev" {
   ]
 }
 EOF
-  website {
-    index_document = "index.html"
-    error_document = "index.html"
+}
+
+resouce "aws_s3_bucket_website_configuration" "bucketdev" {
+  bucket = var.aws_bucket_name
+  
+  index_document {
+    suffix = "index.html"
+  }
+
+  error_document {
+    key = "index.html"
   }
 }
 
