@@ -4,7 +4,7 @@ resource "aws_s3_bucket" "bucketprd" {
   tags = {
     Environment = var.env
   }
-  lifecycle_rule {
+  rule {
     id      = "cleanup"
     prefix  = "cleanup/"
     enabled = true
