@@ -1,17 +1,29 @@
 resource "aws_s3_bucket" "bucketdev" {
   bucket = var.aws_bucket_name
-  acl    = "public-read"
   tags = {
     Environment = var.env
   }
-  lifecycle_rule {
-    id      = "cleanup"
-    prefix  = "cleanup/"
-    enabled = true
+}
+
+resource "aws_s3_bucket_acl" "bucketdev" {
+  bucket = var.aws_bucket_name
+  acl    = "public-read"
+}
+
+resource "aws_s3_bucket_lifecycle_configuration" "bucketdev" {
+  bucket = var.aws_bucket_name
+  rule {
+    id     = "cleanup"
+    prefix = "cleanup/"
+    status = "Enabled"
     expiration {
       days = 1
     }
   }
+}
+
+resource "aws_s3_bucket_policy" "bucketdev" {
+  bucket = var.aws_bucket_name
   policy = <<EOF
 {
   "Id": "MakePublic",
@@ -28,8 +40,16 @@ resource "aws_s3_bucket" "bucketdev" {
   ]
 }
 EOF
-  website {
-    index_document = "index.html"
-    error_document = "index.html"
+}
+
+resource "aws_s3_bucket_website_configuration" "bucketdev" {
+  bucket = var.aws_bucket_name
+
+  index_document {
+    suffix = "index.html"
+  }
+
+  error_document {
+    key = "index.html"
   }
 }
