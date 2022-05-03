@@ -7,14 +7,14 @@ resource "aws_s3_bucket" "bucketdev" {
 
 resouce "aws_s3_bucket_acl" "bucketdev" {
   bucket = var.aws_bucket_name
-  acl = "public-read"
+  acl    = "public-read"
 }
 
 resource "aws_s3_bucket_lifecycle_configuration" "bucketdev" {
   bucket = var.aws_bucket_name
   rule {
-    id      = "cleanup"
-    prefix  = "cleanup/"
+    id     = "cleanup"
+    prefix = "cleanup/"
     status = "Enabled"
     expiration {
       days = 1
@@ -44,7 +44,7 @@ EOF
 
 resouce "aws_s3_bucket_website_configuration" "bucketdev" {
   bucket = var.aws_bucket_name
-  
+
   index_document {
     suffix = "index.html"
   }
