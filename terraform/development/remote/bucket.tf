@@ -1,9 +1,13 @@
 resource "aws_s3_bucket" "bucketdev" {
   bucket = var.aws_bucket_name
-  acl    = "public-read"
   tags = {
     Environment = var.env
   }
+}
+
+resouce "aws_s3_bucket_acl" "bucketdev" {
+  bucket = var.aws_bucket_name
+  acl = "public-read"
 }
 
 resource "aws_s3_bucket_lifecycle_configuration" "bucketdev" {
