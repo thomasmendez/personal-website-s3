@@ -26,14 +26,18 @@ const Footer = (props) => {
       <Grid container item justifyContent="center" xs={3} sm={6}>
         <Grid item justifyContent="center" display={width > BREAKPOINTSTORYBOOKSMALLMOBILEL && 'flex'} xs={12}>
           <FooterLinks
-            hrefLink='thomasamendez.com'
+            hrefLink='https://thomasamendez.com'
             img={reactImg}
             text='Created with React!'
           />
         </Grid>
-        <Grid item justifyContent="center" display={width > BREAKPOINTSTORYBOOKSMALLMOBILEL && 'flex'} xs={12}>
+        <Grid item justifyContent="center" display={width > BREAKPOINTSTORYBOOKSMALLMOBILEL && 'flex'} xs={12}
+          sx={{
+            pt: 1,
+          }}
+        >
           <FooterLinks
-            hrefLink='vue.thomasamendez.com'
+            hrefLink='https://vue.thomasamendez.com'
             img={vueImg}
             text='Check out the Vue version!'
           />
