@@ -1,21 +1,47 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Grid, Typography } from '@mui/material';
+import useWindowDimensions from '../../utils/windowDimensions';
+import { BREAKPOINTSTORYBOOKSMALLMOBILEL } from '../../utils/breakpoints';
 import ContactMethod from '../ContactMethod';
+import FooterLinks from './FooterLinks';
+import reactImg from '../../assets/react.png';
+import vueImg from '../../assets/vue.jpg';
 
 const Footer = (props) => {
   const { contacts } = props;
-  return(
-    <Grid container sx={{borderTop: 'solid 1px gray'}} mt={3} pt={3} pb={3} direction="row" justifyContent="flex-end" alignItems="center">
-      <Grid item xs={2} sm={2}/>
-      <Grid item xs={5} sm={7}>
+  const { width } = useWindowDimensions();
+  return (
+    <Grid container sx={{ borderTop: 'solid 1px gray' }} mt={3} pt={3} pb={3} direction="row" justifyContent="flex-end" alignItems="center">
+      <Grid item xs={2} sm={2} />
+      <Grid item xs={2} sm={1}>
         <Typography>
-          © 
+          ©
           {' '}
           {new Date().getFullYear()}
           {' '}
           Copyright
         </Typography>
+      </Grid>
+      <Grid container item justifyContent="center" xs={3} sm={6}>
+        <Grid item justifyContent="center" display={width > BREAKPOINTSTORYBOOKSMALLMOBILEL && 'flex'} xs={12}>
+          <FooterLinks
+            hrefLink='https://thomasamendez.com'
+            img={reactImg}
+            text='Created with React!'
+          />
+        </Grid>
+        <Grid item justifyContent="center" display={width > BREAKPOINTSTORYBOOKSMALLMOBILEL && 'flex'} xs={12}
+          sx={{
+            pt: 1,
+          }}
+        >
+          <FooterLinks
+            hrefLink='https://vue.thomasamendez.com'
+            img={vueImg}
+            text='Check out the Vue version!'
+          />
+        </Grid>
       </Grid>
       <Grid container item xs={3} sm={3} direction="row" spacing={1}>
         {contacts.map((contact, index) => (
@@ -28,7 +54,7 @@ const Footer = (props) => {
           />
         ))}
       </Grid>
-      <Grid item xs={2} sm={0}/>
+      <Grid item xs={2} sm={0} />
     </Grid>
   );
 };
