@@ -26,7 +26,7 @@ const Footer = (props) => {
       <Grid container item justifyContent="center" xs={3} sm={6}>
         <Grid item justifyContent="center" display={width > BREAKPOINTSTORYBOOKSMALLMOBILEL && 'flex'} xs={12}>
           <FooterLinks
-            hrefLink='https://thomasamendez.com'
+            hrefLink='https://github.com/thomasmendez/personal-website-s3'
             img={reactImg}
             text='Created with React!'
           />
