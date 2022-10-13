@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-useless-fragment */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Grid, Typography } from '@mui/material';
@@ -12,50 +13,97 @@ const Footer = (props) => {
   const { contacts } = props;
   const { width } = useWindowDimensions();
   return (
-    <Grid container sx={{ borderTop: 'solid 1px gray' }} mt={3} pt={3} pb={3} direction="row" justifyContent="flex-end" alignItems="center">
-      <Grid item xs={2} sm={2} />
-      <Grid item xs={2} sm={1}>
-        <Typography>
-          ©
-          {' '}
-          {new Date().getFullYear()}
-          {' '}
-          Copyright
-        </Typography>
-      </Grid>
-      <Grid container item justifyContent="center" xs={3} sm={6}>
-        <Grid item justifyContent="center" display={width > BREAKPOINTSTORYBOOKSMALLMOBILEL && 'flex'} xs={12}>
-          <FooterLinks
-            hrefLink='https://github.com/thomasmendez/personal-website-s3'
-            img={reactImg}
-            text='Created with React!'
-          />
-        </Grid>
-        <Grid item justifyContent="center" display={width > BREAKPOINTSTORYBOOKSMALLMOBILEL && 'flex'} xs={12}
-          sx={{
+    <>
+      {width > BREAKPOINTSTORYBOOKSMALLMOBILEL ? (
+        <Grid container sx={{ borderTop: 'solid 1px gray' }} mt={3} pt={3} pb={3} direction="row" justifyContent="flex-end" alignItems="center">
+          <Grid item xs={2} sm={2} />
+          <Grid item xs={2} sm={1}>
+            <Typography>
+              ©
+              {' '}
+              {new Date().getFullYear()}
+              {' '}
+              Copyright
+            </Typography>
+          </Grid>
+          <Grid container item justifyContent="center" xs={3} sm={6}>
+            <Grid item justifyContent="center" display={width > BREAKPOINTSTORYBOOKSMALLMOBILEL && 'flex'} xs={12}>
+              <FooterLinks
+                hrefLink='https://github.com/thomasmendez/personal-website-s3'
+                img={reactImg}
+                text='Created with React!'
+              />
+            </Grid>
+            <Grid item justifyContent="center" display={width > BREAKPOINTSTORYBOOKSMALLMOBILEL && 'flex'} xs={12}
+              sx={{
             pt: 1,
-          }}
-        >
-          <FooterLinks
-            hrefLink='https://vue.thomasamendez.com'
-            img={vueImg}
-            text='Check out the Vue version!'
-          />
+              }}
+            >
+              <FooterLinks
+                hrefLink='https://vue.thomasamendez.com'
+                img={vueImg}
+                text='Check out the Vue version!'
+              />
+            </Grid>
+          </Grid>
+          <Grid container item xs={3} sm={3} direction="row" spacing={1}>
+            {contacts.map((contact, index) => (
+              <ContactMethod
+                key={index}
+                direction='row'
+                contactMethodName={contact.contactMethod}
+                icon={contact.icon}
+                hrefLink={contact.hrefLink}
+              />
+        ))}
+          </Grid>
+          <Grid item xs={2} sm={0} />
+        </Grid>
+    ) : (
+      <Grid container sx={{ borderTop: 'solid 1px gray' }} mt={3} pt={3} pb={3} direction="row" justifyContent="flex-end" alignItems="center" spacing={2}>
+        <Grid item justifyContent="center" display="flex" xs={12}>
+          <Typography>
+            ©
+            {' '}
+            {new Date().getFullYear()}
+            {' '}
+            Copyright
+          </Typography>
+        </Grid>
+        <Grid container item justifyContent="center" display="flex" xs={12}>
+          <Grid item justifyContent="center" display="flex" xs={12}>
+            <FooterLinks
+              hrefLink='https://github.com/thomasmendez/personal-website-s3'
+              img={reactImg}
+              text='Created with React!'
+            />
+          </Grid>
+          <Grid item justifyContent="center" display="flex" xs={12}
+            sx={{
+            pt: 1,
+            }}
+          >
+            <FooterLinks
+              hrefLink='https://vue.thomasamendez.com'
+              img={vueImg}
+              text='Check out the Vue version!'
+            />
+          </Grid>
+        </Grid>
+        <Grid container item xs={12} direction="row" justifyContent="center" display="flex" spacing={1}>
+          {contacts.map((contact, index) => (
+            <ContactMethod
+              key={index}
+              direction='row'
+              contactMethodName={contact.contactMethod}
+              icon={contact.icon}
+              hrefLink={contact.hrefLink}
+            />
+        ))}
         </Grid>
       </Grid>
-      <Grid container item xs={3} sm={3} direction="row" spacing={1}>
-        {contacts.map((contact, index) => (
-          <ContactMethod
-            key={index}
-            direction='row'
-            contactMethodName={contact.contactMethod}
-            icon={contact.icon}
-            hrefLink={contact.hrefLink}
-          />
-        ))}
-      </Grid>
-      <Grid item xs={2} sm={0} />
-    </Grid>
+    )}
+    </>
   );
 };
 
