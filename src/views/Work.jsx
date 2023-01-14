@@ -18,9 +18,12 @@ const EXPERIENCE = [
     jobRole: 'Software Engineer',
     jobDescription: [
       'Works with team through full software development life cycle in order to deliver quarterly features and deliverables based on customer needs',
-      'Focuses on delivering front-end research, design, and features for internal team product',
-      'Works in the development of back-end GraphQL server features for internal team product',
-      'Created Python package intended to report non-inclusive words present in a directory and suggest alternative words',
+      'Focuses on delivering front-end research, design, and features for internal team product microapps in React and Vue',
+      'Works with Azure services, Microsoft Graph API, and added Microsoft Auth to front-end and backend applications',
+      'Created Natural Language Processing Python package intended to report non-inclusive words in project repositories',
+      'Ensures all front-end and back-end features have adequate unit test, integration test, end-to-end test, and fulfills story requirements',
+      'Mentors and leads associate and junior engineers in developing highly efficient and maintainable features while following code standards',
+      'Designs and documents expected features for team to develop for intended product',
     ],
   },
   {
@@ -38,6 +41,7 @@ const EXPERIENCE = [
     jobDescription: [
       'Prototyped persistent world-scale augmented reality using ARCore and ARKit',
       'Prototyped Instagram like gestures for 3D object/text manipulation in ARKit',
+      'Worked with various Android and iOS libraries to develop features involving storage, sensors, geolocation, camera, and visual mapping',
       'Designed and documented reusable modules for Android and iOS prototypes using MVC architecture',
       'Used agile methodology and rapid prototyping practices',
     ],
