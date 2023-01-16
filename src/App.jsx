@@ -15,6 +15,8 @@ import ResumePdf from '../src/assets/ResumeThomasMendez.pdf';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
+import VueApp from './remotes/VueApp';
+
 const CONTACTS = [
   {
     contactMethod: 'LinkedIn',
@@ -55,6 +57,7 @@ const AppRoutes = () => {
     { path: '/softwareEngineering', exact: true, element: <SoftwareEngineering /> },
     { path: '/vrar', exact: true, element: <VRAR /> },
     { path: '/resume', exact: true, element: <Resume />},
+    { path: '/vue', exact: true, element: <VueApp />},
     { path: '*', element: <ErrorView errorCode={404} /> },
   ]);
   return routes;

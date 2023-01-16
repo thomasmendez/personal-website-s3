@@ -1,19 +1,25 @@
 const path = require('path');
+const { VueLoaderPlugin } = require('vue-loader');
+const { ModuleFederationPlugin } = require('webpack').container;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
+const packageJson = require('./package.json');
 
 module.exports = {
   mode: 'development',
   entry: path.join(__dirname, 'src', 'index.js'),
+  // output: {
+  //   path: path.join(__dirname, 'dist'),
+  // },
   output: {
-    path: path.join(__dirname, 'dist'),
+    publicPath: 'http://localhost:7000/',
   },
   watchOptions: {
     aggregateTimeout: 10000,
   },
   devServer: {
-    port: 8080,
+    port: 7000,
     hot: true,
     open: true,
     historyApiFallback: true,
@@ -30,6 +36,10 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.vue$/,
+        use: 'vue-loader',
+      },
       {
         test: /\.(jsx|js)$/,
         include: path.resolve(__dirname, 'node_modules'),
@@ -50,9 +60,21 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', '.vue'],
   },
   plugins: [
+    new ModuleFederationPlugin({
+      name: 'container',
+      remotes: {
+        vueApp: 'vue@http://localhost:8082/remoteEntry.js',
+      },
+      // shared: packageJson.dependencies,
+      // shared: {react: {singleton: true}, 'react-dom': {singleton: true}},
+      // shared: {
+      //   'react-dom': { singleton: true },
+      // },
+      shared: packageJson.dependencies,
+    }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'public', 'index.html'),
       favicon: path.join(__dirname, 'public', 'favicon.ico'),
@@ -75,5 +97,6 @@ module.exports = {
       path: './.env',
       safe: true,
     }),
+    new VueLoaderPlugin(),
   ],
 };
