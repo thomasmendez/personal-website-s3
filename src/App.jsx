@@ -1,11 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {
   BrowserRouter as Router,
   useRoutes,
 } from 'react-router-dom';
 import { LinkedIn, GitHub, Email } from '@mui/icons-material';
 import TrackRoute from './analytics/TrackRoute';
+import WithTitle from './hoc/withTitle';
 import ErrorView from './views/ErrorView';
 import About from './views/About';
 import Skills_Tools from './views/SkillsTools';
@@ -16,8 +16,6 @@ import Resume from './views/Resume';
 import ResumePdf from '../src/assets/ResumeThomasMendez.pdf';
 import Header from './components/Header';
 import Footer from './components/Footer';
-
-/* eslint react/prop-types: 0 */
 
 const CONTACTS = [
   {
@@ -48,21 +46,6 @@ const HEADERROUTES = [
   { id: 7, name: 'Resume', to: 'resume', link: ResumePdf},
   { id: 8, name: 'Storybook', link: process.env.STORYBOOK_URL},
 ];
-
-const WithTitle = WrappedComponent => {
-  const MyComp = (props) => {
-    const title = props.title + ' | ' + 'Thomas A. Mendez';
-    return (
-      <WrappedComponent {...props} title={title} />
-    );
-  };
-  MyComp.displayName = 'HOC';
-  return MyComp;
-};
-
-WithTitle.propTypes = {
-  title: PropTypes.string.isRequired,
-};
 
 const AboutWithTitle = WithTitle(About);
 const Skills_ToolsWithTitle = WithTitle(Skills_Tools);
