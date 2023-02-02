@@ -5,7 +5,7 @@ import useWindowDimensions from '../utils/windowDimensions';
 
 const ErrorView = (props) => {
   const { errorCode, title } = props;
-  useEffect(() => document.title = title, []);
+  useEffect(() => document.title = title, [title]);
   const { height } = useWindowDimensions();
   const errorPageHeight = height * 0.75;
   let message = '';

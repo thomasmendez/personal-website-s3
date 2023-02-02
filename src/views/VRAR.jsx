@@ -114,7 +114,7 @@ const PROJECTS = [
 ];
 
 const VRAR = (props) => {
-  useEffect(() => document.title = props.title, []);
+  useEffect(() => document.title = props.title, [props.title]);
   return(
     <Grid
       container

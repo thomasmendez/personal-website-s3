@@ -8,7 +8,7 @@ import AboutMe from '../components/About/AboutMe';
 import Contact from '../components/About/Contact';
 
 const About = (props) => {
-  useEffect(() => document.title = props.title, []);
+  useEffect(() => document.title = props.title, [props.title]);
   const { contacts } = props;
   return(
     <Grid container spacing={3}>

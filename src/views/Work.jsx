@@ -84,7 +84,7 @@ const EXPERIENCE = [
 ];
 
 const Work = (props) => {
-  useEffect(() => document.title = props.title, []);
+  useEffect(() => document.title = props.title, [props.title]);
   return(
     <Grid
       container
