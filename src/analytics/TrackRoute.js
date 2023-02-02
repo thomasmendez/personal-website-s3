@@ -1,14 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { useLocation } from 'react-router-dom';
-import GA4React, { useGA4React } from 'ga-4-react';
-
-// const TRACKING_ID = 'G-7RPZJ5Y9EK';
-const TRACKING_ID = 'G-G55CRQQW6N';
-const ga4react = new GA4React(TRACKING_ID);
+import ga4React from './ga4React';
 
 async function trackPage(location) {
-  ga4react.initialize().then((ga4) => {
+  ga4React.initialize().then((ga4) => {
     ga4.pageview(location.pathname);
     ga4.gtag('event',location.pathname,'path'); // or your custom gtag event
     console.info(ga4);
@@ -20,10 +16,6 @@ async function trackPage(location) {
 const TrackRoute = ({children}) => {
   const location = useLocation();
   console.info(location.pathname);
-  
-  // useEffect(() => {
-  //   trackPage();
-  // }, []);
 
   trackPage(location);
 
