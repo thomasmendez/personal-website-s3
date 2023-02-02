@@ -12,3 +12,7 @@ export default {
 const Template = args => <Resume {...args}/>;
 
 export const ResumeView = Template.bind({});
+
+ResumeView.args = {
+  title: 'Resume | Thomas A. Mendez',
+};

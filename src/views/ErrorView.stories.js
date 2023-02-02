@@ -13,5 +13,6 @@ const Template = args => <ErrorView {...args}/>;
 
 export const ErrorViewView = Template.bind({});
 ErrorViewView.args = {
+  title: '404 | Thomas A. Mendez',
   errorCode: 404,
 };

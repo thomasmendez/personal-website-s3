@@ -15,3 +15,7 @@ export default {
 const Template = args => <SkillsTools {...args}/>;
 
 export const SkillsToolsView = Template.bind({});
+
+SkillsToolsView.args = {
+  title: 'Skills & Tools | Thomas A. Mendez',
+};

@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Grid, Typography } from '@mui/material';
 import useWindowDimensions from '../utils/windowDimensions';
 
-const ErrorView = ({ errorCode }) => {
+const ErrorView = (props) => {
+  const { errorCode, title } = props;
+  useEffect(() => document.title = title, []);
   const { height } = useWindowDimensions();
   const errorPageHeight = height * 0.75;
   let message = '';
@@ -25,6 +27,7 @@ const ErrorView = ({ errorCode }) => {
 };
 
 ErrorView.propTypes = {
+  title: PropTypes.string.isRequired,
   errorCode: PropTypes.number.isRequired,
 };
 

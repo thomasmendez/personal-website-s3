@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { Grid } from '@mui/material';
 import TitleHeader from '../components/TitleHeader';
 import SkillsTools from '../components/SkillsTools';
@@ -23,21 +24,28 @@ const TOOLS = [
   {'Data Mining': ['Classification', 'Clustering', 'Association Analysis', 'Dimensionality Reduction']},
 ];
 
-const SkillsToolsView = () => (
-  <Grid
-    container
-    spacing={3}
-  >
-    <TitleHeader titleName={'Skills & Tools'}/>
-    <Grid container item>
-      <Grid container item spacing={{ xs: 3, md: 3 }} ml={{ xs: 5, md: 10, lg: 30, xl: 50 }} mr={{ xs: 5, md: 10, lg: 30, xl: 50 }}>
-        <SkillsTools
-          skills={SKILLS}
-          tools={TOOLS}
-        />
+const SkillsToolsView = (props) => {
+  useEffect(() => document.title = props.title, []);
+  return(
+    <Grid
+      container
+      spacing={3}
+    >
+      <TitleHeader titleName={'Skills & Tools'}/>
+      <Grid container item>
+        <Grid container item spacing={{ xs: 3, md: 3 }} ml={{ xs: 5, md: 10, lg: 30, xl: 50 }} mr={{ xs: 5, md: 10, lg: 30, xl: 50 }}>
+          <SkillsTools
+            skills={SKILLS}
+            tools={TOOLS}
+          />
+        </Grid>
       </Grid>
     </Grid>
-  </Grid>
-);
+  );
+};
+
+SkillsToolsView.propTypes = {
+  title: PropTypes.string.isRequired,
+};
 
 export default SkillsToolsView;

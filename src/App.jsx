@@ -1,9 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   BrowserRouter as Router,
   useRoutes,
 } from 'react-router-dom';
 import { LinkedIn, GitHub, Email } from '@mui/icons-material';
+import TrackRoute from './analytics/TrackRoute';
 import ErrorView from './views/ErrorView';
 import About from './views/About';
 import Skills_Tools from './views/SkillsTools';
@@ -14,6 +16,8 @@ import Resume from './views/Resume';
 import ResumePdf from '../src/assets/ResumeThomasMendez.pdf';
 import Header from './components/Header';
 import Footer from './components/Footer';
+
+/* eslint react/prop-types: 0 */
 
 const CONTACTS = [
   {
@@ -45,17 +49,40 @@ const HEADERROUTES = [
   { id: 8, name: 'Storybook', link: process.env.STORYBOOK_URL},
 ];
 
+const WithTitle = WrappedComponent => {
+  const MyComp = (props) => {
+    const title = props.title + ' | ' + 'Thomas A. Mendez';
+    return (
+      <WrappedComponent {...props} title={title} />
+    );
+  };
+  MyComp.displayName = 'HOC';
+  return MyComp;
+};
+
+WithTitle.propTypes = {
+  title: PropTypes.string.isRequired,
+};
+
+const AboutWithTitle = WithTitle(About);
+const Skills_ToolsWithTitle = WithTitle(Skills_Tools);
+const WorkWithTitle = WithTitle(Work);
+const SoftwareEngineeringWithTitle = WithTitle(SoftwareEngineering);
+const VRARWithTitle = WithTitle(VRAR);
+const ResumeWithTitle = WithTitle(Resume);
+const ErrorViewWithTitle = WithTitle(ErrorView);
+
 const AppRoutes = () => {
+  const HOMEPAGE = 'Thomas A. Mendez';
   const routes = useRoutes([
-    { path: '/', exact: true, element: <About contacts={CONTACTS}/> },
-    { path: '/home', exact: true, element: <About contacts={CONTACTS}/> },
-    { path: '/about', exact: true, element: <About contacts={CONTACTS}/> },
-    { path: '/skillsTools', exact: true, element: <Skills_Tools /> },
-    { path: '/work', exact: true, element: <Work /> },
-    { path: '/softwareEngineering', exact: true, element: <SoftwareEngineering /> },
-    { path: '/vrar', exact: true, element: <VRAR /> },
-    { path: '/resume', exact: true, element: <Resume />},
-    { path: '*', element: <ErrorView errorCode={404} /> },
+    { path: '/', exact: true, element: <About contacts={CONTACTS} title={HOMEPAGE}/> },
+    { path: '/about', exact: true, element: <AboutWithTitle contacts={CONTACTS} title={'About'}/> },
+    { path: '/skillsTools', exact: true, element: <Skills_ToolsWithTitle title={'Skills & Tools'}/> },
+    { path: '/work', exact: true, element: <WorkWithTitle title={'Work'}/> },
+    { path: '/softwareEngineering', exact: true, element: <SoftwareEngineeringWithTitle title={'Software Engineering'}/>},
+    { path: '/vrar', exact: true, element: <VRARWithTitle title={'VR & AR'}/> },
+    { path: '/resume', exact: true, element: <ResumeWithTitle title={'Resume'}/>},
+    { path: '*', element: <ErrorViewWithTitle errorCode={404} title={'404'}/> },
   ]);
   return routes;
 };
@@ -63,9 +90,11 @@ const AppRoutes = () => {
 const App = () => {
   return (
     <Router>
-      <Header backgroundColor='grey' routes={HEADERROUTES}/>
-      <AppRoutes />
-      <Footer contacts={CONTACTS}/>
+      <TrackRoute>
+        <Header backgroundColor='grey' routes={HEADERROUTES}/>
+        <AppRoutes />
+        <Footer contacts={CONTACTS}/>
+      </TrackRoute>
     </Router>
   );
 };

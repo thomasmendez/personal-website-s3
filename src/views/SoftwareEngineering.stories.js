@@ -15,3 +15,7 @@ export default {
 const Template = args => <SoftwareEngineering {...args}/>;
 
 export const SoftwareEngineeringView = Template.bind({});
+
+SoftwareEngineeringView.args = {
+  title: 'Software Engineering | Thomas A. Mendez',
+};

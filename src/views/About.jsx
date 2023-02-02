@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Grid } from '@mui/material';
 
@@ -8,6 +8,7 @@ import AboutMe from '../components/About/AboutMe';
 import Contact from '../components/About/Contact';
 
 const About = (props) => {
+  useEffect(() => document.title = props.title, []);
   const { contacts } = props;
   return(
     <Grid container spacing={3}>
@@ -25,6 +26,7 @@ const About = (props) => {
 };
 
 About.propTypes = {
+  title: PropTypes.string.isRequired,
   contacts: PropTypes.arrayOf(
     PropTypes.shape({
       contactMethod: PropTypes.string.isRequired,
