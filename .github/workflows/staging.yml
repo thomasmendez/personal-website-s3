@@ -1,17 +1,17 @@
-name: Development.yml CI
+name: Staging.yml CI
 on:
   push:
-    branches-ignore:
+    branches:
       - main
 
 jobs:
   pre_build:
     runs-on: ubuntu-latest
     env:
-      AWS_BUCKET_NAME: thomasamendez-dev
-      DIST_NAME: dist-dev
+      AWS_BUCKET_NAME: thomasamendez-stg
+      DIST_NAME: dist-stg
       DIST_PATH: dist/
-      DIST_NAME_STORYBOOK: storybook-static-dev
+      DIST_NAME_STORYBOOK: storybook-static-stg
       DIST_PATH_STORYBOOK: storybook-static/
     outputs:
       AWS_BUCKET_NAME: ${{ steps.bucket_name.outputs.bucket }}
@@ -21,16 +21,10 @@ jobs:
       DIST_NAME_STORYBOOK: ${{ env.DIST_NAME_STORYBOOK }}
       DIST_PATH_STORYBOOK: ${{ env.DIST_PATH_STORYBOOK }}
     steps:
-      - name: "Create bucket_name_suffix Output"
-        id: bucket_name_suffix
-        run: |
-          suffix=$(echo ${{ github.ref_name }} | sed 's/\//-/')
-          echo "suffix=$suffix" >> $GITHUB_OUTPUT
-
       - name: "Create bucket_name Output"
         id: bucket_name
         run: |
-          bucket_name=$(echo ${{ env.AWS_BUCKET_NAME }}-${{ steps.bucket_name_suffix.outputs.suffix }})
+          bucket_name=$(echo ${{ env.AWS_BUCKET_NAME }})
           echo "bucket=$bucket_name" >> $GITHUB_OUTPUT
 
       - name: "Create bucket_name_storybook Output"
@@ -54,21 +48,6 @@ jobs:
       - name: Install Packages
         run: yarn install --immutable
 
-      - name: Create .env
-        run: |
-          chmod +x "${GITHUB_WORKSPACE}/.github/env.sh"
-          sh ${GITHUB_WORKSPACE}/.github/env.sh
-        shell: bash
-
-      - name: ESLint
-        run: yarn lint
-
-      - name: Prettier
-        run: yarn pretty
-
-      - name: Test
-        run: yarn test
-
       - name: Build App
         run: yarn run build
 
@@ -79,35 +58,13 @@ jobs:
           path: ${{ needs.pre_build.outputs.DIST_PATH }}
           retention-days: 1
 
-      - name: Build Storybook
-        run: yarn build-storybook
-
-      - name: Create storybook-static Artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: ${{ needs.pre_build.outputs.DIST_NAME }}
-          path: ${{ needs.pre_build.outputs.DIST_NAME }}
-          retention-days: 1
-
   deploy:
     needs: [pre_build, build]
-    uses: thomasmendez/workflows/.github/workflows/s3_dev_deployment.yml@main
+    uses: thomasmendez/workflows/.github/workflows/s3_stg_deployment.yml@main
     with:
       AWS_BUCKET_NAME: ${{ needs.pre_build.outputs.AWS_BUCKET_NAME }}
       DIST_NAME: ${{ needs.pre_build.outputs.DIST_NAME }}
       DIST_PATH: ${{ needs.pre_build.outputs.DIST_PATH }}
-    secrets:
-      TF_API_TOKEN: ${{ secrets.TF_API_TOKEN }}
-      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-
-  deploy_storybook:
-    needs: [pre_build, build]
-    uses: thomasmendez/workflows/.github/workflows/s3_dev_deployment.yml@main
-    with:
-      AWS_BUCKET_NAME: ${{ needs.pre_build.outputs.AWS_BUCKET_NAME_STORYBOOK }}
-      DIST_NAME: ${{ needs.pre_build.outputs.DIST_NAME_STORYBOOK }}
-      DIST_PATH: ${{ needs.pre_build.outputs.DIST_PATH_STORYBOOK }}
     secrets:
       TF_API_TOKEN: ${{ secrets.TF_API_TOKEN }}
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
