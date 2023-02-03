@@ -31,7 +31,7 @@ jobs:
       - name: "Create bucket_name_storybook Output"
         id: bucket_name_storybook
         run: |
-          storybook=$(echo ${{ steps.bucket_name.outputs.bucket }}-storybook)
+          storybook=$(echo storybook.${{ steps.bucket_name.outputs.bucket }})
           echo "storybook=$storybook" >> $GITHUB_OUTPUT
   build:
     runs-on: ubuntu-latest
