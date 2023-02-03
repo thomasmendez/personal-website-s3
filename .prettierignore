@@ -2,3 +2,5 @@ package.json
 dist/*
 .yarnrc.yml
 .yarn/*
+
+workflows/*
