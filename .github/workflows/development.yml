@@ -87,8 +87,8 @@ jobs:
       - name: Create storybook-static Artifact
         uses: actions/upload-artifact@v3
         with:
-          name: ${{ needs.pre_build.outputs.DIST_NAME }}
-          path: ${{ needs.pre_build.outputs.DIST_NAME }}
+          name: ${{ needs.pre_build.outputs.DIST_NAME_STORYBOOK }}
+          path: ${{ needs.pre_build.outputs.DIST_NAME_STORYBOOK }}
           retention-days: 1
 
   deploy:
