@@ -35,6 +35,8 @@ jobs:
           echo "storybook=$storybook" >> $GITHUB_OUTPUT
   build:
     runs-on: ubuntu-latest
+    env:
+      STORYBOOK_URL: http://${{ needs.pre_build.outputs.AWS_BUCKET_NAME_STORYBOOK }}.s3-website.us-east-2.amazonaws.com
     needs: pre_build
     steps:
       - name: Checkout
