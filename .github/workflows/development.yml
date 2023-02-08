@@ -13,7 +13,7 @@ jobs:
       DIST_PATH: dist/
       DIST_NAME_STORYBOOK: storybook-static-dev
       DIST_PATH_STORYBOOK: storybook-static/
-      GOOGLE_ANALYTICS_TRACKING_ID: "G-G55CRQQW6N"
+      GOOGLE_ANALYTICS_TRACKING_ID: "G-1M9Y5RXPSH"
     outputs:
       AWS_BUCKET_NAME: ${{ steps.bucket_name.outputs.bucket }}
       AWS_BUCKET_NAME_STORYBOOK: ${{ steps.bucket_name_storybook.outputs.storybook }}
