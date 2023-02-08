@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useLocation } from 'react-router-dom';
 import ga4React from './ga4React';
@@ -17,7 +17,9 @@ const TrackRoute = ({children}) => {
   const location = useLocation();
   console.info(location.pathname);
 
-  trackPage(location);
+  useEffect(() => {
+    trackPage(location);
+  }, [location]);
 
   return(
     <div>
