@@ -9938,13 +9938,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ga-4-react@npm:^0.1.281":
-  version: 0.1.281
-  resolution: "ga-4-react@npm:0.1.281"
-  checksum: 83a6e5f040d285af734523b67f08a5924ff6cb02109839df6a26c17029679bd4eb32ab301646fdf6dad579b7f7dac681a166f5f7affc583d45a8b16ce3de4f37
-  languageName: node
-  linkType: hard
-
 "gauge@npm:^3.0.0":
   version: 3.0.1
   resolution: "gauge@npm:3.0.1"
@@ -15143,6 +15136,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-ga4@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "react-ga4@npm:2.0.0"
+  checksum: 7cb9f2d7863466f429e0256ed4903c84e3e7c3f21d913455716555ea7649240d142ad36586994daece67d1a8383482f58a35898d432fb43e4884ce0234235e68
+  languageName: node
+  linkType: hard
+
 "react-helmet-async@npm:^1.0.7":
   version: 1.1.2
   resolution: "react-helmet-async@npm:1.1.2"
@@ -15320,7 +15320,6 @@ __metadata:
     eslint-plugin-react-hooks: ^4.2.0
     eslint-webpack-plugin: ^3.1.1
     file-loader: ^6.2.0
-    ga-4-react: ^0.1.281
     html-webpack-plugin: ^5.5.0
     husky: ^7.0.4
     jest: ^27.3.1
@@ -15330,6 +15329,7 @@ __metadata:
     prop-types: ^15.7.2
     react: ^17.0.2
     react-dom: ^17.0.2
+    react-ga4: ^2.0.0
     react-router-dom: ^6.0.2
     storybook-color-picker: ^2.1.5
     typescript: ^4.5.2

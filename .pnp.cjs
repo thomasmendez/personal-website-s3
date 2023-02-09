@@ -66,7 +66,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-react-hooks", "virtual:7b267a74aa77fbffac560d43d2e54202d41290498f2f35562f90f8efcc35d819136b00ffaac6261ce4447b6f176870533ff810e540e9e1d4c2316e0f660765f2#npm:4.2.0"],
             ["eslint-webpack-plugin", "virtual:7b267a74aa77fbffac560d43d2e54202d41290498f2f35562f90f8efcc35d819136b00ffaac6261ce4447b6f176870533ff810e540e9e1d4c2316e0f660765f2#npm:3.1.1"],
             ["file-loader", "virtual:7b267a74aa77fbffac560d43d2e54202d41290498f2f35562f90f8efcc35d819136b00ffaac6261ce4447b6f176870533ff810e540e9e1d4c2316e0f660765f2#npm:6.2.0"],
-            ["ga-4-react", "npm:0.1.281"],
             ["html-webpack-plugin", "virtual:7b267a74aa77fbffac560d43d2e54202d41290498f2f35562f90f8efcc35d819136b00ffaac6261ce4447b6f176870533ff810e540e9e1d4c2316e0f660765f2#npm:5.5.0"],
             ["husky", "npm:7.0.4"],
             ["jest", "virtual:7b267a74aa77fbffac560d43d2e54202d41290498f2f35562f90f8efcc35d819136b00ffaac6261ce4447b6f176870533ff810e540e9e1d4c2316e0f660765f2#npm:27.3.1"],
@@ -76,6 +75,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["prop-types", "npm:15.7.2"],
             ["react", "npm:17.0.2"],
             ["react-dom", "virtual:7b267a74aa77fbffac560d43d2e54202d41290498f2f35562f90f8efcc35d819136b00ffaac6261ce4447b6f176870533ff810e540e9e1d4c2316e0f660765f2#npm:17.0.2"],
+            ["react-ga4", "npm:2.0.0"],
             ["react-router-dom", "virtual:7b267a74aa77fbffac560d43d2e54202d41290498f2f35562f90f8efcc35d819136b00ffaac6261ce4447b6f176870533ff810e540e9e1d4c2316e0f660765f2#npm:6.0.2"],
             ["storybook-color-picker", "npm:2.1.5"],
             ["typescript", "patch:typescript@npm%3A4.5.2#~builtin<compat/typescript>::version=4.5.2&hash=ddd1e8"],
@@ -14025,15 +14025,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
-      ["ga-4-react", [
-        ["npm:0.1.281", {
-          "packageLocation": "./.yarn/cache/ga-4-react-npm-0.1.281-97dfa6d198-83a6e5f040.zip/node_modules/ga-4-react/",
-          "packageDependencies": [
-            ["ga-4-react", "npm:0.1.281"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
       ["gauge", [
         ["npm:2.7.4", {
           "packageLocation": "./.yarn/cache/gauge-npm-2.7.4-2189a73529-a89b53cee6.zip/node_modules/gauge/",
@@ -19954,6 +19945,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["react-ga4", [
+        ["npm:2.0.0", {
+          "packageLocation": "./.yarn/cache/react-ga4-npm-2.0.0-95ba003d38-7cb9f2d786.zip/node_modules/react-ga4/",
+          "packageDependencies": [
+            ["react-ga4", "npm:2.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["react-helmet-async", [
         ["npm:1.1.2", {
           "packageLocation": "./.yarn/cache/react-helmet-async-npm-1.1.2-48bc383cd0-8db5d875bb.zip/node_modules/react-helmet-async/",
@@ -20265,7 +20265,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-react-hooks", "virtual:7b267a74aa77fbffac560d43d2e54202d41290498f2f35562f90f8efcc35d819136b00ffaac6261ce4447b6f176870533ff810e540e9e1d4c2316e0f660765f2#npm:4.2.0"],
             ["eslint-webpack-plugin", "virtual:7b267a74aa77fbffac560d43d2e54202d41290498f2f35562f90f8efcc35d819136b00ffaac6261ce4447b6f176870533ff810e540e9e1d4c2316e0f660765f2#npm:3.1.1"],
             ["file-loader", "virtual:7b267a74aa77fbffac560d43d2e54202d41290498f2f35562f90f8efcc35d819136b00ffaac6261ce4447b6f176870533ff810e540e9e1d4c2316e0f660765f2#npm:6.2.0"],
-            ["ga-4-react", "npm:0.1.281"],
             ["html-webpack-plugin", "virtual:7b267a74aa77fbffac560d43d2e54202d41290498f2f35562f90f8efcc35d819136b00ffaac6261ce4447b6f176870533ff810e540e9e1d4c2316e0f660765f2#npm:5.5.0"],
             ["husky", "npm:7.0.4"],
             ["jest", "virtual:7b267a74aa77fbffac560d43d2e54202d41290498f2f35562f90f8efcc35d819136b00ffaac6261ce4447b6f176870533ff810e540e9e1d4c2316e0f660765f2#npm:27.3.1"],
@@ -20275,6 +20274,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["prop-types", "npm:15.7.2"],
             ["react", "npm:17.0.2"],
             ["react-dom", "virtual:7b267a74aa77fbffac560d43d2e54202d41290498f2f35562f90f8efcc35d819136b00ffaac6261ce4447b6f176870533ff810e540e9e1d4c2316e0f660765f2#npm:17.0.2"],
+            ["react-ga4", "npm:2.0.0"],
             ["react-router-dom", "virtual:7b267a74aa77fbffac560d43d2e54202d41290498f2f35562f90f8efcc35d819136b00ffaac6261ce4447b6f176870533ff810e540e9e1d4c2316e0f660765f2#npm:6.0.2"],
             ["storybook-color-picker", "npm:2.1.5"],
             ["typescript", "patch:typescript@npm%3A4.5.2#~builtin<compat/typescript>::version=4.5.2&hash=ddd1e8"],
