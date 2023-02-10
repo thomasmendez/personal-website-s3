@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { Grid } from '@mui/material';
 import TitleHeader from '../components/TitleHeader';
 import Project from '../components/Projects/Project';
@@ -112,7 +113,8 @@ const PROJECTS = [
   },
 ];
 
-const VRAR = () => {
+const VRAR = (props) => {
+  useEffect(() => document.title = props.title, [props.title]);
   return(
     <Grid
       container
@@ -126,6 +128,10 @@ const VRAR = () => {
       </Grid>
     </Grid>
   );
+};
+
+VRAR.propTypes = {
+  title: PropTypes.string.isRequired,
 };
 
 export default VRAR;

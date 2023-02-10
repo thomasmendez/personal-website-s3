@@ -11,6 +11,7 @@ const Template = args => <About {...args}/>;
 
 export const AboutView = Template.bind({});
 AboutView.args = {
+  title: 'Thomas A. Mendez',
   contacts: [
     {
       contactMethod: 'LinkedIn',

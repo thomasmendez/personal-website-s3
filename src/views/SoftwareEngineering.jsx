@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { Grid } from '@mui/material';
 import TitleHeader from '../components/TitleHeader';
 import Project from '../components/Projects/Project';
@@ -106,7 +107,8 @@ const PROJECTS = [
   },
 ];
 
-const SoftwareEngineering = () => {
+const SoftwareEngineering = (props) => {
+  useEffect(() => document.title = props.title, [props.title]);
   return(
     <Grid
       container
@@ -120,6 +122,10 @@ const SoftwareEngineering = () => {
       </Grid>
     </Grid>
   );
+};
+
+SoftwareEngineering.propTypes = {
+  title: PropTypes.string.isRequired,
 };
 
 export default SoftwareEngineering;

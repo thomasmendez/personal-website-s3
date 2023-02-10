@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { Grid } from '@mui/material';
 import TitleHeader from '../components/TitleHeader';
 import WorkExperience from '../components/WorkExperience';
@@ -82,20 +83,27 @@ const EXPERIENCE = [
   },
 ];
 
-const Work = () => (
-  <Grid
-    container
-    spacing={3}
-  >
-    <TitleHeader titleName={'Where I Worked'}/>
-    <Grid container item>
-      <Grid container item spacing={{ xs: 3, md: 3 }} ml={{ xs: 5, md: 10 }} mr={{ xs: 5, md: 10 }}>
-        <WorkExperience
-          arrayOfExperiences={EXPERIENCE}
-        />
+const Work = (props) => {
+  useEffect(() => document.title = props.title, [props.title]);
+  return(
+    <Grid
+      container
+      spacing={3}
+    >
+      <TitleHeader titleName={'Where I Worked'}/>
+      <Grid container item>
+        <Grid container item spacing={{ xs: 3, md: 3 }} ml={{ xs: 5, md: 10 }} mr={{ xs: 5, md: 10 }}>
+          <WorkExperience
+            arrayOfExperiences={EXPERIENCE}
+          />
+        </Grid>
       </Grid>
     </Grid>
-  </Grid>
-);
+  );
+};
+
+Work.propTypes = {
+  title: PropTypes.string.isRequired,
+};
 
 export default Work;

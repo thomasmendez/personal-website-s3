@@ -15,3 +15,7 @@ export default {
 const Template = args => <VRAR {...args}/>;
 
 export const VRARView = Template.bind({});
+
+VRARView.args = {
+  title: 'AR & VR | Thomas A. Mendez',
+};

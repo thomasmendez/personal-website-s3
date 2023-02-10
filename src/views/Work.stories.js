@@ -12,3 +12,7 @@ export default {
 const Template = args => <Work {...args}/>;
 
 export const WorkView = Template.bind({});
+
+WorkView.args = {
+  title: 'Work | Thomas A. Mendez',
+};
