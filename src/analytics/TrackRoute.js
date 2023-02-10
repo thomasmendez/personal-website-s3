@@ -9,7 +9,6 @@ async function trackPage(location) {
 
 const TrackRoute = ({children}) => {
   const location = useLocation();
-  console.info(location.pathname);
 
   useEffect(() => {
     trackPage(location);
