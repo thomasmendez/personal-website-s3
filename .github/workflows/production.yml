@@ -39,7 +39,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      STORYBOOK_URL: http://${{ needs.pre_build.outputs.AWS_BUCKET_NAME_STORYBOOK }}.s3-website.us-east-2.amazonaws.com
+      STORYBOOK_URL: http://${{ needs.pre_build.outputs.AWS_BUCKET_NAME_STORYBOOK }}
       GOOGLE_ANALYTICS_TRACKING_ID: ${{ needs.pre_build.outputs.GOOGLE_ANALYTICS_TRACKING_ID }}
     needs: pre_build
     steps:
